@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RedstoneSidekick.WPF"
+        xmlns:local="clr-namespace:RedstoneSidekick.WPF.ProjectWindow"
         xmlns:uc="clr-namespace:RedstoneSidekick.WPF.ProjectWindow.UserControls"
         mc:Ignorable="d"
         Width="1366"
@@ -13,7 +13,8 @@
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         FontFamily="Garamond"
-        WindowStyle="SingleBorderWindow">
+        WindowStyle="SingleBorderWindow"
+        d:DataContext="{d:DesignInstance Type=local:ProjectWindowVM}">
     <DockPanel LastChildFill="True">
 
         <!--#region Top Menu -->

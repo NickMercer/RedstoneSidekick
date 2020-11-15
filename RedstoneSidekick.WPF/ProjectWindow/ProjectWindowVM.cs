@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedstoneSidekick.WPF.ProjectWindow
 {
-    public class ProjectWindowVM
+    public class ProjectWindowVM : ViewModelBase
     {
         private string _projectName = "New Project";
         public string ProjectName
@@ -15,10 +15,9 @@ namespace RedstoneSidekick.WPF.ProjectWindow
             set { SetProperty(ref _projectName, value); }
         }
 
-
         public ProjectWindowVM()
         {
-            ItemDataUpdateHandler.UpdateMinecraftItemsDatabase();
+            //ItemDataUpdateHandler.UpdateMinecraftItemsDatabase();
         }
     }
 }

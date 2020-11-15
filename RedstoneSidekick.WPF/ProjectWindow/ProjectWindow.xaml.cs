@@ -107,7 +107,7 @@ namespace RedstoneSidekick.WPF.ProjectWindow
                 _focusedTabIndex = index;
             }
         }
-        private void FocusButton(Button button)
+        private static void FocusButton(Button button)
         {
             button.Opacity = 1;
 
@@ -116,7 +116,7 @@ namespace RedstoneSidekick.WPF.ProjectWindow
             var border = button.Parent as Border;
             border.BeginAnimation(MarginProperty, animation);
         }
-        private void DeFocusButton(Button button)
+        private static void DeFocusButton(Button button)
         {
             button.Opacity = 0.75;
 
