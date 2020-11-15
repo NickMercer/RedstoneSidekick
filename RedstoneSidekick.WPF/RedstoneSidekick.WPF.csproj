@@ -5,11 +5,17 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>RedstoneSidekick.WPF.App</StartupObject>
   </PropertyGroup>
 
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\NatickCommon\NatickCommon.csproj" />
   </ItemGroup>
 
   <ItemGroup>

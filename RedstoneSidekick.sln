@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedstoneSidekick.WPF", "RedstoneSidekick.WPF\RedstoneSidekick.WPF.csproj", "{B467694B-89D3-4FD5-8F69-4233CB8AB268}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatickCommon", "NatickCommon\NatickCommon.csproj", "{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.ActiveCfg = Release|x64
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.Build.0 = Release|x64
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|x64.ActiveCfg = Debug|x64
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|x64.Build.0 = Debug|x64
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|x64.ActiveCfg = Release|x64
+		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
