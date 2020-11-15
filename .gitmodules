@@ -1,3 +1,4 @@
-[submodule "Natick.Common"]
-	path = Natick.Common
-	url = https://github.com/NickMercer/Natick.Common.git
+
+[submodule "NatickCommon"]
+	path = NatickCommon
+	url = https://github.com/NickMercer/NatickCommon.git
