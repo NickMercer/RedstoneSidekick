@@ -1,0 +1,3 @@
+[submodule "Natick.Common"]
+	path = Natick.Common
+	url = https://github.com/NickMercer/Natick.Common.git
