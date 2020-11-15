@@ -1,7 +1,7 @@
 # RedstoneSidekick
 A rebuild of the RedstoneSidekick application using .NET 5
 
-![](https://github.com/NickMercer/RedstoneSidekick/blob/master/RedstoneSidekick/Images/App/RSBanner.png?raw=true)
+![](https://imgur.com/v3yk2du)
 #### A Minecraft Crafting List Application
 
 Get the Newest Release Here: [v1.0](https://github.com/NickMercer/RedstoneSidekick/releases/tag/v1.0)
