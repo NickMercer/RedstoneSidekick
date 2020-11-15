@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedstoneSidekick.WPF", "RedstoneSidekick.WPF\RedstoneSidekick.WPF.csproj", "{B467694B-89D3-4FD5-8F69-4233CB8AB268}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Debug|x64.ActiveCfg = Debug|x64
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Debug|x64.Build.0 = Debug|x64
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.ActiveCfg = Release|x64
+		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B485D217-7CC0-48B4-A85E-0D72D6261E65}
+	EndGlobalSection
+EndGlobal

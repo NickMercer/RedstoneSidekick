@@ -1,0 +1,279 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RedstoneSidekick.WPF">
+
+    <!--#region https://colorhunt.co/palette/201927 -->
+    <SolidColorBrush x:Key="RSDarkRed"
+                     Color="#CD0A0A" />
+    <SolidColorBrush x:Key="RSRed"
+                     Color="#EC0101" />
+    <SolidColorBrush x:Key="RSPink"
+                     Color="#EB8F8F" />
+    <SolidColorBrush x:Key="RSBeige"
+                     Color="#F1F3DE" />
+    <!--#endregion-->
+
+    <ImageSource x:Key="BlockErrorImage">pack://application:,,,/Images/Blocks/Error.png</ImageSource>
+    <ImageSource x:Key="RSLogo">pack://application:,,,/Images/App/RSLogo.png</ImageSource>
+    <ImageSource x:Key="RSBanner">pack://application:,,,/Images/App/RSBanner.png</ImageSource>
+
+
+
+
+    <!--#region Buttons -->
+    <Style TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="Foreground"
+                Value="{StaticResource RSDarkRed}" />
+        <Setter Property="BorderBrush"
+                Value="White" />
+        <Setter Property="ToolTipService.InitialShowDelay"
+                Value="1000" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="buttonControlTemplate"
+                                 TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted"
+                                 Value="True">
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
+                            <Setter Property="Cursor"
+                                    Value="Arrow" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard FillBehavior="HoldEnd">
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
+                                                                          BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00"
+                                                                     Value="0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:0.15"
+                                                                     Value="0 10" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard FillBehavior="Stop">
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
+                                                                          BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00"
+                                                                     Value="0 10" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:0.15"
+                                                                     Value="0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Opacity"
+                                    TargetName="border"
+                                    Value="0.7" />
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFBCDDEE" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FF245A83" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFF4F4F4" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FFADB2B5" />
+                            <Setter Property="Foreground"
+                                    Value="#FF838383" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Rounded Button-->
+    <Style x:Key="RoundedButton"
+           TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush"
+                        Value="{StaticResource RSDarkRed}" />
+                <Setter Property="BorderThickness"
+                        Value="5" />
+                <Setter Property="CornerRadius"
+                        Value="5" />
+            </Style>
+        </Style.Resources>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted"
+                                 Value="True">
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
+                            <Setter Property="Cursor"
+                                    Value="Arrow" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
+                            <Setter Property="Opacity"
+                                    TargetName="contentPresenter"
+                                    Value="0.6" />
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFBCDDEE" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FF245A83" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFF4F4F4" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FFADB2B5" />
+                            <Setter Property="Foreground"
+                                    Value="#FF838383" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion -->
+
+    <!--#region Text Box -->
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource RSPink}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="KeyboardNavigation.TabNavigation"
+                Value="None" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
+        <Setter Property="AllowDrop"
+                Value="true" />
+        <Setter Property="ScrollViewer.PanningMode"
+                Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Focusable="false"
+                                      HorizontalScrollBarVisibility="Hidden"
+                                      VerticalScrollBarVisibility="Hidden" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Opacity"
+                                    TargetName="border"
+                                    Value="0.56" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="true">
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource RSPink}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused"
+                                 Value="true">
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource RSPink}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled"
+                               Value="true" />
+                    <Condition Property="IsSelectionActive"
+                               Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush"
+                        Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

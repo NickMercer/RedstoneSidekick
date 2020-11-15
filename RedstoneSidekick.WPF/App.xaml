@@ -1,0 +1,9 @@
+﻿<Application x:Class="RedstoneSidekick.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RedstoneSidekick.WPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="RedstoneSidekickResourceDictionary.xaml" />
+    </Application.Resources>
+</Application>
