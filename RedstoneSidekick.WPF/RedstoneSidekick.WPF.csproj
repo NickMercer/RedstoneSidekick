@@ -8,6 +8,10 @@
     <StartupObject>RedstoneSidekick.WPF.App</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="RedstoneSidekickDB.db" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -15,7 +19,14 @@
 
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <ProjectReference Include="..\NatickCommon\NatickCommon.csproj" />
+    <ProjectReference Include="..\RedstoneSidekick.Domain\RedstoneSidekick.Domain.csproj" />
+    <ProjectReference Include="..\RedstoneSidekick.Logic\RedstoneSidekick.Logic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2061,6 +2072,9 @@
     </Resource>
     <Resource Include="Images\Transportation\TNTMinecart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RedstoneSidekickDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

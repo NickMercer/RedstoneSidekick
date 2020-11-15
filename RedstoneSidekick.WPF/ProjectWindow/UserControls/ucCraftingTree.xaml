@@ -6,7 +6,31 @@
              xmlns:local="clr-namespace:RedstoneSidekick.WPF.ProjectWindow.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="{StaticResource RSBeige}">
+    <Grid Background="{StaticResource RSPink}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <TreeView Grid.Column="0"
+                  Grid.Row="0"
+                  Margin="5"
+                  Height="300"
+                  Width="300"
+                  Background="{StaticResource RSBeige}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+
+            <TreeViewItem Header="Minecraft Item">
+                <TreeViewItem Header="Ingredient 1" />
+                <TreeViewItem Header="Ingredient 2" />
+                <TreeViewItem Header="Ingredient 3" />
+                <TreeViewItem Header="Ingredient 4" />
+            </TreeViewItem>
+            
+            
+        </TreeView>
     </Grid>
 </UserControl>

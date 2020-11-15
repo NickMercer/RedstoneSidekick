@@ -1,0 +1,729 @@
+Id,Name,ImagePath,MinecraftId,Category
+1,Air,/Images/Blocks/Error.png,minecraft:air,1
+2,Stone,/Images/Blocks/StoneBlock.png,minecraft:stone,1
+3,Granite,/Images/Blocks/GraniteBlock.png,minecraft:granite,1
+4,Polished Granite,/Images/Blocks/PolishedGraniteBlock.png,minecraft:polished_granite,1
+5,Diorite,/Images/Blocks/DioriteBlock.png,minecraft:diorite,1
+6,Polished Diorite,/Images/Blocks/PolishedDioriteBlock.png,minecraft:polished_diorite,1
+7,Andesite,/Images/Blocks/AndesiteBlock.png,minecraft:andesite,1
+8,Polished Andesite,/Images/Blocks/PolishedAndesiteBlock.png,minecraft:polished_andesite,1
+9,Grass Block,/Images/Blocks/GrassBlock.png,minecraft:grass_block,1
+10,Dirt,/Images/Blocks/DirtBlock.png,minecraft:dirt,1
+11,Coarse Dirt,/Images/Blocks/CoarseDirtBlock.png,minecraft:coarse_dirt,1
+12,Podzol,/Images/Blocks/PodzolBlock.png,minecraft:podzol,1
+13,Cobblestone,/Images/Blocks/CobblestoneBlock.png,minecraft:cobblestone,1
+14,Oak Planks,/Images/Blocks/OakPlanks.png,minecraft:oak_planks,1
+15,Spruce Planks,/Images/Blocks/SprucePlanks.png,minecraft:spruce_planks,1
+16,Birch Planks,/Images/Blocks/BirchPlanks.png,minecraft:birch_planks,1
+17,Jungle Planks,/Images/Blocks/JunglePlanks.png,minecraft:jungle_planks,1
+18,Acacia Planks,/Images/Blocks/AcaciaPlanks.png,minecraft:acacia_planks,1
+19,Dark Oak Planks,/Images/Blocks/DarkOakPlanks.png,minecraft:dark_oak_planks,1
+20,Oak Sapling,/Images/Decorations/OakSapling.png,minecraft:oak_sapling,2
+21,Spruce Sapling,/Images/Decorations/SpruceSapling.png,minecraft:spruce_sapling,2
+22,Birch Sapling,/Images/Decorations/BirchSapling.png,minecraft:birch_sapling,2
+23,Jungle Sapling,/Images/Decorations/JungleSapling.png,minecraft:jungle_sapling,2
+24,Acacia Sapling,/Images/Decorations/AcaciaSapling.png,minecraft:acacia_sapling,2
+25,Dark Oak Sapling,/Images/Decorations/DarkOakSapling.png,minecraft:dark_oak_sapling,2
+26,Bedrock,/Images/Blocks/Bedrock.png,minecraft:bedrock,1
+27,Sand,/Images/Blocks/Sand.png,minecraft:sand,1
+28,Red Sand,/Images/Blocks/RedSand.png,minecraft:red_sand,1
+29,Gravel,/Images/Blocks/Gravel.png,minecraft:gravel,1
+30,Gold Ore,/Images/Blocks/GoldOre.png,minecraft:gold_ore,1
+31,Iron Ore,/Images/Blocks/IronOre.png,minecraft:iron_ore,1
+32,Coal Ore,/Images/Blocks/CoalOre.png,minecraft:coal_ore,1
+33,Oak Log,/Images/Blocks/OakLog.png,minecraft:oak_log,1
+34,Spruce Log,/Images/Blocks/SpruceLog.png,minecraft:spruce_log,1
+35,Birch Log,/Images/Blocks/BirchLog.png,minecraft:birch_log,1
+36,Jungle Log,/Images/Blocks/JungleLog.png,minecraft:jungle_log,1
+37,Acacia Log,/Images/Blocks/AcaciaLog.png,minecraft:acacia_log,1
+38,Dark Oak Log,/Images/Blocks/DarkOakLog.png,minecraft:dark_oak_log,1
+39,Stripped Oak Log,/Images/Blocks/StrippedOakLog.png,minecraft:stripped_oak_log,1
+40,Stripped Spruce Log,/Images/Blocks/StrippedSpruceLog.png,minecraft:stripped_spruce_log,1
+41,Stripped Birch Log,/Images/Blocks/StrippedBirchLog.png,minecraft:stripped_birch_log,1
+42,Stripped Jungle Log,/Images/Blocks/StrippedJungleLog.png,minecraft:stripped_jungle_log,1
+43,Stripped Acacia Log,/Images/Blocks/StrippedAcaciaLog.png,minecraft:stripped_acacia_log,1
+44,Stripped Dark Oak Log,/Images/Blocks/StrippedDarkOakLog.png,minecraft:stripped_dark_oak_log,1
+45,Stripped Oak Wood,/Images/Blocks/StrippedOakWood.png,minecraft:stripped_oak_wood,1
+46,Stripped Spruce Wood,/Images/Blocks/StrippedSpruceWood.png,minecraft:stripped_spruce_wood,1
+47,Stripped Birch Wood,/Images/Blocks/StrippedBirchWood.png,minecraft:stripped_birch_wood,1
+48,Stripped Jungle Wood,/Images/Blocks/StrippedJungleWood.png,minecraft:stripped_jungle_wood,1
+49,Stripped Acacia Wood,/Images/Blocks/StrippedAcaciaWood.png,minecraft:stripped_acacia_wood,1
+50,Stripped Dark Oak Wood,/Images/Blocks/StrippedDarkOakWood.png,minecraft:stripped_dark_oak_wood,1
+51,Oak Leaves,/Images/Decorations/OakLeaves.png,minecraft:oak_leaves,2
+52,Spruce Leaves,/Images/Decorations/SpruceLeaves.png,minecraft:spruce_leaves,2
+53,Birch Leaves,/Images/Decorations/BirchLeaves.png,minecraft:birch_leaves,2
+54,Jungle Leaves,/Images/Decorations/JungleLeaves.png,minecraft:jungle_leaves,2
+55,Acacia Leaves,/Images/Decorations/AcaciaLeaves.png,minecraft:acacia_leaves,2
+56,Dark Oak Leaves,/Images/Decorations/DarkOakLeaves.png,minecraft:dark_oak_leaves,2
+57,Oak Wood,/Images/Blocks/OakWood.png,minecraft:oak_wood,1
+58,Spruce Wood,/Images/Blocks/SpruceWood.png,minecraft:spruce_wood,1
+59,Birch Wood,/Images/Blocks/BirchWood.png,minecraft:birch_wood,1
+60,Jungle Wood,/Images/Blocks/JungleWood.png,minecraft:jungle_wood,1
+61,Acacia Wood,/Images/Blocks/AcaciaWood.png,minecraft:acacia_wood,1
+62,Dark Oak Wood,/Images/Blocks/DarkOakWood.png,minecraft:dark_oak_wood,1
+63,Sponge,/Images/Blocks/Sponge.png,minecraft:sponge,1
+64,Wet Sponge,/Images/Blocks/WetSponge.png,minecraft:wet_sponge,1
+65,Glass,/Images/Blocks/Glass.png,minecraft:glass,1
+66,Lapis Lazuli Ore,/Images/Blocks/LapisLazuliOre.png,minecraft:lapis_ore,1
+67,Lapis Lazuli Block,/Images/Blocks/LapisLazuliBlock.png,minecraft:lapis_block,1
+68,Dispenser,/Images/Redstone/Dispenser.png,minecraft:dispenser,3
+69,Sandstone,/Images/Blocks/Sandstone.png,minecraft:sandstone,1
+70,Chiseled Sandstone,/Images/Blocks/ChiseledSandstone.png,minecraft:chiseled_sandstone,1
+71,Cut Sandstone,/Images/Blocks/CutSandstone.png,minecraft:cut_sandstone,1
+72,Note Block,/Images/Redstone/NoteBlock.png,minecraft:note_block,3
+73,Powered Rail,/Images/Transportation/PoweredRail.png,minecraft:powered_rail,4
+74,Detector Rail,/Images/Transportation/DetectorRail.png,minecraft:detector_rail,4
+75,Sticky Piston,/Images/Redstone/StickyPiston.png,minecraft:sticky_piston,3
+76,Cobweb,/Images/Decorations/Cobweb.png,minecraft:cobweb,2
+77,Grass,/Images/Decorations/Grass.png,minecraft:grass,2
+78,Fern,/Images/Decorations/Fern.png,minecraft:fern,2
+79,Dead Bush,/Images/Decorations/DeadBush.png,minecraft:dead_bush,2
+80,Seagrass,/Images/Decorations/Seagrass.png,minecraft:seagrass,2
+81,Sea Pickle,/Images/Decorations/SeaPickle.png,minecraft:sea_pickle,2
+82,Piston,/Images/Redstone/Piston.png,minecraft:piston,3
+83,White Wool,/Images/Blocks/WhiteWool.png,minecraft:white_wool,1
+84,Orange Wool,/Images/Blocks/OrangeWool.png,minecraft:orange_wool,1
+85,Magenta Wool,/Images/Blocks/MagentaWool.png,minecraft:magenta_wool,1
+86,Light Blue Wool,/Images/Blocks/LightBlueWool.png,minecraft:light_blue_wool,1
+87,Yellow Wool,/Images/Blocks/YellowWool.png,minecraft:yellow_wool,1
+88,Lime Wool,/Images/Blocks/LimeWool.png,minecraft:lime_wool,1
+89,Pink Wool,/Images/Blocks/PinkWool.png,minecraft:pink_wool,1
+90,Gray Wool,/Images/Blocks/GrayWool.png,minecraft:gray_wool,1
+91,Light Gray Wool,/Images/Blocks/LightGrayWool.png,minecraft:light_gray_wool,1
+92,Cyan Wool,/Images/Blocks/CyanWool.png,minecraft:cyan_wool,1
+93,Purple Wool,/Images/Blocks/PurpleWool.png,minecraft:purple_wool,1
+94,Blue Wool,/Images/Blocks/BlueWool.png,minecraft:blue_wool,1
+95,Brown Wool,/Images/Blocks/BrownWool.png,minecraft:brown_wool,1
+96,Green Wool,/Images/Blocks/GreenWool.png,minecraft:green_wool,1
+97,Red Wool,/Images/Blocks/RedWool.png,minecraft:red_wool,1
+98,Black Wool,/Images/Blocks/BlackWool.png,minecraft:black_wool,1
+99,Dandelion,/Images/Decorations/Dandelion.png,minecraft:dandelion,2
+100,Poppy,/Images/Decorations/Poppy.png,minecraft:poppy,2
+101,Blue Orchid,/Images/Decorations/BlueOrchid.png,minecraft:blue_orchid,2
+102,Allium,/Images/Decorations/Allium.png,minecraft:allium,2
+103,Azure Bluet,/Images/Decorations/AzureBluet.png,minecraft:azure_bluet,2
+104,Red Tulip,/Images/Decorations/RedTulip.png,minecraft:red_tulip,2
+105,Orange Tulip,/Images/Decorations/OrangeTulip.png,minecraft:orange_tulip,2
+106,White Tulip,/Images/Decorations/WhiteTulip.png,minecraft:white_tulip,2
+107,Pink Tulip,/Images/Decorations/PinkTulip.png,minecraft:pink_tulip,2
+108,Oxeye Daisy,/Images/Decorations/OxeyeDaisy.png,minecraft:oxeye_daisy,2
+109,Cornflower,/Images/Decorations/Cornflower.png,minecraft:cornflower,2
+110,Lily of the Valley,/Images/Decorations/LilyoftheValley.png,minecraft:lily_of_the_valley,2
+111,Wither Rose,/Images/Decorations/WitherRose.png,minecraft:wither_rose,2
+112,Brown Mushroom,/Images/Decorations/BrownMushroom.png,minecraft:brown_mushroom,2
+113,Red Mushroom,/Images/Decorations/RedMushroom.png,minecraft:red_mushroom,2
+114,Block of Gold,/Images/Blocks/GoldBlock.png,minecraft:gold_block,1
+115,Block of Iron,/Images/Blocks/IronBlock.png,minecraft:iron_block,1
+116,Oak Slab,/Images/Blocks/OakSlab.png,minecraft:oak_slab,1
+117,Spruce Slab,/Images/Blocks/SpruceSlab.png,minecraft:spruce_slab,1
+118,Birch Slab,/Images/Blocks/BirchSlab.png,minecraft:birch_slab,1
+119,Jungle Slab,/Images/Blocks/JungleSlab.png,minecraft:jungle_slab,1
+120,Acacia Slab,/Images/Blocks/AcaciaSlab.png,minecraft:acacia_slab,1
+121,Dark Oak Slab,/Images/Blocks/DarkOakSlab.png,minecraft:dark_oak_slab,1
+122,Stone Slab,/Images/Blocks/StoneSlab.png,minecraft:stone_slab,1
+123,Smooth Stone Slab,/Images/Blocks/SmoothStoneSlab.png,minecraft:smooth_stone_slab,1
+124,Sandstone Slab,/Images/Blocks/SandstoneSlab.png,minecraft:sandstone_slab,1
+125,Cut Sandstone Slab,/Images/Blocks/CutSandstoneSlab.png,minecraft:cut_sandstone_slab,1
+126,Petrified Oak Slab,/Images/Blocks/PetrifiedOakSlab.png,minecraft:petrified_oak_slab,1
+127,Cobblestone Slab,/Images/Blocks/CobblestoneSlab.png,minecraft:cobblestone_slab,1
+128,Brick Slab,/Images/Blocks/BrickSlab.png,minecraft:brick_slab,1
+129,Stone Brick Slab,/Images/Blocks/StoneBrickSlab.png,minecraft:stone_brick_slab,1
+130,Nether Brick Slab,/Images/Blocks/NetherBrickSlab.png,minecraft:nether_brick_slab,1
+131,Quartz Slab,/Images/Blocks/QuartzSlab.png,minecraft:quartz_slab,1
+132,Red Sandstone Slab,/Images/Blocks/RedSandstoneSlab.png,minecraft:red_sandstone_slab,1
+133,Cut Red Sandstone Slab,/Images/Blocks/CutRedSandstoneSlab.png,minecraft:cut_red_sandstone_slab,1
+134,Purpur Slab,/Images/Blocks/PurpurSlab.png,minecraft:purpur_slab,1
+135,Prismarine Slab,/Images/Blocks/PrismarineSlab.png,minecraft:prismarine_slab,1
+136,Prismarine Brick Slab,/Images/Blocks/PrismarineBrickSlab.png,minecraft:prismarine_brick_slab,1
+137,Dark Prismarine Slab,/Images/Blocks/DarkPrismarineSlab.png,minecraft:dark_prismarine_slab,1
+138,Smooth Quartz,/Images/Blocks/SmoothQuartz.png,minecraft:smooth_quartz,1
+139,Smooth Red Sandstone,/Images/Blocks/SmoothRedSandstone.png,minecraft:smooth_red_sandstone,1
+140,Smooth Sandstone,/Images/Blocks/SmoothSandstone.png,minecraft:smooth_sandstone,1
+141,Smooth Stone,/Images/Blocks/SmoothStone.png,minecraft:smooth_stone,1
+142,Bricks,/Images/Blocks/Bricks.png,minecraft:bricks,1
+143,TNT,/Images/Redstone/TNT.png,minecraft:tnt,3
+144,Bookshelf,/Images/Blocks/Bookshelf.png,minecraft:bookshelf,1
+145,Mossy Cobblestone,/Images/Blocks/MossyCobblestone.png,minecraft:mossy_cobblestone,1
+146,Obsidian,/Images/Blocks/Obsidian.png,minecraft:obsidian,1
+147,Torch,/Images/Decorations/Torch.png,minecraft:torch,2
+148,End Rod,/Images/Decorations/EndRod.png,minecraft:end_rod,2
+149,Chorus Plant,/Images/Decorations/ChorusPlant.png,minecraft:chorus_plant,2
+150,Chorus Flower,/Images/Decorations/ChorusFlower.png,minecraft:chorus_flower,2
+151,Purpur Block,/Images/Blocks/PurpurBlock.png,minecraft:purpur_block,1
+152,Purpur Pillar,/Images/Blocks/PurpurPillar.png,minecraft:purpur_pillar,1
+153,Purpur Stairs,/Images/Blocks/PurpurStairs.png,minecraft:purpur_stairs,1
+154,Oak Stairs,/Images/Blocks/OakStairs.png,minecraft:oak_stairs,1
+155,Chest,/Images/Decorations/Chest.png,minecraft:chest,2
+156,Diamond Ore,/Images/Blocks/DiamondOre.png,minecraft:diamond_ore,1
+157,Block of Diamond,/Images/Blocks/DiamondBlock.png,minecraft:diamond_block,1
+158,Crafting Table,/Images/Decorations/CraftingTable.png,minecraft:crafting_table,2
+159,Farmland,/Images/Decorations/Farmland.png,minecraft:farmland,2
+160,Furnace,/Images/Decorations/Furnace.png,minecraft:furnace,2
+161,Ladder,/Images/Decorations/Ladder.png,minecraft:ladder,2
+162,Rail,/Images/Transportation/Rail.png,minecraft:rail,4
+163,Cobblestone Stairs,/Images/Blocks/CobblestoneStairs.png,minecraft:cobblestone_stairs,1
+164,Lever,/Images/Redstone/Lever.png,minecraft:lever,3
+165,Stone Pressure Plate,/Images/Redstone/StonePressurePlate.png,minecraft:stone_pressure_plate,3
+166,Oak Pressure Plate,/Images/Redstone/OakPressurePlate.png,minecraft:oak_pressure_plate,3
+167,Spruce Pressure Plate,/Images/Redstone/SprucePressurePlate.png,minecraft:spruce_pressure_plate,3
+168,Birch Pressure Plate,/Images/Redstone/BirchPressurePlate.png,minecraft:birch_pressure_plate,3
+169,Jungle Pressure Plate,/Images/Redstone/JunglePressurePlate.png,minecraft:jungle_pressure_plate,3
+170,Acacia Pressure Plate,/Images/Redstone/AcaciaPressurePlate.png,minecraft:acacia_pressure_plate,3
+171,Dark Oak Pressure Plate,/Images/Redstone/DarkOakPressurePlate.png,minecraft:dark_oak_pressure_plate,3
+172,Redstone Ore,/Images/Blocks/RedstoneOre.png,minecraft:redstone_ore,1
+173,Redstone Torch,/Images/Redstone/RedstoneTorch.png,minecraft:redstone_torch,3
+174,Stone Button,/Images/Redstone/StoneButton.png,minecraft:stone_button,3
+175,Snow,/Images/Decorations/Snow.png,minecraft:snow,2
+176,Ice,/Images/Blocks/Ice.png,minecraft:ice,1
+177,Snow Block,/Images/Blocks/SnowBlock.png,minecraft:snow_block,1
+178,Cactus,/Images/Decorations/Cactus.png,minecraft:cactus,2
+179,Clay Block,/Images/Blocks/ClayBlock.png,minecraft:clay,1
+180,Jukebox,/Images/Decorations/Jukebox.png,minecraft:jukebox,2
+181,Oak Fence,/Images/Decorations/OakFence.png,minecraft:oak_fence,2
+182,Spruce Fence,/Images/Decorations/SpruceFence.png,minecraft:spruce_fence,2
+183,Birch Fence,/Images/Decorations/BirchFence.png,minecraft:birch_fence,2
+184,Jungle Fence,/Images/Decorations/JungleFence.png,minecraft:jungle_fence,2
+185,Acacia Fence,/Images/Decorations/AcaciaFence.png,minecraft:acacia_fence,2
+186,Dark Oak Fence,/Images/Decorations/DarkOakFence.png,minecraft:dark_oak_fence,2
+187,Pumpkin,/Images/Blocks/Pumpkin.png,minecraft:pumpkin,1
+188,Carved Pumpkin,/Images/Blocks/CarvedPumpkin.png,minecraft:carved_pumpkin,1
+189,Netherrack,/Images/Blocks/Netherrack.png,minecraft:netherrack,1
+190,Soul Sand,/Images/Blocks/SoulSand.png,minecraft:soul_sand,1
+191,Glowstone,/Images/Blocks/Glowstone.png,minecraft:glowstone,1
+192,Jack O'Lantern,/Images/Blocks/JackOLantern.png,minecraft:jack_o_lantern,1
+193,Oak Trapdoor,/Images/Redstone/OakTrapdoor.png,minecraft:oak_trapdoor,3
+194,Spruce Trapdoor,/Images/Redstone/SpruceTrapdoor.png,minecraft:spruce_trapdoor,3
+195,Birch Trapdoor,/Images/Redstone/BirchTrapdoor.png,minecraft:birch_trapdoor,3
+196,Jungle Trapdoor,/Images/Redstone/JungleTrapdoor.png,minecraft:jungle_trapdoor,3
+197,Acacia Trapdoor,/Images/Redstone/AcaciaTrapdoor.png,minecraft:acacia_trapdoor,3
+198,Dark Oak Trapdoor,/Images/Redstone/DarkOakTrapdoor.png,minecraft:dark_oak_trapdoor,3
+199,Infested Stone,/Images/Blocks/StoneBlock.png,minecraft:infested_stone,2
+200,Infested Cobblestone,/Images/Blocks/CobblestoneBlock.png,minecraft:infested_cobblestone,2
+201,Infested Stone Bricks,/Images/Blocks/StoneBricks.png,minecraft:infested_stone_bricks,2
+202,Infested Mossy Stone Bricks,/Images/Blocks/MossyStoneBricks.png,minecraft:infested_mossy_stone_bricks,2
+203,Infested Cracked Stone Bricks,/Images/Blocks/CrackedStoneBricks.png,minecraft:infested_cracked_stone_bricks,2
+204,Infested Chiseled Stone Bricks,/Images/Blocks/ChiseledStoneBricks.png,minecraft:infested_chiseled_stone_bricks,2
+205,Stone Bricks,/Images/Blocks/StoneBricks.png,minecraft:stone_bricks,1
+206,Mossy Stone Bricks,/Images/Blocks/MossyStoneBricks.png,minecraft:mossy_stone_bricks,1
+207,Cracked Stone Bricks,/Images/Blocks/CrackedStoneBricks.png,minecraft:cracked_stone_bricks,1
+208,Chiseled Stone Bricks,/Images/Blocks/ChiseledStoneBricks.png,minecraft:chiseled_stone_bricks,1
+209,Brown Mushroom Block,/Images/Decorations/BrownMushroomBlock.png,minecraft:brown_mushroom_block,2
+210,Red Mushroom Block,/Images/Decorations/RedMushroomBlock.png,minecraft:red_mushroom_block,2
+211,Mushroom Stem,/Images/Decorations/MushroomStem.png,minecraft:mushroom_stem,2
+212,Iron Bars,/Images/Decorations/IronBars.png,minecraft:iron_bars,2
+213,Glass Pane,/Images/Decorations/GlassPane.png,minecraft:glass_pane,2
+214,Melon,/Images/Blocks/Melon.png,minecraft:melon,1
+215,Vines,/Images/Decorations/Vines.png,minecraft:vine,2
+216,Oak Fence Gate,/Images/Redstone/OakFenceGate.png,minecraft:oak_fence_gate,3
+217,Spruce Fence Gate,/Images/Redstone/SpruceFenceGate.png,minecraft:spruce_fence_gate,3
+218,Birch Fence Gate,/Images/Redstone/BirchFenceGate.png,minecraft:birch_fence_gate,3
+219,Jungle Fence Gate,/Images/Redstone/JungleFenceGate.png,minecraft:jungle_fence_gate,3
+220,Acacia Fence Gate,/Images/Redstone/AcaciaFenceGate.png,minecraft:acacia_fence_gate,3
+221,Dark Oak Fence Gate,/Images/Redstone/DarkOakFenceGate.png,minecraft:dark_oak_fence_gate,3
+222,Brick Stairs,/Images/Blocks/BrickStairs.png,minecraft:brick_stairs,1
+223,Stone Brick Stairs,/Images/Blocks/StoneBrickStairs.png,minecraft:stone_brick_stairs,1
+224,Mycelium,/Images/Blocks/Mycelium.png,minecraft:mycelium,1
+225,Lily Pad,/Images/Decorations/LilyPad.png,minecraft:lily_pad,2
+226,Nether Bricks,/Images/Blocks/NetherBricks.png,minecraft:nether_bricks,1
+227,Nether Brick Fence,/Images/Decorations/NetherBrickFence.png,minecraft:nether_brick_fence,2
+228,Nether Brick Stairs,/Images/Blocks/NetherBrickStairs.png,minecraft:nether_brick_stairs,1
+229,Enchanting Table,/Images/Decorations/EnchantingTable.png,minecraft:enchanting_table,2
+230,End Portal Frame,/Images/Decorations/EndPortalFrame.png,minecraft:end_portal_frame,2
+231,End Stone,/Images/Blocks/EndStone.png,minecraft:end_stone,1
+232,End Stone Bricks,/Images/Blocks/EndStoneBricks.png,minecraft:end_stone_bricks,1
+233,Redstone Lamp,/Images/Redstone/RedstoneLamp.png,minecraft:redstone_lamp,3
+234,Sandstone Stairs,/Images/Blocks/SandstoneStairs.png,minecraft:sandstone_stairs,1
+235,Emerald Ore,/Images/Blocks/EmeraldOre.png,minecraft:emerald_ore,1
+236,Ender Chest,/Images/Decorations/EnderChest.png,minecraft:ender_chest,2
+237,Tripwire Hook,/Images/Redstone/TripwireHook.png,minecraft:tripwire_hook,3
+238,Block of Emerald,/Images/Blocks/EmeraldBlock.png,minecraft:emerald_block,1
+239,Spruce Stairs,/Images/Blocks/SpruceStairs.png,minecraft:spruce_stairs,1
+240,Birch Stairs,/Images/Blocks/BirchStairs.png,minecraft:birch_stairs,1
+241,Jungle Stairs,/Images/Blocks/JungleStairs.png,minecraft:jungle_stairs,1
+242,Beacon,/Images/Miscellaneous/Beacon.png,minecraft:beacon,5
+243,Cobblestone Wall,/Images/Decorations/CobblestoneWall.png,minecraft:cobblestone_wall,2
+244,Mossy Cobblestone Wall,/Images/Decorations/MossyCobblestoneWall.png,minecraft:mossy_cobblestone_wall,2
+245,Brick Wall,/Images/Decorations/BrickWall.png,minecraft:brick_wall,2
+246,Prismarine Wall,/Images/Decorations/PrismarineWall.png,minecraft:prismarine_wall,2
+247,Red Sandstone Wall,/Images/Decorations/RedSandstoneWall.png,minecraft:red_sandstone_wall,2
+248,Mossy Stone Brick Wall,/Images/Decorations/MossyStoneBrickWall.png,minecraft:mossy_stone_brick_wall,2
+249,Granite Wall,/Images/Decorations/GraniteWall.png,minecraft:granite_wall,2
+250,Stone Brick Wall,/Images/Decorations/StoneBrickWall.png,minecraft:stone_brick_wall,2
+251,Nether Brick Wall,/Images/Decorations/NetherBrickWall.png,minecraft:nether_brick_wall,2
+252,Andesite Wall,/Images/Decorations/AndesiteWall.png,minecraft:andesite_wall,2
+253,Red Nether Brick Wall,/Images/Decorations/RedNetherBrickWall.png,minecraft:red_nether_brick_wall,2
+254,Sandstone Wall,/Images/Decorations/SandstoneWall.png,minecraft:sandstone_wall,2
+255,End Stone Brick Wall,/Images/Decorations/EndStoneBrickWall.png,minecraft:end_stone_brick_wall,2
+256,Diorite Wall,/Images/Decorations/DioriteWall.png,minecraft:diorite_wall,2
+257,Oak Button,/Images/Redstone/OakButton.png,minecraft:oak_button,3
+258,Spruce Button,/Images/Redstone/SpruceButton.png,minecraft:spruce_button,3
+259,Birch Button,/Images/Redstone/BirchButton.png,minecraft:birch_button,3
+260,Jungle Button,/Images/Redstone/JungleButton.png,minecraft:jungle_button,3
+261,Acacia Button,/Images/Redstone/AcaciaButton.png,minecraft:acacia_button,3
+262,Dark Oak Button,/Images/Redstone/DarkOakButton.png,minecraft:dark_oak_button,3
+263,Anvil,/Images/Decorations/Anvil.png,minecraft:anvil,2
+264,Chipped Anvil,/Images/Decorations/ChippedAnvil.png,minecraft:chipped_anvil,2
+265,Damaged Anvil,/Images/Decorations/DamagedAnvil.png,minecraft:damaged_anvil,2
+266,Trapped Chest,/Images/Redstone/TrappedChest.png,minecraft:trapped_chest,3
+267,Light Weighted Pressure Plate,/Images/Redstone/LightWeightedPressurePlate.png,minecraft:light_weighted_pressure_plate,3
+268,Heavy Weighted Pressure Plate,/Images/Redstone/HeavyWeightedPressurePlate.png,minecraft:heavy_weighted_pressure_plate,3
+269,Daylight Detector,/Images/Redstone/DaylightDetector.png,minecraft:daylight_detector,3
+270,Block of Redstone,/Images/Redstone/RedstoneBlock.png,minecraft:redstone_block,3
+271,Quartz Ore,/Images/Blocks/QuartzOre.png,minecraft:nether_quartz_ore,1
+272,Hopper,/Images/Redstone/Hopper.png,minecraft:hopper,3
+273,Chiseled Quartz Block,/Images/Blocks/ChiseledQuartzBlock.png,minecraft:chiseled_quartz_block,1
+274,Block of Quartz,/Images/Blocks/QuartzBlock.png,minecraft:quartz_block,1
+275,Quartz Pillar,/Images/Blocks/QuartzPillar.png,minecraft:quartz_pillar,1
+276,Quartz Stairs,/Images/Blocks/QuartzStairs.png,minecraft:quartz_stairs,1
+277,Activator Rail,/Images/Transportation/ActivatorRail.png,minecraft:activator_rail,4
+278,Dropper,/Images/Redstone/Dropper.png,minecraft:dropper,3
+279,White Terracotta,/Images/Blocks/WhiteTerracotta.png,minecraft:white_terracotta,1
+280,Orange Terracotta,/Images/Blocks/OrangeTerracotta.png,minecraft:orange_terracotta,1
+281,Magenta Terracotta,/Images/Blocks/MagentaTerracotta.png,minecraft:magenta_terracotta,1
+282,Light Blue Terracotta,/Images/Blocks/LightBlueTerracotta.png,minecraft:light_blue_terracotta,1
+283,Yellow Terracotta,/Images/Blocks/YellowTerracotta.png,minecraft:yellow_terracotta,1
+284,Lime Terracotta,/Images/Blocks/LimeTerracotta.png,minecraft:lime_terracotta,1
+285,Pink Terracotta,/Images/Blocks/PinkTerracotta.png,minecraft:pink_terracotta,1
+286,Gray Terracotta,/Images/Blocks/GrayTerracotta.png,minecraft:gray_terracotta,1
+287,Light Gray Terracotta,/Images/Blocks/LightGrayTerracotta.png,minecraft:light_gray_terracotta,1
+288,Cyan Terracotta,/Images/Blocks/CyanTerracotta.png,minecraft:cyan_terracotta,1
+289,Purple Terracotta,/Images/Blocks/PurpleTerracotta.png,minecraft:purple_terracotta,1
+290,Blue Terracotta,/Images/Blocks/BlueTerracotta.png,minecraft:blue_terracotta,1
+291,Brown Terracotta,/Images/Blocks/BrownTerracotta.png,minecraft:brown_terracotta,1
+292,Green Terracotta,/Images/Blocks/GreenTerracotta.png,minecraft:green_terracotta,1
+293,Red Terracotta,/Images/Blocks/RedTerracotta.png,minecraft:red_terracotta,1
+294,Black Terracotta,/Images/Blocks/BlackTerracotta.png,minecraft:black_terracotta,1
+295,Iron Trapdoor,/Images/Redstone/IronTrapdoor.png,minecraft:iron_trapdoor,3
+296,Hay Bale,/Images/Blocks/HayBlock.png,minecraft:hay_block,1
+297,White Carpet,/Images/Decorations/WhiteCarpet.png,minecraft:white_carpet,2
+298,Orange Carpet,/Images/Decorations/OrangeCarpet.png,minecraft:orange_carpet,2
+299,Magenta Carpet,/Images/Decorations/MagentaCarpet.png,minecraft:magenta_carpet,2
+300,Light Blue Carpet,/Images/Decorations/LightBlueCarpet.png,minecraft:light_blue_carpet,2
+301,Yellow Carpet,/Images/Decorations/YellowCarpet.png,minecraft:yellow_carpet,2
+302,Lime Carpet,/Images/Decorations/LimeCarpet.png,minecraft:lime_carpet,2
+303,Pink Carpet,/Images/Decorations/PinkCarpet.png,minecraft:pink_carpet,2
+304,Gray Carpet,/Images/Decorations/GrayCarpet.png,minecraft:gray_carpet,2
+305,Light Gray Carpet,/Images/Decorations/LightGrayCarpet.png,minecraft:light_gray_carpet,2
+306,Cyan Carpet,/Images/Decorations/CyanCarpet.png,minecraft:cyan_carpet,2
+307,Purple Carpet,/Images/Decorations/PurpleCarpet.png,minecraft:purple_carpet,2
+308,Blue Carpet,/Images/Decorations/BlueCarpet.png,minecraft:blue_carpet,2
+309,Brown Carpet,/Images/Decorations/BrownCarpet.png,minecraft:brown_carpet,2
+310,Green Carpet,/Images/Decorations/GreenCarpet.png,minecraft:green_carpet,2
+311,Red Carpet,/Images/Decorations/RedCarpet.png,minecraft:red_carpet,2
+312,Black Carpet,/Images/Decorations/BlackCarpet.png,minecraft:black_carpet,2
+313,Terracotta,/Images/Blocks/Terracotta.png,minecraft:terracotta,1
+314,Block of Coal,/Images/Blocks/CoalBlock.png,minecraft:coal_block,1
+315,Packed Ice,/Images/Blocks/PackedIce.png,minecraft:packed_ice,1
+316,Acacia Stairs,/Images/Blocks/AcaciaStairs.png,minecraft:acacia_stairs,1
+317,Dark Oak Stairs,/Images/Blocks/DarkOakStairs.png,minecraft:dark_oak_stairs,1
+318,Slime Block,/Images/Decorations/SlimeBlock.png,minecraft:slime_block,2
+319,Grass Path,/Images/Decorations/GrassPath.png,minecraft:grass_path,2
+320,Sunflower,/Images/Decorations/Sunflower.png,minecraft:sunflower,2
+321,Lilac,/Images/Decorations/Lilac.png,minecraft:lilac,2
+322,Rose Bush,/Images/Decorations/RoseBush.png,minecraft:rose_bush,2
+323,Peony,/Images/Decorations/Peony.png,minecraft:peony,2
+324,Tall Grass,/Images/Decorations/TallGrass.png,minecraft:tall_grass,2
+325,Large Fern,/Images/Decorations/LargeFern.png,minecraft:large_fern,2
+326,White Stained Glass,/Images/Blocks/WhiteStainedGlass.png,minecraft:white_stained_glass,2
+327,Orange Stained Glass,/Images/Blocks/OrangeStainedGlass.png,minecraft:orange_stained_glass,1
+328,Magenta Stained Glass,/Images/Blocks/MagentaStainedGlass.png,minecraft:magenta_stained_glass,1
+329,Light Blue Stained Glass,/Images/Blocks/LightBlueStainedGlass.png,minecraft:light_blue_stained_glass,1
+330,Yellow Stained Glass,/Images/Blocks/YellowStainedGlass.png,minecraft:yellow_stained_glass,1
+331,Lime Stained Glass,/Images/Blocks/LimeStainedGlass.png,minecraft:lime_stained_glass,1
+332,Pink Stained Glass,/Images/Blocks/PinkStainedGlass.png,minecraft:pink_stained_glass,1
+333,Gray Stained Glass,/Images/Blocks/GrayStainedGlass.png,minecraft:gray_stained_glass,1
+334,Light Gray Stained Glass,/Images/Blocks/LightGrayStainedGlass.png,minecraft:light_gray_stained_glass,1
+335,Cyan Stained Glass,/Images/Blocks/CyanStainedGlass.png,minecraft:cyan_stained_glass,1
+336,Purple Stained Glass,/Images/Blocks/PurpleStainedGlass.png,minecraft:purple_stained_glass,1
+337,Blue Stained Glass,/Images/Blocks/BlueStainedGlass.png,minecraft:blue_stained_glass,1
+338,Brown Stained Glass,/Images/Blocks/BrownStainedGlass.png,minecraft:brown_stained_glass,1
+339,Green Stained Glass,/Images/Blocks/GreenStainedGlass.png,minecraft:green_stained_glass,1
+340,Red Stained Glass,/Images/Blocks/RedStainedGlass.png,minecraft:red_stained_glass,1
+341,Black Stained Glass,/Images/Blocks/BlackStainedGlass.png,minecraft:black_stained_glass,1
+342,White Stained Glass Pane,/Images/Decorations/WhiteStainedGlassPane.png,minecraft:white_stained_glass_pane,2
+343,Orange Stained Glass Pane,/Images/Decorations/OrangeStainedGlassPane.png,minecraft:orange_stained_glass_pane,2
+344,Magenta Stained Glass Pane,/Images/Decorations/MagentaStainedGlassPane.png,minecraft:magenta_stained_glass_pane,2
+345,Light Blue Stained Glass Pane,/Images/Decorations/LightBlueStainedGlassPane.png,minecraft:light_blue_stained_glass_pane,2
+346,Yellow Stained Glass Pane,/Images/Decorations/YellowStainedGlassPane.png,minecraft:yellow_stained_glass_pane,2
+347,Lime Stained Glass Pane,/Images/Decorations/LimeStainedGlassPane.png,minecraft:lime_stained_glass_pane,2
+348,Pink Stained Glass Pane,/Images/Decorations/PinkStainedGlassPane.png,minecraft:pink_stained_glass_pane,2
+349,Gray Stained Glass Pane,/Images/Decorations/GrayStainedGlassPane.png,minecraft:gray_stained_glass_pane,2
+350,Light Gray Stained Glass Pane,/Images/Decorations/LightGrayStainedGlassPane.png,minecraft:light_gray_stained_glass_pane,2
+351,Cyan Stained Glass Pane,/Images/Decorations/CyanStainedGlassPane.png,minecraft:cyan_stained_glass_pane,2
+352,Purple Stained Glass Pane,/Images/Decorations/PurpleStainedGlassPane.png,minecraft:purple_stained_glass_pane,2
+353,Blue Stained Glass Pane,/Images/Decorations/BlueStainedGlassPane.png,minecraft:blue_stained_glass_pane,2
+354,Brown Stained Glass Pane,/Images/Decorations/BrownStainedGlassPane.png,minecraft:brown_stained_glass_pane,2
+355,Green Stained Glass Pane,/Images/Decorations/GreenStainedGlassPane.png,minecraft:green_stained_glass_pane,2
+356,Red Stained Glass Pane,/Images/Decorations/RedStainedGlassPane.png,minecraft:red_stained_glass_pane,2
+357,Black Stained Glass Pane,/Images/Decorations/BlackStainedGlassPane.png,minecraft:black_stained_glass_pane,2
+358,Prismarine,/Images/Blocks/Prismarine.png,minecraft:prismarine,1
+359,Prismarine Bricks,/Images/Blocks/PrismarineBricks.png,minecraft:prismarine_bricks,1
+360,Dark Prismarine,/Images/Blocks/DarkPrismarine.png,minecraft:dark_prismarine,1
+361,Prismarine Stairs,/Images/Blocks/PrismarineStairs.png,minecraft:prismarine_stairs,1
+362,Prismarine Brick Stairs,/Images/Blocks/PrismarineBrickStairs.png,minecraft:prismarine_brick_stairs,1
+363,Dark Prismarine Stairs,/Images/Blocks/DarkPrismarineStairs.png,minecraft:dark_prismarine_stairs,1
+364,Sea Lantern,/Images/Blocks/SeaLantern.png,minecraft:sea_lantern,1
+365,Red Sandstone,/Images/Blocks/RedSandstone.png,minecraft:red_sandstone,1
+366,Chiseled Red Sandstone,/Images/Blocks/ChiseledRedSandstone.png,minecraft:chiseled_red_sandstone,1
+367,Cut Red Sandstone,/Images/Blocks/CutRedSandstone.png,minecraft:cut_red_sandstone,1
+368,Red Sandstone Stairs,/Images/Blocks/RedSandstoneStairs.png,minecraft:red_sandstone_stairs,1
+369,Magma Block,/Images/Blocks/MagmaBlock.png,minecraft:magma_block,1
+370,Nether Wart Block,/Images/Blocks/NetherWartBlock.png,minecraft:nether_wart_block,1
+371,Red Nether Bricks,/Images/Blocks/RedNetherBricks.png,minecraft:red_nether_bricks,1
+372,Bone Block,/Images/Blocks/BoneBlock.png,minecraft:bone_block,1
+373,Observer,/Images/Redstone/Observer.png,minecraft:observer,3
+374,Shulker Box,/Images/Decorations/ShulkerBox.png,minecraft:shulker_box,2
+375,White Shulker Box,/Images/Decorations/WhiteShulkerBox.png,minecraft:white_shulker_box,2
+376,Orange Shulker Box,/Images/Decorations/OrangeShulkerBox.png,minecraft:orange_shulker_box,2
+377,Magenta Shulker Box,/Images/Decorations/MagentaShulkerBox.png,minecraft:magenta_shulker_box,2
+378,Light Blue Shulker Box,/Images/Decorations/LightBlueShulkerBox.png,minecraft:light_blue_shulker_box,2
+379,Yellow Shulker Box,/Images/Decorations/YellowShulkerBox.png,minecraft:yellow_shulker_box,2
+380,Lime Shulker Box,/Images/Decorations/LimeShulkerBox.png,minecraft:lime_shulker_box,2
+381,Pink Shulker Box,/Images/Decorations/PinkShulkerBox.png,minecraft:pink_shulker_box,2
+382,Gray Shulker Box,/Images/Decorations/GrayShulkerBox.png,minecraft:gray_shulker_box,2
+383,Light Gray Shulker Box,/Images/Decorations/LightGrayShulkerBox.png,minecraft:light_gray_shulker_box,2
+384,Cyan Shulker Box,/Images/Decorations/CyanShulkerBox.png,minecraft:cyan_shulker_box,2
+385,Purple Shulker Box,/Images/Decorations/PurpleShulkerBox.png,minecraft:purple_shulker_box,2
+386,Blue Shulker Box,/Images/Decorations/BlueShulkerBox.png,minecraft:blue_shulker_box,2
+387,Brown Shulker Box,/Images/Decorations/BrownShulkerBox.png,minecraft:brown_shulker_box,2
+388,Green Shulker Box,/Images/Decorations/GreenShulkerBox.png,minecraft:green_shulker_box,2
+389,Red Shulker Box,/Images/Decorations/RedShulkerBox.png,minecraft:red_shulker_box,2
+390,Black Shulker Box,/Images/Decorations/BlackShulkerBox.png,minecraft:black_shulker_box,2
+391,White Glazed Terracotta,/Images/Decorations/WhiteGlazedTerracotta.png,minecraft:white_glazed_terracotta,2
+392,Orange Glazed Terracotta,/Images/Decorations/OrangeGlazedTerracotta.png,minecraft:orange_glazed_terracotta,2
+393,Magenta Glazed Terracotta,/Images/Decorations/MagentaGlazedTerracotta.png,minecraft:magenta_glazed_terracotta,2
+394,Light Blue Glazed Terracotta,/Images/Decorations/LightBlueGlazedTerracotta.png,minecraft:light_blue_glazed_terracotta,2
+395,Yellow Glazed Terracotta,/Images/Decorations/YellowGlazedTerracotta.png,minecraft:yellow_glazed_terracotta,2
+396,Lime Glazed Terracotta,/Images/Decorations/LimeGlazedTerracotta.png,minecraft:lime_glazed_terracotta,2
+397,Pink Glazed Terracotta,/Images/Decorations/PinkGlazedTerracotta.png,minecraft:pink_glazed_terracotta,2
+398,Gray Glazed Terracotta,/Images/Decorations/GrayGlazedTerracotta.png,minecraft:gray_glazed_terracotta,2
+399,Light Gray Glazed Terracotta,/Images/Decorations/LightGrayGlazedTerracotta.png,minecraft:light_gray_glazed_terracotta,2
+400,Cyan Glazed Terracotta,/Images/Decorations/CyanGlazedTerracotta.png,minecraft:cyan_glazed_terracotta,2
+401,Purple Glazed Terracotta,/Images/Decorations/PurpleGlazedTerracotta.png,minecraft:purple_glazed_terracotta,2
+402,Blue Glazed Terracotta,/Images/Decorations/BlueGlazedTerracotta.png,minecraft:blue_glazed_terracotta,2
+403,Brown Glazed Terracotta,/Images/Decorations/BrownGlazedTerracotta.png,minecraft:brown_glazed_terracotta,2
+404,Green Glazed Terracotta,/Images/Decorations/GreenGlazedTerracotta.png,minecraft:green_glazed_terracotta,2
+405,Red Glazed Terracotta,/Images/Decorations/RedGlazedTerracotta.png,minecraft:red_glazed_terracotta,2
+406,Black Glazed Terracotta,/Images/Decorations/BlackGlazedTerracotta.png,minecraft:black_glazed_terracotta,2
+407,White Concrete,/Images/Blocks/WhiteConcrete.png,minecraft:white_concrete,1
+408,Orange Concrete,/Images/Blocks/OrangeConcrete.png,minecraft:orange_concrete,1
+409,Magenta Concrete,/Images/Blocks/MagentaConcrete.png,minecraft:magenta_concrete,1
+410,Light Blue Concrete,/Images/Blocks/LightBlueConcrete.png,minecraft:light_blue_concrete,1
+411,Yellow Concrete,/Images/Blocks/YellowConcrete.png,minecraft:yellow_concrete,1
+412,Lime Concrete,/Images/Blocks/LimeConcrete.png,minecraft:lime_concrete,1
+413,Pink Concrete,/Images/Blocks/PinkConcrete.png,minecraft:pink_concrete,1
+414,Gray Concrete,/Images/Blocks/GrayConcrete.png,minecraft:gray_concrete,1
+415,Light Gray Concrete,/Images/Blocks/LightGrayConcrete.png,minecraft:light_concrete,1
+416,Cyan Concrete,/Images/Blocks/CyanConcrete.png,minecraft:cyan_concrete,1
+417,Purple Concrete,/Images/Blocks/PurpleConcrete.png,minecraft:purple_concrete,1
+418,Blue Concrete,/Images/Blocks/BlueConcrete.png,minecraft:blue_concrete,1
+419,Brown Concrete,/Images/Blocks/BrownConcrete.png,minecraft:brown_concrete,1
+420,Green Concrete,/Images/Blocks/GreenConcrete.png,minecraft:green_concrete,1
+421,Red Concrete,/Images/Blocks/RedConcrete.png,minecraft:red_concrete,1
+422,Black Concrete,/Images/Blocks/BlackConcrete.png,minecraft:black_concrete,1
+423,White Concrete Powder,/Images/Blocks/WhiteConcretePowder.png,minecraft:white_concrete_powder,1
+424,Orange Concrete Powder,/Images/Blocks/OrangeConcretePowder.png,minecraft:orange_concrete_powder,1
+425,Magenta Concrete Powder,/Images/Blocks/MagentaConcretePowder.png,minecraft:magenta_concrete_powder,1
+426,Light Blue Concrete Powder,/Images/Blocks/LightBlueConcretePowder.png,minecraft:light_blue_concrete_powder,1
+427,Yellow Concrete Powder,/Images/Blocks/YellowConcretePowder.png,minecraft:yellow_concrete_powder,1
+428,Lime Concrete Powder,/Images/Blocks/LimeConcretePowder.png,minecraft:lime_concrete_powder,1
+429,Pink Concrete Powder,/Images/Blocks/PinkConcretePowder.png,minecraft:pink_concrete_powder,1
+430,Gray Concrete Powder,/Images/Blocks/GrayConcretePowder.png,minecraft:gray_concrete_powder,1
+431,Light Gray Concrete Powder,/Images/Blocks/LightGrayConcretePowder.png,minecraft:light_concrete_powder,1
+432,Cyan Concrete Powder,/Images/Blocks/CyanConcretePowder.png,minecraft:cyan_concrete_powder,1
+433,Purple Concrete Powder,/Images/Blocks/PurpleConcretePowder.png,minecraft:purple_concrete_powder,1
+434,Blue Concrete Powder,/Images/Blocks/BlueConcretePowder.png,minecraft:blue_concrete_powder,1
+435,Brown Concrete Powder,/Images/Blocks/BrownConcretePowder.png,minecraft:brown_concrete_powder,1
+436,Green Concrete Powder,/Images/Blocks/GreenConcretePowder.png,minecraft:green_concrete_powder,1
+437,Red Concrete Powder,/Images/Blocks/RedConcretePowder.png,minecraft:red_concrete_powder,1
+438,Black Concrete Powder,/Images/Blocks/BlackConcretePowder.png,minecraft:black_concrete_powder,1
+439,Turtle Egg,/Images/Miscellaneous/TurtleEgg.png,minecraft:turtle_egg,5
+440,Dead Tube Coral Block,/Images/Blocks/DeadTubeCoralBlock.png,minecraft:dead_tube_coral_block,1
+441,Dead Brain Coral Block,/Images/Blocks/DeadBrainCoralBlock.png,minecraft:dead_brain_coral_block,1
+442,Dead Bubble Coral Block,/Images/Blocks/DeadBubbleCoralBlock.png,minecraft:dead_bubble_coral_block,1
+443,Dead Fire Coral Block,/Images/Blocks/DeadFireCoralBlock.png,minecraft:dead_fire_coral_block,1
+444,Dead Horn Coral Block,/Images/Blocks/DeadHornCoralBlock.png,minecraft:dead_horn_coral_block,1
+445,Tube Coral Block,/Images/Blocks/TubeCoralBlock.png,minecraft:tube_coral_block,1
+446,Brain Coral Block,/Images/Blocks/BrainCoralBlock.png,minecraft:brain_coral_block,1
+447,Bubble Coral Block,/Images/Blocks/BubbleCoralBlock.png,minecraft:bubble_coral_block,1
+448,Fire Coral Block,/Images/Blocks/FireCoralBlock.png,minecraft:fire_coral_block,1
+449,Horn Coral Block,/Images/Blocks/HornCoralBlock.png,minecraft:horn_coral_block,1
+450,Tube Coral,/Images/Decorations/TubeCoral.png,minecraft:tube_coral,2
+451,Brain Coral,/Images/Decorations/BrainCoral.png,minecraft:brain_coral,2
+452,Bubble Coral,/Images/Decorations/BubbleCoral.png,minecraft:bubble_coral,2
+453,Fire Coral,/Images/Decorations/FireCoral.png,minecraft:fire_coral,2
+454,Horn Coral,/Images/Decorations/HornCoral.png,minecraft:horn_coral,2
+455,Dead Tube Coral,/Images/Decorations/DeadTubeCoral.png,minecraft:dead_tube_coral,2
+456,Dead Brain Coral,/Images/Decorations/DeadBrainCoral.png,minecraft:dead_brain_coral,2
+457,Dead Bubble Coral,/Images/Decorations/DeadBubbleCoral.png,minecraft:dead_bubble_coral,2
+458,Dead Fire Coral,/Images/Decorations/DeadFireCoral.png,minecraft:dead_fire_coral,2
+459,Dead Horn Coral,/Images/Decorations/DeadHornCoral.png,minecraft:dead_horn_coral,2
+460,Tube Coral Fan,/Images/Decorations/TubeCoralFan.png,minecraft:tube_coral_fan,2
+461,Brain Coral Fan,/Images/Decorations/BrainCoralFan.png,minecraft:brain_coral_fan,2
+462,Bubble Coral Fan,/Images/Decorations/BubbleCoralFan.png,minecraft:bubble_coral_fan,2
+463,Fire Coral Fan,/Images/Decorations/FireCoralFan.png,minecraft:fire_coral_fan,2
+464,Horn Coral Fan,/Images/Decorations/HornCoralFan.png,minecraft:horn_coral_fan,2
+465,Dead Tube Coral Fan,/Images/Decorations/DeadTubeCoralFan.png,minecraft:dead_tube_coral_fan,2
+466,Dead Brain Coral Fan,/Images/Decorations/DeadBrainCoralFan.png,minecraft:dead_brain_coral_fan,2
+467,Dead Bubble Coral Fan,/Images/Decorations/DeadBubbleCoralFan.png,minecraft:dead_bubble_coral_fan,2
+468,Dead Fire Coral Fan,/Images/Decorations/DeadFireCoralFan.png,minecraft:dead_fire_coral_fan,2
+469,Dead Horn Coral Fan,/Images/Decorations/DeadHornCoralFan.png,minecraft:dead_horn_coral_fan,2
+470,Conduit,/Images/Miscellaneous/Conduit.png,minecraft:conduit,5
+471,Blue Ice,/Images/Blocks/BlueIce.png,minecraft:blue_ice,1
+472,Polished Granite Stairs,/Images/Blocks/PolishedGraniteStairs.png,minecraft:polished_granite_stairs,1
+473,Smooth Red Sandstone Stairs,/Images/Blocks/SmoothRedSandstoneStairs.png,minecraft:smooth_red_sandstone_stairs,1
+474,Mossy Stone Brick Stairs,/Images/Blocks/MossyStoneBrickStairs.png,minecraft:mossy_stone_brick_stairs,1
+475,Polished Diorite Stairs,/Images/Blocks/PolishedDioriteStairs.png,minecraft:polished_diorite_stairs,1
+476,Mossy Cobblestone Stairs,/Images/Blocks/MossyCobblestoneStairs.png,minecraft:mossy_cobblestone_stairs,1
+477,End Stone Brick Stairs,/Images/Blocks/EndStoneBrickStairs.png,minecraft:end_stone_brick_stairs,1
+478,Stone Stairs,/Images/Blocks/StoneStairs.png,minecraft:stone_stairs,1
+479,Smooth Sandstone Stairs,/Images/Blocks/SmoothSandstoneStairs.png,minecraft:smooth_sandstone_stairs,1
+480,Smooth Quartz Stairs,/Images/Blocks/SmoothQuartzStairs.png,minecraft:smooth_quartz_stairs,1
+481,Granite Stairs,/Images/Blocks/GraniteStairs.png,minecraft:granite_stairs,1
+482,Andesite Stairs,/Images/Blocks/AndesiteStairs.png,minecraft:andesite_stairs,1
+483,Red Nether Brick Stairs,/Images/Blocks/RedNetherBrickStairs.png,minecraft:red_nether_brick_stairs,1
+484,Polished Andesite Stairs,/Images/Blocks/PolishedAndesiteStairs.png,minecraft:polished_andesite_stairs,1
+485,Diorite Stairs,/Images/Blocks/DioriteStairs.png,minecraft:diorite_stairs,1
+486,Polished Granite Slab,/Images/Blocks/PolishedGraniteSlab.png,minecraft:polished_granite_slab,1
+487,Smooth Red Sandstone Slab,/Images/Blocks/SmoothRedSandstoneSlab.png,minecraft:smooth_red_sandstone_slab,1
+488,Mossy Stone Brick Slab,/Images/Blocks/MossyStoneBrickSlab.png,minecraft:mossy_stone_brick_slab,1
+489,Polished Diorite Slab,/Images/Blocks/PolishedDioriteSlab.png,minecraft:polished_diorite_slab,1
+490,Mossy Cobblestone Slab,/Images/Blocks/MossyCobblestoneSlab.png,minecraft:mossy_cobblestone_slab,1
+491,End Stone Brick Slab,/Images/Blocks/EndStoneBrickSlab.png,minecraft:end_stone_brick_slab,1
+492,Smooth Sandstone Slab,/Images/Blocks/SmoothSandstoneSlab.png,minecraft:smooth_sandstone_slab,1
+493,Smooth Quartz Slab,/Images/Blocks/SmoothQuartzSlab.png,minecraft:smooth_quartz_slab,1
+494,Granite Slab,/Images/Blocks/GraniteSlab.png,minecraft:granite_slab,1
+495,Andesite Slab,/Images/Blocks/AndesiteSlab.png,minecraft:andesite_slab,1
+496,Red Nether Brick Slab,/Images/Blocks/RedNetherBrickSlab.png,minecraft:red_nether_brick_slab,1
+497,Polished Andesite Slab,/Images/Blocks/PolishedAndesiteSlab.png,minecraft:polished_andesite_slab,1
+498,Diorite Slab,/Images/Blocks/DioriteSlab.png,minecraft:diorite_slab,1
+499,Scaffolding,/Images/Decorations/Scaffolding.png,minecraft:scaffolding,2
+500,Iron Door,/Images/Redstone/IronDoor.png,minecraft:iron_door,3
+501,Oak Door,/Images/Redstone/OakDoor.png,minecraft:oak_door,3
+502,Spruce Door,/Images/Redstone/SpruceDoor.png,minecraft:spruce_door,3
+503,Birch Door,/Images/Redstone/BirchDoor.png,minecraft:birch_door,3
+504,Jungle Door,/Images/Redstone/JungleDoor.png,minecraft:jungle_door,3
+505,Acacia Door,/Images/Redstone/AcaciaDoor.png,minecraft:acacia_door,3
+506,Dark Oak Door,/Images/Redstone/DarkOakDoor.png,minecraft:dark_oak_door,3
+507,Redstone Repeater,/Images/Redstone/RedstoneRepeater.png,minecraft:repeater,3
+508,Redstone Comparator,/Images/Redstone/RedstoneComparator.png,minecraft:comparator,3
+509,Composter,/Images/Miscellaneous/Composter.png,minecraft:composter,5
+510,Bow,/Images/Combat/Bow.png,minecraft:bow,8
+511,Coal,/Images/Miscellaneous/Coal.png,minecraft:coal,5
+512,Charcoal,/Images/Miscellaneous/Charcoal.png,minecraft:charcoal,5
+513,Diamond,/Images/Miscellaneous/Diamond.png,minecraft:diamond,5
+514,Iron Ingot,/Images/Miscellaneous/IronIngot.png,minecraft:iron_ingot,5
+515,Gold Ingot,/Images/Miscellaneous/GoldIngot.png,minecraft:gold_ingot,5
+516,Stick,/Images/Miscellaneous/Stick.png,minecraft:stick,5
+517,String,/Images/Miscellaneous/String.png,minecraft:string,5
+518,Feather,/Images/Miscellaneous/Feather.png,minecraft:feather,5
+519,Gunpowder,/Images/Miscellaneous/Gunpowder.png,minecraft:gunpowder,5
+520,Wheat Seeds,/Images/Miscellaneous/WheatSeeds.png,minecraft:wheat_seeds,5
+521,Wheat,/Images/Miscellaneous/Wheat.png,minecraft:wheat,5
+522,Flint,/Images/Miscellaneous/Flint.png,minecraft:flint,5
+523,Painting,/Images/Decorations/Painting.png,minecraft:painting,2
+524,Oak Sign,/Images/Decorations/OakSign.png,minecraft:oak_sign,2
+525,Spruce Sign,/Images/Decorations/SpruceSign.png,minecraft:spruce_sign,2
+526,Birch Sign,/Images/Decorations/BirchSign.png,minecraft:birch_sign,2
+527,Jungle Sign,/Images/Decorations/JungleSign.png,minecraft:jungle_sign,2
+528,Acacia Sign,/Images/Decorations/AcaciaSign.png,minecraft:acacia_sign,2
+529,Dark Oak Sign,/Images/Decorations/DarkOakSign.png,minecraft:dark_oak_sign,2
+530,Water Bucket,/Images/Miscellaneous/Water.png,minecraft:water,5
+531,Lava Bucket,/Images/Miscellaneous/Lava.png,minecraft:lava,5
+532,Minecart,/Images/Transportation/Minecart.png,minecraft:minecart,4
+533,Redstone Dust,/Images/Redstone/RedstoneDust.png,minecraft:redstone,3
+534,Snowball,/Images/Miscellaneous/Snowball.png,minecraft:snowball,5
+535,Oak Boat,/Images/Transportation/OakBoat.png,minecraft:oak_boat,4
+536,Leather,/Images/Miscellaneous/Leather.png,minecraft:leather,5
+537,Brick,/Images/Miscellaneous/Brick.png,minecraft:brick,5
+538,Clay Ball,/Images/Miscellaneous/ClayBall.png,minecraft:clay_ball,5
+539,Sugar Cane,/Images/Miscellaneous/SugarCane.png,minecraft:sugar_cane,5
+540,Kelp,/Images/Miscellaneous/Kelp.png,minecraft:kelp,5
+541,Dried Kelp Block,/Images/Blocks/DriedKelpBlock.png,minecraft:dried_kelp_block,1
+542,Bamboo,/Images/Miscellaneous/Bamboo.png,minecraft:bamboo,5
+543,Paper,/Images/Miscellaneous/Paper.png,minecraft:paper,5
+544,Book,/Images/Miscellaneous/Book.png,minecraft:book,5
+545,Slimeball,/Images/Miscellaneous/Slimeball.png,minecraft:slime_ball,5
+546,Minecart With Chest,/Images/Transportation/ChestMinecart.png,minecraft:chest_minecart,4
+547,Minecart With Furnace,/Images/Transportation/FurnaceMinecart.png,minecraft:furnace_minecart,4
+548,Egg,/Images/Miscellaneous/Egg.png,minecraft:egg,5
+549,Glowstone Dust,/Images/Miscellaneous/GlowstoneDust.png,minecraft:glowstone_dust,5
+550,Ink Sac,/Images/Miscellaneous/InkSac.png,minecraft:ink_sac,5
+551,Red Dye,/Images/Miscellaneous/RedDye.png,minecraft:red_dye,5
+552,Green Dye,/Images/Miscellaneous/GreenDye.png,minecraft:green_dye,5
+553,Cocoa Beans,/Images/Miscellaneous/CocoaBeans.png,minecraft:cocoa_beans,5
+554,Lapis Lazuli,/Images/Miscellaneous/LapisLazuli.png,minecraft:lapis_lazuli,5
+555,Purple Dye,/Images/Miscellaneous/PurpleDye.png,minecraft:purple_dye,5
+556,Cyan Dye,/Images/Miscellaneous/CyanDye.png,minecraft:cyan_dye,5
+557,Light Gray Dye,/Images/Miscellaneous/LightGrayDye.png,minecraft:light_gray_dye,5
+558,Gray Dye,/Images/Miscellaneous/GrayDye.png,minecraft:gray_dye,5
+559,Pink Dye,/Images/Miscellaneous/PinkDye.png,minecraft:pink_dye,5
+560,Lime Dye,/Images/Miscellaneous/LimeDye.png,minecraft:lime_dye,5
+561,Yellow Dye,/Images/Miscellaneous/YellowDye.png,minecraft:yellow_dye,5
+562,Light Blue Dye,/Images/Miscellaneous/LightBlueDye.png,minecraft:light_blue_dye,5
+563,Magenta Dye,/Images/Miscellaneous/MagentaDye.png,minecraft:magenta_dye,5
+564,Orange Dye,/Images/Miscellaneous/OrangeDye.png,minecraft:orange_dye,5
+565,Bone Meal,/Images/Miscellaneous/BoneMeal.png,minecraft:bone_meal,5
+566,Blue Dye,/Images/Miscellaneous/BlueDye.png,minecraft:blue_dye,5
+567,Brown Dye,/Images/Miscellaneous/BrownDye.png,minecraft:brown_dye,5
+568,Black Dye,/Images/Miscellaneous/BlackDye.png,minecraft:black_dye,5
+569,White Dye,/Images/Miscellaneous/WhiteDye.png,minecraft:white_dye,5
+570,Bone,/Images/Miscellaneous/Bone.png,minecraft:bone,5
+571,Sugar,/Images/Miscellaneous/Sugar.png,minecraft:sugar,5
+572,Cake,/Images/Foodstuffs/Cake.png,minecraft:cake,6
+573,White Bed,/Images/Decorations/WhiteBed.png,minecraft:white_bed,2
+574,Orange Bed,/Images/Decorations/OrangeBed.png,minecraft:orange_bed,2
+575,Magenta Bed,/Images/Decorations/MagentaBed.png,minecraft:magenta_bed,2
+576,Light Blue Bed,/Images/Decorations/LightBlueBed.png,minecraft:light_blue_bed,2
+577,Yellow Bed,/Images/Decorations/YellowBed.png,minecraft:yellow_bed,2
+578,Lime Bed,/Images/Decorations/LimeBed.png,minecraft:lime_bed,2
+579,Pink Bed,/Images/Decorations/PinkBed.png,minecraft:pink_bed,2
+580,Gray Bed,/Images/Decorations/GrayBed.png,minecraft:gray_bed,2
+581,Light Gray Bed,/Images/Decorations/LightGrayBed.png,minecraft:light_gray_bed,2
+582,Cyan Bed,/Images/Decorations/CyanBed.png,minecraft:cyan_bed,2
+583,Purple Bed,/Images/Decorations/PurpleBed.png,minecraft:purple_bed,2
+584,Blue Bed,/Images/Decorations/BlueBed.png,minecraft:blue_bed,2
+585,Brown Bed,/Images/Decorations/BrownBed.png,minecraft:brown_bed,2
+586,Green Bed,/Images/Decorations/GreenBed.png,minecraft:green_bed,2
+587,Red Bed,/Images/Decorations/RedBed.png,minecraft:red_bed,2
+588,Black Bed,/Images/Decorations/BlackBed.png,minecraft:black_bed,2
+589,Melon Slice,/Images/Miscellaneous/MelonSlice.png,minecraft:melon_slice,6
+590,Dried Kelp,/Images/Miscellaneous/DriedKelp.png,minecraft:dried_kelp,6
+591,Pumpkin Seeds,/Images/Miscellaneous/PumpkinSeeds.png,minecraft:pumpkin_seeds,5
+592,Melon Seeds,/Images/Miscellaneous/MelonSeeds.png,minecraft:melon_seeds,5
+593,Ender Pearl,/Images/Miscellaneous/EnderPearl.png,minecraft:ender_pearl,5
+594,Blaze Rod,/Images/Miscellaneous/BlazeRod.png,minecraft:blaze_rod,5
+595,Gold Nugget,/Images/Miscellaneous/GoldNugget.png,minecraft:gold_nugget,5
+596,Nether Wart,/Images/Miscellaneous/NetherWart.png,minecraft:nether_wart,5
+597,Blaze Powder,/Images/Brewing/BlazePowder.png,minecraft:blaze_powder,7
+598,Brewing Stand,/Images/Brewing/BrewingStand.png,minecraft:brewing_stand,7
+599,Cauldron,/Images/Brewing/Cauldron.png,minecraft:cauldron,7
+600,Eye of Ender,/Images/Miscellaneous/EyeOfEnder.png,minecraft:ender_eye,5
+601,Bat Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:bat_spawn_egg,5
+602,Bee Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:bee_spawn_egg,5
+603,Blaze Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:blaze_spawn_egg,5
+604,Cat Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:cat_spawn_egg,5
+605,Cave Spider Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:cave_spider_spawn_egg,5
+606,Chicken Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:chicken_spawn_egg,5
+607,Cod Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:cod_spawn_egg,5
+608,Cow Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:cow_spawn_egg,5
+609,Creeper Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:creeper_spawn_egg,5
+610,Dolphin Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:dolphin_spawn_egg,5
+611,Donkey Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:donkey_spawn_egg,5
+612,Drowned Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:drowned_spawn_egg,5
+613,Elder Guardian Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:elder_guardian_spawn_egg,5
+614,Enderman Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:enderman_spawn_egg,5
+615,Endermite Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:endermite_spawn_egg,5
+616,Evoker Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:evoker_spawn_egg,5
+617,Fox Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:fox_spawn_egg,5
+618,Ghast Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:ghast_spawn_egg,5
+619,Guardian Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:guardian_spawn_egg,5
+620,Horse Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:horse_spawn_egg,5
+621,Husk Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:husk_spawn_egg,5
+622,Llama Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:llama_spawn_egg,5
+623,Magma Cube Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:magma_cube_spawn_egg,5
+624,Mooshroom Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:mooshroom_spawn_egg,5
+625,Mule Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:mule_spawn_egg,5
+626,Ocelot Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:ocelot_spawn_egg,5
+627,Panda Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:panda_spawn_egg,5
+628,Parrot Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:parrot_spawn_egg,5
+629,Phantom Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:phantom_spawn_egg,5
+630,Pig Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:pig_spawn_egg,5
+631,Pillager Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:pillager_spawn_egg,5
+632,Polar Bear Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:polar_bear_spawn_egg,5
+633,Pufferfish Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:pufferfish_spawn_egg,5
+634,Rabbit Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:rabbit_spawn_egg,5
+635,Ravager Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:ravager_spawn_egg,5
+636,Salmon Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:salmon_spawn_egg,5
+637,Sheep Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:sheep_spawn_egg,5
+638,Shulker Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:shulker_spawn_egg,5
+639,Silverfish Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:silverfish_spawn_egg,5
+640,Skeleton Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:skeleton_spawn_egg,5
+641,Skeleton Horse Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:skeleton_horse_spawn_egg,5
+642,Slime Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:slime_spawn_egg,5
+643,Spider Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:spider_spawn_egg,5
+644,Squid Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:squid_spawn_egg,5
+645,Stray Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:stray_spawn_egg,5
+646,Trader Llama Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:trader_llama_spawn_egg,5
+647,Tropical Fish Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:tropical_fish_spawn_egg,5
+648,Turtle Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:turtle_spawn_egg,5
+649,Vex Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:vex_spawn_egg,5
+650,Villager Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:villager_spawn_egg,5
+651,Vindicator Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:vindicator_spawn_egg,5
+652,Wandering Trader Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:wandering_trader_spawn_egg,5
+653,Witch Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:witch_spawn_egg,5
+654,Wither Skeleton Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:wither_skeleton_spawn_egg,5
+655,Wolf Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:wolf_spawn_egg,5
+656,Zombie Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zombie_spawn_egg,5
+657,Zombie Horse Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zombie_horse_spawn_egg,5
+658,Zombie Pigman Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zombie_pigman_spawn_egg,5
+659,Zombie Villager Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zombie_villager_spawn_egg,5
+660,Book and Quill,/Images/Miscellaneous/BookAndQuill.png,minecraft:writable_book,5
+661,Emerald,/Images/Miscellaneous/Emerald.png,minecraft:emerald,5
+662,Item Frame,/Images/Decorations/ItemFrame.png,minecraft:item_frame,2
+663,Flower Pot,/Images/Decorations/FlowerPot.png,minecraft:flower_pot,2
+664,Carrot,/Images/Foodstuffs/Carrot.png,minecraft:carrot,6
+665,Potato,/Images/Foodstuffs/Potato.png,minecraft:potato,6
+666,Skeleton Skull,/Images/Decorations/SkeletonSkull.png,minecraft:skeleton_skull,2
+667,Wither Skeleton Skull,/Images/Decorations/WitherSkeletonSkull.png,minecraft:wither_skeleton_skull,2
+668,Player Head,/Images/Decorations/PlayerHead.png,minecraft:player_head,2
+669,Zombie Head,/Images/Decorations/ZombieHead.png,minecraft:zombie_head,2
+670,Creeper Head,/Images/Decorations/CreeperHead.png,minecraft:creeper_head,2
+671,Dragon Head,/Images/Decorations/DragonHead.png,minecraft:dragon_head,2
+672,Nether Star,/Images/Miscellaneous/NetherStar.png,minecraft:nether_star,5
+673,Nether Brick,/Images/Miscellaneous/NetherBrick.png,minecraft:nether_brick,5
+674,Nether Quartz,/Images/Miscellaneous/NetherQuartz.png,minecraft:quartz,5
+675,Minecart With TNT,/Images/Transportation/TNTMinecart.png,minecraft:tnt_minecart,4
+676,Minecart With Hopper,/Images/Transportation/HopperMinecart.png,minecraft:hopper_minecart,4
+677,Prismarine Shard,/Images/Miscellaneous/PrismarineShard.png,minecraft:prismarine_shard,5
+678,Prismarine Crystals,/Images/Miscellaneous/PrismarineCrystals.png,minecraft:prismarine_crystals,5
+679,Armor Stand,/Images/Decorations/ArmorStand.png,minecraft:armor_stand,2
+680,White Banner,/Images/Decorations/WhiteBanner.png,minecraft:white_banner,2
+681,Orange Banner,/Images/Decorations/OrangeBanner.png,minecraft:orange_banner,2
+682,Magenta Banner,/Images/Decorations/MagentaBanner.png,minecraft:magenta_banner,2
+683,Light Blue Banner,/Images/Decorations/LightBlueBanner.png,minecraft:light_blue_banner,2
+684,Yellow Banner,/Images/Decorations/YellowBanner.png,minecraft:yellow_banner,2
+685,Lime Banner,/Images/Decorations/LimeBanner.png,minecraft:lime_banner,2
+686,Pink Banner,/Images/Decorations/PinkBanner.png,minecraft:pink_banner,2
+687,Gray Banner,/Images/Decorations/GrayBanner.png,minecraft:gray_banner,2
+688,Light Gray Banner,/Images/Decorations/LightGrayBanner.png,minecraft:light_gray_banner,2
+689,Cyan Banner,/Images/Decorations/CyanBanner.png,minecraft:cyan_banner,2
+690,Purple Banner,/Images/Decorations/PurpleBanner.png,minecraft:purple_banner,2
+691,Blue Banner,/Images/Decorations/BlueBanner.png,minecraft:blue_banner,2
+692,Brown Banner,/Images/Decorations/BrownBanner.png,minecraft:brown_banner,2
+693,Green Banner,/Images/Decorations/GreenBanner.png,minecraft:green_banner,2
+694,Red Banner,/Images/Decorations/RedBanner.png,minecraft:red_banner,2
+695,Black Banner,/Images/Decorations/BlackBanner.png,minecraft:black_banner,2
+696,End Crystal,/Images/Decorations/EndCrystal.png,minecraft:end_crystal,2
+697,Chorus Fruit,/Images/Miscellaneous/ChorusFruit.png,minecraft:chorus_fruit,5
+698,Popped Chorus Fruit,/Images/Miscellaneous/PoppedChorusFruit.png,minecraft:popped_chorus_fruit,5
+699,Beetroot Seeds,/Images/Miscellaneous/BeetrootSeeds.png,minecraft:beetroot_seeds,5
+700,Spruce Boat,/Images/Transportation/SpruceBoat.png,minecraft:spruce_boat,4
+701,Birch Boat,/Images/Transportation/BirchBoat.png,minecraft:birch_boat,4
+702,Jungle Boat,/Images/Transportation/JungleBoat.png,minecraft:jungle_boat,4
+703,Acacia Boat,/Images/Transportation/AcaciaBoat.png,minecraft:acacia_boat,4
+704,Dark Oak Boat,/Images/Transportation/DarkOakBoat.png,minecraft:dark_oak_boat,4
+705,Shulker Shell,/Images/Miscellaneous/ShulkerShell.png,minecraft:shulker_shell,5
+706,Iron Nugget,/Images/Miscellaneous/IronNugget.png,minecraft:iron_nugget,5
+707,Nautilus Shell,/Images/Miscellaneous/NautilusShell.png,minecraft:nautilus_shell,5
+708,Heart of the Sea,/Images/Miscellaneous/HeartOfTheSea.png,minecraft:heart_of_the_sea,5
+709,Loom,/Images/Decorations/Loom.png,minecraft:loom,2
+710,Barrel,/Images/Decorations/Barrel.png,minecraft:barrel,2
+711,Smoker,/Images/Decorations/Smoker.png,minecraft:smoker,2
+712,Blast Furnace,/Images/Decorations/BlastFurnace.png,minecraft:blast_furnace,2
+713,Cartography Table,/Images/Decorations/CartographyTable.png,minecraft:cartography_table,2
+714,Fletching Table,/Images/Decorations/FletchingTable.png,minecraft:fletching_table,2
+715,Grindstone,/Images/Decorations/Grindstone.png,minecraft:grindstone,2
+716,Lectern,/Images/Redstone/Lectern.png,minecraft:lectern,3
+717,Smithing Table,/Images/Decorations/SmithingTable.png,minecraft:smithing_table,2
+718,Stonecutter,/Images/Decorations/Stonecutter.png,minecraft:stonecutter,2
+719,Bell,/Images/Decorations/Bell.png,minecraft:bell,2
+720,Lantern,/Images/Decorations/Lantern.png,minecraft:lantern,2
+721,Sweet Berries,/Images/Foodstuffs/SweetBerries.png,minecraft:sweet_berries,6
+722,Campfire,/Images/Decorations/Campfire.png,minecraft:campfire,2
+723,Honeycomb,/Images/Miscellaneous/Honeycomb.png,minecraft:honeycomb,5
+724,Bee Nest,/Images/Decorations/BeeNest.png,minecraft:bee_nest,2
+725,Beehive,/Images/Decorations/Beehive.png,minecraft:beehive,2
+726,Honey Bottle,/Images/Foodstuffs/HoneyBottle.png,minecraft:honey_bottle,6
+727,Honey Block,/Images/Decorations/HoneyBlock.png,minecraft:honey_block,2
+728,Honeycomb Block,/Images/Decorations/HoneycombBlock.png,minecraft:honeycomb_block,2

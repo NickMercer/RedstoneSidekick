@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NatickCommon.WPF;
+using RedstoneSidekick.Logic.StartupDataProcess;
 
 namespace RedstoneSidekick.WPF.ProjectWindow
 {
@@ -18,7 +19,7 @@ namespace RedstoneSidekick.WPF.ProjectWindow
 
         public ProjectWindowVM()
         {
-            //ItemDataUpdateHandler.UpdateMinecraftItemsDatabase();
+            new ItemDataUpdateHandler().RefreshMinecraftItemData();
         }
     }
 }
