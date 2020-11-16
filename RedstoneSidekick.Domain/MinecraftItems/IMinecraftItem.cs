@@ -1,11 +1,10 @@
-﻿using RedstoneSidekick.Domain.MinecraftItems;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RedstoneSidekick.Domain
+namespace RedstoneSidekick.Domain.MinecraftItems
 {
-    public class MinecraftItem : IMinecraftItem
+    public interface IMinecraftItem
     {
         public int Id { get; set; }
 

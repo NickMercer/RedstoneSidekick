@@ -300,7 +300,12 @@
 
         <Grid x:Name="Grid_ProjectView"
               Background="{StaticResource RSBeige}">
-            <uc:ucCraftingTree />
+            <uc:ucCraftingTree x:Name="uc_CraftingTree"
+                               Items="{Binding CraftingTreeItems}"
+                               Visibility="Visible" />
+
+            <uc:ucGatheringList x:Name="uc_GatheringList"
+                                Visibility="Collapsed" />
         </Grid>
 
         <!--#endregion-->

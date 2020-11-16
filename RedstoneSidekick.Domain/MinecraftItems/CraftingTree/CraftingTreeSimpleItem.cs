@@ -1,20 +1,23 @@
-﻿using RedstoneSidekick.Domain.MinecraftItems;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RedstoneSidekick.Domain
+namespace RedstoneSidekick.Domain.MinecraftItems
 {
-    public class MinecraftItem : IMinecraftItem
+    public class CraftingTreeSimpleItem : ICraftingTreeItem
     {
         public int Id { get; set; }
-
+     
         public string Name { get; set; }
-
+        
         public string ImagePath { get; set; }
-
+        
         public string MinecraftId { get; set; }
-
+        
         public ItemCategory Category { get; set; }
+        
+        public int Count { get; set; }
+        
+        public bool IsChecked { get; set; }
     }
 }

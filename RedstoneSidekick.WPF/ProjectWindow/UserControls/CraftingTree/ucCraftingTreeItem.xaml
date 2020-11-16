@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="RedstoneSidekick.WPF.ProjectWindow.UserControls.CraftingTree.ucCraftingTreeItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:RedstoneSidekick.WPF.ProjectWindow.UserControls.CraftingTree"
+             mc:Ignorable="d"
+             Height="Auto"
+             Width="Auto">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight"
+                    Value="DemiBold" />
+            <Setter Property="FontSize"
+                    Value="14" />
+        </Style>
+    </UserControl.Resources>
+
+    <Border x:Name="LayoutRoot"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="8"
+            Background="White">
+
+        <Grid Margin="3"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Left">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="{StaticResource RSPink}"
+                    Background="White"
+                    Grid.Column="0"
+                    BorderThickness="2"
+                    CornerRadius="3"
+                    Height="36"
+                    Width="36">
+                <Image Source="{Binding Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}" />
+            </Border>
+
+            <Label Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Margin="0 0 0 0"
+                   ContentStringFormat="{} {0}x"
+                   Content="{Binding Item.Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
+
+
+            <Label Grid.Column="2"
+                   VerticalAlignment="Center"
+                   Margin="0 0 0 0"
+                   Content="{Binding Item.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Error}" />
+
+        </Grid>
+    </Border>
+</UserControl>

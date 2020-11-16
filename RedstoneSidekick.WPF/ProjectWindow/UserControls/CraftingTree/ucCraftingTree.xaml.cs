@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedstoneSidekick.Domain.MinecraftItems;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace RedstoneSidekick.WPF.ProjectWindow.UserControls
     /// </summary>
     public partial class ucCraftingTree : UserControl
     {
+        public List<ICraftingTreeItem> Items
+        {
+            get { return (List<ICraftingTreeItem>)GetValue(ItemsProperty); }
+            set { SetValue(ItemsProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemsProperty =
+            DependencyProperty.Register("Items", typeof(List<ICraftingTreeItem>), typeof(ucCraftingTree), new PropertyMetadata(null));
+
+
         public ucCraftingTree()
         {
             InitializeComponent();
+            LayoutRoot.DataContext = this;
         }
     }
 }

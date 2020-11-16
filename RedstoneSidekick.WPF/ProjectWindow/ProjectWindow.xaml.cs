@@ -88,16 +88,14 @@ namespace RedstoneSidekick.WPF.ProjectWindow
                     case 1:
                         FocusButton(BTN_CraftingTreeTab);
                         DeFocusButton(BTN_GatheringListTab);
-                        Grid_ProjectView.Background = new SolidColorBrush(Colors.Beige);
-                        Grid_ProjectView.Children.Add(new ucCraftingTree());
-                        Grid_ProjectView.Children.Remove(new ucGatheringList());
+                        uc_CraftingTree.Visibility = Visibility.Visible;
+                        uc_GatheringList.Visibility = Visibility.Collapsed;
                         break;
                     case 2:
                         FocusButton(BTN_GatheringListTab);
                         DeFocusButton(BTN_CraftingTreeTab);
-                        Grid_ProjectView.Background = new SolidColorBrush(Colors.DarkRed);
-                        Grid_ProjectView.Children.Add(new ucGatheringList());
-                        Grid_ProjectView.Children.Remove(new ucCraftingTree());
+                        uc_CraftingTree.Visibility = Visibility.Collapsed;
+                        uc_GatheringList.Visibility = Visibility.Visible;
                         break;
                     case 3:
                         Grid_ProjectView.Background = new SolidColorBrush(Colors.Red);

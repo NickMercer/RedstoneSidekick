@@ -13,11 +13,11 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
     {
         private CSVFileVersion _itemDataVersion;
 
-        private MinecraftItemRepository _minecraftItemRepository = new MinecraftItemRepository();
+        private readonly MinecraftItemRepository _minecraftItemRepository = new MinecraftItemRepository();
 
-        private CSVFileVersionsRepository _csvFileVersionsRepository = new CSVFileVersionsRepository();
+        private readonly CSVFileVersionsRepository _csvFileVersionsRepository = new CSVFileVersionsRepository();
 
-        private MinecraftItemCSVReader _minecraftItemCSVReader = new MinecraftItemCSVReader();
+        private readonly MinecraftItemCSVReader _minecraftItemCSVReader = new MinecraftItemCSVReader();
 
         public void RefreshMinecraftItemData()
         {
