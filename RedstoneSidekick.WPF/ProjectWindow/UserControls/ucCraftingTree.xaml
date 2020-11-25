@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="RedstoneSidekick.WPF.ProjectWindow.UserControls.ucCraftingTree"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RedstoneSidekick.WPF.ProjectWindow.UserControls"
+             xmlns:uc="clr-namespace:RedstoneSidekick.WPF.ProjectWindow.UserControls"
+             xmlns:items="clr-namespace:RedstoneSidekick.Domain.MinecraftItems;assembly=RedstoneSidekick.Domain"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        
+        <Style TargetType="uc:ucCraftingTreeItem">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}"
+                             Value="True">
+                    <Setter Property="Selected"
+                            Value="True" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type TreeViewItem}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                 Color="Transparent" />
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot"
+          Background="{StaticResource RSBeige}">
+
+        <TreeView Margin="5"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  ItemsSource="{Binding Items}"
+                  HorizontalAlignment="Stretch">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type items:CraftingTreeCompoundItem}"
+                                          ItemsSource="{Binding Ingredients}">
+                    <uc:ucCraftingTreeItem Item="{Binding}"
+                                           Margin="0 2"/>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type items:CraftingTreeSimpleItem}">
+                    <uc:ucCraftingTreeItem Item="{Binding}"
+                                           Margin="0 2"/>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+
+    </Grid>
+</UserControl>

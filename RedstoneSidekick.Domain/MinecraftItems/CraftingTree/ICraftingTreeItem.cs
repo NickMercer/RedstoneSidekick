@@ -1,8 +1,11 @@
-﻿namespace RedstoneSidekick.Domain.MinecraftItems
+﻿
+namespace RedstoneSidekick.Domain.MinecraftItems
 {
     public interface ICraftingTreeItem : IMinecraftItem
     {
-        public int Count { get; set; }
+        public int RequiredAmount { get; set; }
+
+        public int CurrentAmount { get; set; }
 
         public bool IsChecked { get; set; }
 

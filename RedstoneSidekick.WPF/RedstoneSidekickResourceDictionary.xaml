@@ -3,14 +3,39 @@
                     xmlns:local="clr-namespace:RedstoneSidekick.WPF">
 
     <!--#region https://colorhunt.co/palette/201927 -->
+    <Color x:Key="RSBeigeColor"
+           A="255"
+           R="241"
+           G="243"
+           B="222" />
+
+    <Color x:Key="RSPinkColor"
+           A="255"
+           R="235"
+           G="143"
+           B="143" />
+
+    <Color x:Key="RSRedColor"
+           A="255"
+           R="236"
+           G="1"
+           B="1" />
+
+    <Color x:Key="RSDarkRedColor"
+           A="255"
+           R="205"
+           G="10"
+           B="10" />
+
+    
     <SolidColorBrush x:Key="RSDarkRed"
-                     Color="#CD0A0A" />
+                     Color="{StaticResource RSDarkRedColor}" />
     <SolidColorBrush x:Key="RSRed"
-                     Color="#EC0101" />
+                     Color="{StaticResource RSRedColor}" />
     <SolidColorBrush x:Key="RSPink"
-                     Color="#EB8F8F" />
+                     Color="{StaticResource RSPinkColor}" />
     <SolidColorBrush x:Key="RSBeige"
-                     Color="#F1F3DE" />
+                     Color="{StaticResource RSBeigeColor}" />
     <!--#endregion-->
 
     <ImageSource x:Key="BlockErrorImage">pack://application:,,,/Images/Blocks/Error.png</ImageSource>
@@ -18,10 +43,88 @@
     <ImageSource x:Key="RSBanner">pack://application:,,,/Images/App/RSBanner.png</ImageSource>
 
 
+    
+    
 
-
-    <!--#region Buttons -->
+    <!--#region Regular Buttons -->
     <Style TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="Foreground"
+                Value="{StaticResource RSDarkRed}" />
+        <Setter Property="BorderBrush"
+                Value="White" />
+        <Setter Property="ToolTipService.InitialShowDelay"
+                Value="1000" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted"
+                                 Value="True">
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
+                            <Setter Property="Cursor"
+                                    Value="Arrow" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
+                            <Setter Property="Opacity"
+                                    TargetName="contentPresenter"
+                                    Value="0.6" />
+                        </Trigger>
+
+                        <Trigger Property="ToggleButton.IsChecked"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFBCDDEE" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FF245A83" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="#FFF4F4F4" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="#FFADB2B5" />
+                            <Setter Property="Foreground"
+                                    Value="#FF838383" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Drop Button -->
+    <Style x:Key="DropButton"
+           TargetType="Button"
            BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Background"
                 Value="White" />
@@ -218,14 +321,16 @@
                 Value="None" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Left" />
-        <Setter Property="FocusVisualStyle"
-                Value="{x:Null}" />
         <Setter Property="AllowDrop"
                 Value="true" />
         <Setter Property="ScrollViewer.PanningMode"
                 Value="VerticalFirst" />
         <Setter Property="Stylus.IsFlicksEnabled"
                 Value="False" />
+        <Setter Property="FontWeight"
+                Value="DemiBold" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -275,5 +380,9 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+    
+    
     <!--#endregion-->
+
+
 </ResourceDictionary>

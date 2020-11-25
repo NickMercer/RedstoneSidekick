@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NatickCommon.WPF;
+﻿using NatickCommon.WPF;
 using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Logic.StartupDataProcess;
+using System.Collections.Generic;
 
 namespace RedstoneSidekick.WPF.ProjectWindow
 {
     public class ProjectWindowVM : ViewModelBase
     {
+
         private string _projectName = "New Project";
         public string ProjectName
         {
@@ -34,6 +31,7 @@ namespace RedstoneSidekick.WPF.ProjectWindow
             CraftingTreeItems = CreateTestData();
         }
 
+
         private List<ICraftingTreeItem> CreateTestData()
         {
             var items = new List<ICraftingTreeItem>();
@@ -42,14 +40,24 @@ namespace RedstoneSidekick.WPF.ProjectWindow
             {
                 Name = "Dirt Block",
                 ImagePath = "/Images/Blocks/DirtBlock.png",
-                Count = 5,
+                RequiredAmount = 5,
             };
 
-            var item2 = new CraftingTreeSimpleItem
+            var diamondBlockIngredients = new CraftingTreeSimpleItem
+            {
+                Name = "Diamond",
+                ImagePath = "/Images/Miscellaneous/Diamond.png",
+                RequiredAmount = 9 * 1024,
+                CurrentAmount = 1000
+            };
+
+            var item2 = new CraftingTreeCompoundItem
             {
                 Name = "Block of Diamond",
                 ImagePath = "/Images/Blocks/DiamondBlock.png",
-                Count = 1024,
+                RequiredAmount = 1024,
+                CurrentAmount = 6,
+                Ingredients = new List<ICraftingTreeItem>() { diamondBlockIngredients }
             };
 
             items.Add(item1);
