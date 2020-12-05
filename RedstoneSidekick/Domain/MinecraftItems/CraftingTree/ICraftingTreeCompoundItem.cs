@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RedstoneSidekick.Domain.MinecraftItems
+namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
     public interface ICraftingTreeCompoundItem : ICraftingTreeItem
     {

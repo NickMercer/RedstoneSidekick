@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RedstoneSidekick.WPF.UserControlLibrary
+namespace RedstoneSidekickWPF.UserControlLibrary
 {
     /// <summary>
     /// Interaction logic for ucLabeledTextBox.xaml

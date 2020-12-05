@@ -1,9 +1,11 @@
 ﻿using NatickCommon.WPF;
+using RedstoneSidekick;
 using RedstoneSidekick.Domain.MinecraftItems;
+using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Logic.StartupDataProcess;
 using System.Collections.Generic;
 
-namespace RedstoneSidekick.WPF.ProjectWindow
+namespace RedstoneSidekickWPF.ProjectWindow
 {
     public class ProjectWindowVM : ViewModelBase
     {
@@ -26,7 +28,7 @@ namespace RedstoneSidekick.WPF.ProjectWindow
 
         public ProjectWindowVM()
         {
-            new ItemDataUpdateHandler().RefreshMinecraftItemData();
+            new ItemDataUpdateHandler().RefreshAllData();
 
             CraftingTreeItems = CreateTestData();
         }
@@ -34,36 +36,12 @@ namespace RedstoneSidekick.WPF.ProjectWindow
 
         private List<ICraftingTreeItem> CreateTestData()
         {
-            var items = new List<ICraftingTreeItem>();
+            var itemDictionary = new Dictionary<int, int>();
+            itemDictionary.Add(10, 5);
+            itemDictionary.Add(157, 1000);
 
-            var item1 = new CraftingTreeSimpleItem
-            {
-                Name = "Dirt Block",
-                ImagePath = "/Images/Blocks/DirtBlock.png",
-                RequiredAmount = 5,
-            };
-
-            var diamondBlockIngredients = new CraftingTreeSimpleItem
-            {
-                Name = "Diamond",
-                ImagePath = "/Images/Miscellaneous/Diamond.png",
-                RequiredAmount = 9 * 1024,
-                CurrentAmount = 1000
-            };
-
-            var item2 = new CraftingTreeCompoundItem
-            {
-                Name = "Block of Diamond",
-                ImagePath = "/Images/Blocks/DiamondBlock.png",
-                RequiredAmount = 1024,
-                CurrentAmount = 6,
-                Ingredients = new List<ICraftingTreeItem>() { diamondBlockIngredients }
-            };
-
-            items.Add(item1);
-            items.Add(item2);
-
-            return items;
+            var craftingTree = new ProjectCraftingTree(itemDictionary);
+            return craftingTree.Items;
         }
     }
 }

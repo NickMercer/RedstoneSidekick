@@ -1,4 +1,4 @@
-﻿using RedstoneSidekick.WPF.ProjectWindow.UserControls;
+﻿using RedstoneSidekickWPF.ProjectWindow.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace RedstoneSidekick.WPF.ProjectWindow
+namespace RedstoneSidekickWPF.ProjectWindow
 {
     /// <summary>
     /// Interaction logic for ProjectWindow.xaml

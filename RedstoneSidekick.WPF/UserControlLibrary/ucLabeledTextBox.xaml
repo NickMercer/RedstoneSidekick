@@ -1,17 +1,18 @@
-﻿<UserControl x:Class="RedstoneSidekick.WPF.UserControlLibrary.ucLabeledTextBox"
+﻿<UserControl x:Class="RedstoneSidekickWPF.UserControlLibrary.ucLabeledTextBox"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:RedstoneSidekick.WPF.UserControlLibrary"
+             xmlns:local="clr-namespace:RedstoneSidekickWPF.UserControlLibrary"
              mc:Ignorable="d"
              d:DesignHeight="50"
              d:DesignWidth="200">
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/RedstoneSidekick.WPF;component/RedstoneSidekickResourceDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/RedstoneSidekickWPF;component/RedstoneSidekickResourceDictionary.xaml" />
     </UserControl.Resources>
     <StackPanel Name="LayoutRoot" Orientation="Horizontal">
         <Button x:Name="BTN_Label"
+                Grid.Column="0"
                 Background="Transparent"
                 Foreground="Transparent"
                 Padding="0"
@@ -31,6 +32,7 @@
         <StackPanel x:Name="SP_TextBox"
                     Orientation="Horizontal"
                     Margin="0 0 16 0"
+                    Grid.Column="0"
                     Visibility="Collapsed">
             <Button x:Name="BTN_TextBox"
                     Background="Transparent"

@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:RedstoneSidekick.WPF">
+                    xmlns:local="clr-namespace:RedstoneSidekickWPF">
 
     <!--#region https://colorhunt.co/palette/201927 -->
     <Color x:Key="RSBeigeColor"

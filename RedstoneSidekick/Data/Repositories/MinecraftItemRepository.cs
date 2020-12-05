@@ -4,18 +4,28 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
 using System.Text;
 
 namespace RedstoneSidekick.Data.Repositories
 {
     public class MinecraftItemRepository : IRepository
     {
-        public List<MinecraftItem> GetMinecraftItems()
+        public IEnumerable<MinecraftItem> GetMinecraftItems()
         {
             using (IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
-                var items = conn.Query<MinecraftItem>("SELECT * FROM MinecraftItems;", new DynamicParameters());
-                return items.AsList();
+                var commandString = "SELECT * FROM MinecraftItems;";
+                return conn.Query<MinecraftItem>(commandString, new DynamicParameters());
+            }
+        }
+
+        public MinecraftItem GetMinecraftItemById(int id)
+        {
+            using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
+            {
+                var commandString = "SELECT * FROM MinecraftItems WHERE Id = @Id;";
+                return conn.Query<MinecraftItem>(commandString, new { Id = id }).FirstOrDefault();
             }
         }
 

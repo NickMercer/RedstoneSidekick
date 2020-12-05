@@ -26,7 +26,7 @@ namespace RedstoneSidekick.Tests.Data.Tests
         {
             var items = _minecraftItemRepository.GetMinecraftItems();
 
-            Assert.IsTrue(items.Count > 0);
+            Assert.IsTrue(items.Any());
         }
 
         [TestMethod]

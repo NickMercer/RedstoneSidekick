@@ -11,7 +11,7 @@ namespace RedstoneSidekick.Data.CSVDataReaders
 {
     public class MinecraftItemCSVReader
     {
-        public const string MinecraftItemFilePath = "CSVFiles/ItemData.csv";
+        public const string MinecraftItemFilePath = "Data/CSVFiles/ItemData.csv";
 
         public IEnumerable<MinecraftItem> LoadItemData()
         {

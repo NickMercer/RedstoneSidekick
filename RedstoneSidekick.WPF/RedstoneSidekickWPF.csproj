@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
-    <StartupObject>RedstoneSidekick.WPF.App</StartupObject>
+    <StartupObject>RedstoneSidekickWPF.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,8 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NatickCommon\NatickCommon.csproj" />
-    <ProjectReference Include="..\RedstoneSidekick.Domain\RedstoneSidekick.Domain.csproj" />
-    <ProjectReference Include="..\RedstoneSidekick.Logic\RedstoneSidekick.Logic.csproj" />
+    <ProjectReference Include="..\RedstoneSidekick\RedstoneSidekick.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RedstoneSidekick.Data\RedstoneSidekick.Data.csproj" />
-    <ProjectReference Include="..\RedstoneSidekick.Domain\RedstoneSidekick.Domain.csproj" />
-    <ProjectReference Include="..\RedstoneSidekick.Logic\RedstoneSidekick.Logic.csproj" />
+    <ProjectReference Include="..\RedstoneSidekick\RedstoneSidekick.csproj" />
   </ItemGroup>
 
 </Project>

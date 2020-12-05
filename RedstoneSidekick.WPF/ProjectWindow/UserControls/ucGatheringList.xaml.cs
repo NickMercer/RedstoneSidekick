@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RedstoneSidekick.WPF.ProjectWindow.UserControls
+namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 {
     /// <summary>
     /// Interaction logic for ucGatheringList.xaml
