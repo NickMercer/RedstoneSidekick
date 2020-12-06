@@ -138,7 +138,7 @@ namespace RedstoneSidekickWPF.UserControlLibrary
                 return false;
             }
 
-            return int.TryParse(input, out int result);
+            return int.TryParse(input, out _);
         }
 
         public enum Inputs

@@ -3,6 +3,8 @@ using RedstoneSidekick;
 using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Logic.StartupDataProcess;
+using RedstoneSidekickWPF.Commands;
+using System;
 using System.Collections.Generic;
 
 namespace RedstoneSidekickWPF.ProjectWindow
@@ -26,27 +28,47 @@ namespace RedstoneSidekickWPF.ProjectWindow
         }
 
 
+        #region Commands
+
+        public LoadProjectCommand LoadProjectCommand { get; set; }
+
+        #endregion
+
         public ProjectWindowVM()
         {
             new ItemDataUpdateHandler().RefreshAllData();
 
-            CraftingTreeItems = CreateTestData();
+            RegisterCommands();
         }
 
-
-        private List<ICraftingTreeItem> CreateTestData()
+        private void RegisterCommands()
         {
-            var itemDictionary = new Dictionary<int, int>();
-            itemDictionary.Add(10, 5);
-            itemDictionary.Add(157, 1000);
-            itemDictionary.Add(183, 40);
-            itemDictionary.Add(214, 1);
-            itemDictionary.Add(521, 12);
-            itemDictionary.Add(325, 1);
-            itemDictionary.Add(568, 14);
-
-            var craftingTree = new ProjectCraftingTree(itemDictionary);
-            return craftingTree.Items;
+            LoadProjectCommand = new LoadProjectCommand(this);
         }
+
+        #region Menu Command Implementations
+
+        internal void LoadProject()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+
+        //private List<ICraftingTreeItem> CreateTestData()
+        //{
+        //    var itemDictionary = new Dictionary<int, int>();
+        //    itemDictionary.Add(10, 5);
+        //    itemDictionary.Add(157, 1000);
+        //    itemDictionary.Add(183, 40);
+        //    itemDictionary.Add(214, 1);
+        //    itemDictionary.Add(521, 12);
+        //    itemDictionary.Add(325, 1);
+        //    itemDictionary.Add(568, 14);
+
+        //    var craftingTree = new ProjectCraftingTree(itemDictionary);
+        //    return craftingTree.Items;
+        //}
     }
 }
