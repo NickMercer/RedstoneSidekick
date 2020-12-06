@@ -29,6 +29,7 @@
             BorderBrush="Black"
             BorderThickness="2"
             CornerRadius="8"
+            Padding="0 0 15 0"
             HorizontalAlignment="Stretch"
             Background="White">
 
@@ -37,7 +38,7 @@
               HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" MinWidth="60" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -59,6 +60,7 @@
 
             <Label Grid.Column="2"
                    VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
                    Content="{Binding Item.Item.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Error}" />
 
 
@@ -66,7 +68,7 @@
                                   Label="Have: "
                                   HorizontalAlignment="Right"
                                   InputType="Int"
-                                  Value="{Binding Item.CurrentAmount}" />
+                                  Value="{Binding Item.CurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
     </Border>
 </UserControl>

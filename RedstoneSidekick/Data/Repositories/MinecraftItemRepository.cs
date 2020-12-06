@@ -25,7 +25,23 @@ namespace RedstoneSidekick.Data.Repositories
             using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
                 var commandString = "SELECT * FROM MinecraftItems WHERE Id = @Id;";
-                return conn.Query<MinecraftItem>(commandString, new { Id = id }).FirstOrDefault();
+                var minecraftItem = conn.Query<MinecraftItem>(commandString, new { Id = id }).FirstOrDefault();
+
+                if(minecraftItem == null)
+                {
+                    minecraftItem = new MinecraftItem();
+                }
+
+                return minecraftItem;
+            }
+        }
+
+        public int GetIdByMinecraftId(string minecraftId)
+        {
+            using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
+            {
+                var commandString = "SELECT Id FROM MinecraftItems WHERE MinecraftId = @MinecraftId";
+                return conn.Query<int>(commandString, new { MinecraftId = minecraftId }).FirstOrDefault();
             }
         }
 

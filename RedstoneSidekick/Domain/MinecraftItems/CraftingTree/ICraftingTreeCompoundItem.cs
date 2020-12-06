@@ -5,5 +5,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
     public interface ICraftingTreeCompoundItem : ICraftingTreeItem
     {
         public List<ICraftingTreeItem> Ingredients { get; set; }
+
+        public int RecipeResultCount { get; set; }
+
+        public void UpdateIngredientCounts();
     }
 }

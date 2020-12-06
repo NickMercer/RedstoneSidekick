@@ -22,12 +22,12 @@ namespace RedstoneSidekick.Data.Repositories
             }
         }
 
-        public CraftingRecipe GetRecipeByMinecraftId(string minecraftId)
+        public IEnumerable<CraftingRecipe> GetRecipesByMinecraftId(string minecraftId)
         {
             using (IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
                 var commandString = "SELECT * FROM CraftingRecipes WHERE ResultItemMinecraftId = @MinecraftId;";
-                return conn.Query<CraftingRecipe>(commandString, new { MinecraftId = minecraftId }).FirstOrDefault();
+                return conn.Query<CraftingRecipe>(commandString, new { MinecraftId = minecraftId });
             }
         }
 
@@ -35,7 +35,7 @@ namespace RedstoneSidekick.Data.Repositories
         {
             using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
-                var commandString = "SELECT * FROM CraftingIngredients WHERE RecipeId = @RecipeId;";
+                var commandString = "SELECT i.RecipeId, i.IngredientMinecraftId, i.Count, m.Id FROM CraftingIngredients i LEFT JOIN MinecraftItems m ON i.IngredientMinecraftId = m.MinecraftId WHERE RecipeId = @RecipeId;";
                 return conn.Query<CraftingIngredient>(commandString, new { RecipeId = recipeId });
             }
         }
@@ -53,8 +53,8 @@ namespace RedstoneSidekick.Data.Repositories
 
                     conn.Execute(commandString, new { ResultMinecraftId = recipe.ResultItemMinecraftId, ResultCount = recipe.ResultCount });
 
-                    var idSelectString = "SELECT Id FROM CraftingRecipes WHERE ResultItemMinecraftId == @ResultMinecraftId AND ResultCount == @ResultCount";
-                    var idLong = conn.ExecuteScalar(idSelectString, new { ResultMinecraftId = recipe.ResultItemMinecraftId, ResultCount = recipe.ResultCount });
+                    var idSelectString = "SELECT MAX(Id) FROM CraftingRecipes";
+                    var idLong = conn.ExecuteScalar(idSelectString);
                     int.TryParse(idLong.ToString(), out int id);
 
 

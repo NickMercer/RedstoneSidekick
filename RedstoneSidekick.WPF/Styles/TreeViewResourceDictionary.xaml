@@ -9,7 +9,7 @@
                 Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                <ControlTemplate TargetType="{x:Type ToggleButton}" >
                     <Image x:Name="image"
                            Height="32" 
                            Width="32"
@@ -54,7 +54,7 @@
                                       ClickMode="Press"
                                       Width="32"
                                       Height="32" 
-                                      Margin="-5"/>
+                                      Margin="0"/>
                         <ContentPresenter Grid.Column="1"
                                           x:Name="PART_Header"
                                           ContentSource="Header"

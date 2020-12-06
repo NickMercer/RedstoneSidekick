@@ -39,6 +39,11 @@ namespace RedstoneSidekickWPF.ProjectWindow
             var itemDictionary = new Dictionary<int, int>();
             itemDictionary.Add(10, 5);
             itemDictionary.Add(157, 1000);
+            itemDictionary.Add(183, 40);
+            itemDictionary.Add(214, 1);
+            itemDictionary.Add(521, 12);
+            itemDictionary.Add(325, 1);
+            itemDictionary.Add(568, 14);
 
             var craftingTree = new ProjectCraftingTree(itemDictionary);
             return craftingTree.Items;
