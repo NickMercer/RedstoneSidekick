@@ -54,9 +54,10 @@
             </Border>
 
             <ucl:ucLabeledTextBox Grid.Column="1"
-                                 Label="x"
-                                 InputType="Int"
-                                 Value="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
+                                  Label="x"
+                                  InputType="Int"
+                                  Editable="{Binding Item.IsRootItem, UpdateSourceTrigger=PropertyChanged}"
+                                  Value="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
 
             <Label Grid.Column="2"
                    VerticalAlignment="Center"

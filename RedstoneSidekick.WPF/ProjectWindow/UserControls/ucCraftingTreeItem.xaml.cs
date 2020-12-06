@@ -56,6 +56,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             }
         }
 
+
         public ucCraftingTreeItem()
         {
             InitializeComponent();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NatickCommon.ExtensionMethods;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -16,7 +17,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _requiredAmount; }
             set
             {
-                _requiredAmount = value;
+                _requiredAmount = value.Clamp(0, int.MaxValue);
                 OnPropertyChanged();
             }
         }
@@ -27,7 +28,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _currentAmount; }
             set
             {
-                _currentAmount = value;
+                _currentAmount = value.Clamp(0, RequiredAmount);
                 OnPropertyChanged();
             }
         }
@@ -36,8 +37,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         
         public bool IsChecked { get; set; }
 
+        public bool IsRootItem { get; set; }
 
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
@@ -45,12 +47,13 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         }
 
 
-        public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0)
+        public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0, bool isRootItem = false)
         {
             Item = item;
             RequiredAmount = requiredAmount;
             RecipeAmount = recipeAmount;
             CurrentAmount = currentAmount;
+            IsRootItem = isRootItem;
         }
 
     }

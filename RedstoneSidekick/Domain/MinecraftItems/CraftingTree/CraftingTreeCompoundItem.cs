@@ -1,4 +1,5 @@
-﻿using RedstoneSidekick.Domain.Recipes;
+﻿using NatickCommon.ExtensionMethods;
+using RedstoneSidekick.Domain.Recipes;
 using RedstoneSidekick.Logic.CraftingTree;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _requiredAmount; }
             set
             {
-                _requiredAmount = value;
+                _requiredAmount = value.Clamp(0, int.MaxValue);
                 UpdateIngredientCounts();
                 OnPropertyChanged();
             }
@@ -29,7 +30,8 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _currentAmount; }
             set
             {
-                _currentAmount = value;
+                _currentAmount = value.Clamp(0, RequiredAmount);
+                UpdateIngredientCounts();
                 OnPropertyChanged();
             }
         }
@@ -41,8 +43,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         public List<ICraftingTreeItem> Ingredients { get; set; }
         
         public int RecipeResultCount { get; set; }
-
-
+        public bool IsRootItem { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
@@ -52,7 +53,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         
         
-        public CraftingTreeCompoundItem(MinecraftItem item, List<ICraftingTreeItem> ingredients, int requiredAmount = 0, int recipeResultCount = 0, int recipeAmount = 0, int currentAmount = 0)
+        public CraftingTreeCompoundItem(MinecraftItem item, List<ICraftingTreeItem> ingredients, int requiredAmount = 0, int recipeResultCount = 0, int recipeAmount = 0, int currentAmount = 0, bool isRootItem = false)
         {
             Item = item;
             RequiredAmount = requiredAmount;
@@ -60,6 +61,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             RecipeResultCount = recipeResultCount;
             RecipeAmount = recipeAmount;
             CurrentAmount = currentAmount;
+            IsRootItem = isRootItem;
 
             UpdateIngredientCounts();
         }

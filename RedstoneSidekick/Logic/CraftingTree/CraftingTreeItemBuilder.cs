@@ -24,7 +24,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
 
             if (recipe == null)
             {
-                treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount);
+                treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount, isRootItem: true);
             }
             else
             {
@@ -52,7 +52,8 @@ namespace RedstoneSidekick.Logic.CraftingTree
                                                 requiredAmount: requiredAmount, 
                                                 ingredients: ingredients, 
                                                 recipeResultCount: rootRecipe.ResultCount, 
-                                                currentAmount: currentAmount);
+                                                currentAmount: currentAmount,
+                                                isRootItem: true);
         }
 
         private static ICraftingTreeItem CreateChildItem(MinecraftItem mcItem, CraftingRecipe parentRecipe, int requiredAmount, int currentAmount)
