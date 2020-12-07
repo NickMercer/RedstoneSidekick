@@ -46,7 +46,8 @@
                 <Button x:Name="BTN_NewProject"
                         Grid.Column="0"
                         Style="{StaticResource DropButton}"
-                        ToolTip="Create a new project">
+                        ToolTip="Create a new project"
+                        Command="{Binding NewProjectCommand}">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/NewProjectButton.png"
                                Height="64" />
@@ -96,7 +97,8 @@
                 <Button x:Name="BTN_LoadProjectFromFile"
                         Grid.Column="3"
                         Style="{StaticResource DropButton}"
-                        ToolTip="Load a project from a .rsp file">
+                        ToolTip="Load a project from a .rsp file"
+                        Command="{Binding LoadProjectCommand}">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/LoadProjectButton.png"
                                Height="64" />
@@ -112,7 +114,8 @@
                 <Button x:Name="BTN_SaveProjectToFile"
                         Grid.Column="4"
                         Style="{StaticResource DropButton}"
-                        ToolTip="Save project to a .rsp file">
+                        ToolTip="Save project to a .rsp file"
+                        Command="{Binding SaveProjectCommand}">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/SaveProjectButton.png"
                                Height="64" />
@@ -129,7 +132,8 @@
                 <Button x:Name="BTN_LoadProjectFromProjectCode"
                         Grid.Column="5"
                         Style="{StaticResource DropButton}"
-                        ToolTip="Load a project from a project code">
+                        ToolTip="Load a project from a project code"
+                        Command="{Binding LoadProjectCodeCommand}">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/LoadCodeButton.png"
                                Height="64" />
@@ -146,7 +150,8 @@
                 <Button x:Name="BTN_SaveProjectToProjectString"
                         Grid.Column="6"
                         Style="{StaticResource DropButton}"
-                        ToolTip="Generate the project code for this project">
+                        ToolTip="Generate the project code for this project"
+                        Command="{Binding CreateProjectCodeCommand}">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/CopyCodeButton.png"
                                Height="64" />
@@ -310,7 +315,7 @@
         <Grid x:Name="Grid_ProjectView"
               Background="{StaticResource RSBeige}">
             <uc:ucCraftingTree x:Name="uc_CraftingTree"
-                               Items="{Binding CraftingTreeItems}"
+                               Items="{Binding CraftingTree.Items}"
                                Visibility="Visible" />
 
             <uc:ucGatheringList x:Name="uc_GatheringList"

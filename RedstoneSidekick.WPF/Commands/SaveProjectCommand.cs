@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace RedstoneSidekickWPF.Commands
 {
-    public class LoadProjectCommand : ICommand
+    public class SaveProjectCommand : ICommand
     {
         private readonly ProjectWindowVM _vm;
 
@@ -18,19 +18,19 @@ namespace RedstoneSidekickWPF.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public LoadProjectCommand(ProjectWindowVM vm)
+        public SaveProjectCommand(ProjectWindowVM vm)
         {
             _vm = vm;
         }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return _vm.CraftingTree != null && _vm.CraftingTree.Items.Any();
         }
 
         public void Execute(object parameter)
         {
-            _vm.LoadProject();
+            _vm.SaveProject();
         }
     }
 }

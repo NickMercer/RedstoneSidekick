@@ -9,6 +9,7 @@ namespace RedstoneSidekick.Domain.Projects
     {
         public string ProjectName { get; set; } = "Untitled Project";
 
-        public List<ICraftingTreeItem> CraftingTreeItems { get; set; } = new List<ICraftingTreeItem>();
+        public ProjectCraftingTree CraftingTree { get; set; } = new ProjectCraftingTree();
+
     }
 }

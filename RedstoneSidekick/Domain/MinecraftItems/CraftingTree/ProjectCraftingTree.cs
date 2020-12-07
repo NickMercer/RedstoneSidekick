@@ -8,6 +8,11 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         public List<ICraftingTreeItem> Items { get; set; } = new List<ICraftingTreeItem>();
 
         
+        public ProjectCraftingTree()
+        {
+
+        }
+
         public ProjectCraftingTree(Dictionary<int, int> itemDictionary)
         {
             Items = GenerateItemTree(itemDictionary);

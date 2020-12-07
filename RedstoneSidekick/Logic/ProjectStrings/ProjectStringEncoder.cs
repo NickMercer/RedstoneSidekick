@@ -1,49 +1,100 @@
-﻿using RedstoneSidekick.Domain.Projects;
+﻿using Newtonsoft.Json;
+using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+using RedstoneSidekick.Domain.Projects;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace RedstoneSidekick.Logic.ProjectStrings
 {
     public static class ProjectStringEncoder
     {
-        //Should be modular.
-        //Encoding options: Project Name, CraftingTree Items/Counts, FullCraftingTree Data, Shopping List Info
 
-        public static string Encode(RedstoneSidekickProject project, bool name = true, CraftingTreeOptions craftingTree = CraftingTreeOptions.Light, bool shoppingList = false)
+        public static string Encode(RedstoneSidekickProject project, CraftingTreeOptions craftingTree = CraftingTreeOptions.Light)
         {
             StringBuilder projectStringBuilder = new StringBuilder();
 
-            if (name)
-            {
-                projectStringBuilder.Append(AppendProjectName(project));
-            }
+            projectStringBuilder.Append(AppendProjectName(project));
             
-            if (craftingTree != CraftingTreeOptions.None)
-            {
-                projectStringBuilder.Append(AppendCraftingTree(project, craftingTree));
-            }
+            projectStringBuilder.Append(AppendCraftingTree(project, craftingTree));
 
-            if (shoppingList)
-            {
-                projectStringBuilder.Append(AppendShoppingList(project));
-            }
+            projectStringBuilder.Append(AppendShoppingList(project));
 
             return projectStringBuilder.ToString();
         }
 
 
-        private static bool AppendProjectName(RedstoneSidekickProject project)
+        private static string AppendProjectName(RedstoneSidekickProject project)
         {
-            throw new NotImplementedException();
+            return $"{project.ProjectName}";
         }
-        private static bool AppendCraftingTree(RedstoneSidekickProject project, CraftingTreeOptions craftingTree)
+        private static string AppendCraftingTree(RedstoneSidekickProject project, CraftingTreeOptions craftingTree)
         {
-            throw new NotImplementedException();
+            var craftingTreeString = "|";
+
+            switch (craftingTree)
+            {
+                case CraftingTreeOptions.Full:
+                    craftingTreeString += "2";
+                    craftingTreeString += ConvertFullCraftingTreeToBase64(project.CraftingTree);
+                    break;
+
+                case CraftingTreeOptions.Light:
+                    craftingTreeString += "1";
+                    craftingTreeString += ConvertLightCraftingTreeToBase64(project.CraftingTree);
+                    break;
+
+                default:
+                    craftingTreeString += "0";
+                    break;
+            }
+
+            return craftingTreeString;
         }
-        private static bool AppendShoppingList(RedstoneSidekickProject project)
+
+        private static string ConvertFullCraftingTreeToBase64(ProjectCraftingTree craftingTree)
         {
-            throw new NotImplementedException();
+            using (MemoryStream m = new MemoryStream())
+            {
+                using (BinaryWriter writer = new BinaryWriter(m))
+                {
+                    var settings = new JsonSerializerSettings()
+                    {
+                        TypeNameHandling = TypeNameHandling.All
+                    };
+
+                    var treeJson = JsonConvert.SerializeObject(craftingTree.Items, settings);
+                    writer.Write(treeJson);
+                }
+
+                byte[] treeArray = m.ToArray();
+
+                return Convert.ToBase64String(treeArray);
+            }
+        }
+        private static string ConvertLightCraftingTreeToBase64(ProjectCraftingTree craftingTree)
+        {
+            using (MemoryStream m = new MemoryStream())
+            {
+                using (BinaryWriter writer = new BinaryWriter(m))
+                {
+                    foreach (var item in craftingTree.Items)
+                    {
+                        writer.Write(item.Item.Id);
+                        writer.Write(item.RequiredAmount);
+                    }
+                }
+
+                byte[] treeArray = m.ToArray();
+
+                return Convert.ToBase64String(treeArray);
+            }
+        }
+
+        private static string AppendShoppingList(RedstoneSidekickProject project)
+        {
+            return "|";
         }
 
         public enum CraftingTreeOptions

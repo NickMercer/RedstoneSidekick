@@ -5,3 +5,6 @@ dotnet_style_prefer_inferred_anonymous_type_member_names = false:suggestion
 
 # IDE0063: Use simple 'using' statement
 dotnet_diagnostic.IDE0063.severity = none
+
+# IDE0057: Use range operator
+csharp_style_prefer_range_operator = false:suggestion

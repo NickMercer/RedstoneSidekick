@@ -214,7 +214,7 @@
                                  Value="False">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#FFF4F4F4" />
+                                    Value="LightGray" />
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#FFADB2B5" />
