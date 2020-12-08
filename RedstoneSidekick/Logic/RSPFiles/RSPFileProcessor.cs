@@ -8,7 +8,7 @@ using System.IO;
 using System.Text;
 using System.Windows;
 
-namespace RedstoneSidekick.Logic.RSP_Files
+namespace RedstoneSidekick.Logic.RSPFiles
 {
     public static class RSPFileProcessor
     {
@@ -40,38 +40,26 @@ namespace RedstoneSidekick.Logic.RSP_Files
             return "Error";
         }
 
-        public static RedstoneSidekickProject LoadProjectFromFile()
+        public static RedstoneSidekickProject LoadProjectFromFile(string filePath, string fileName)
         {
-            RedstoneSidekickProject project = new RedstoneSidekickProject();
+            RedstoneSidekickProject project = null;
 
-            OpenFileDialog dialog = new OpenFileDialog
+            string fileString = File.ReadAllText(filePath);
+
+            project = ProjectStringDecoder.Decode(fileString);
+
+            if(project == null)
             {
-                Filter = "Redstone Sidekick Projects (*.rsp)|*.rsp",
-                InitialDirectory = $"{GlobalDataVars.AppDirectory}"
-            };
-            var success = dialog.ShowDialog();
-
-
-            if(success == true)
-            {
-                string fileName = dialog.FileName;
-                string fileString = File.ReadAllText(fileName);
-
-                project = ProjectStringDecoder.Decode(fileString);
-
-                if(project.ProjectName == "Untitled Project")
-                {
-                    string projectName = dialog.SafeFileName;
-                    int extPos = projectName.LastIndexOf(".");
-                    project.ProjectName = projectName.Substring(0, extPos);
-                }
-            }
-            else
-            {
-                //TODO: Log Error.
-                MessageBox.Show("File was not a valid .rsp file. Please try again", "File Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return project;
             }
 
+            if(project.ProjectName == "Untitled Project")
+            {
+                string projectName = fileName;
+                int extPos = projectName.LastIndexOf(".");
+                project.ProjectName = projectName.Substring(0, extPos);
+            }
+            
             return project;
         }
     }

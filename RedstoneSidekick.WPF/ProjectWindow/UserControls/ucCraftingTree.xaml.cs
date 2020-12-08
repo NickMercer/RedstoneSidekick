@@ -2,6 +2,7 @@
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,14 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
     /// </summary>
     public partial class ucCraftingTree : UserControl
     {
-        public List<ICraftingTreeItem> Items
+        public ObservableCollection<ICraftingTreeItem> Items
         {
-            get { return (List<ICraftingTreeItem>)GetValue(ItemsProperty); }
+            get { return (ObservableCollection<ICraftingTreeItem>)GetValue(ItemsProperty); }
             set { SetValue(ItemsProperty, value); }
         }
 
         public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(List<ICraftingTreeItem>), typeof(ucCraftingTree), new PropertyMetadata(null));
+            DependencyProperty.Register("Items", typeof(ObservableCollection<ICraftingTreeItem>), typeof(ucCraftingTree), new PropertyMetadata(null));
 
 
         public ucCraftingTree()

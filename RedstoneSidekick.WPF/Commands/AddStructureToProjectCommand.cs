@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace RedstoneSidekickWPF.Commands
 {
-    public class CreateProjectCodeCommand : ICommand
+    public class AddStructureToProjectCommand : ICommand
     {
         private readonly ProjectWindowVM _vm;
 
@@ -18,7 +18,7 @@ namespace RedstoneSidekickWPF.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public CreateProjectCodeCommand(ProjectWindowVM vm)
+        public AddStructureToProjectCommand(ProjectWindowVM vm)
         {
             _vm = vm;
         }
@@ -30,7 +30,7 @@ namespace RedstoneSidekickWPF.Commands
 
         public void Execute(object parameter)
         {
-            _vm.CreateProjectCode();
+            _vm.AddStructureToProject();
         }
     }
 }

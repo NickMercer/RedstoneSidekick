@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace RedstoneSidekickWPF.Commands
 {
-    public class CreateProjectCodeCommand : ICommand
+    public class NewProjectFromStructureCommand : ICommand
     {
         private readonly ProjectWindowVM _vm;
 
@@ -18,19 +18,19 @@ namespace RedstoneSidekickWPF.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public CreateProjectCodeCommand(ProjectWindowVM vm)
+        public NewProjectFromStructureCommand(ProjectWindowVM vm)
         {
             _vm = vm;
         }
 
         public bool CanExecute(object parameter)
         {
-            return _vm.Project.CraftingTree != null && _vm.Project.CraftingTree.Items.Any();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            _vm.CreateProjectCode();
+            _vm.NewProjectFromStructure();
         }
     }
 }

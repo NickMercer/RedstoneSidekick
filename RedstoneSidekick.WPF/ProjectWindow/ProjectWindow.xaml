@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Width="1366"
         Height="768"
-        Title="{Binding ProjectName, StringFormat='Redstone Sidekick - {0}'}"
+        Title="{Binding Project.ProjectName, StringFormat='Redstone Sidekick - {0}'}"
         Icon="{StaticResource RSLogo}"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
@@ -42,7 +42,6 @@
                            Fill="White" />
 
 
-                <!-- TODO: Hook up New Project Button-->
                 <Button x:Name="BTN_NewProject"
                         Grid.Column="0"
                         Style="{StaticResource DropButton}"
@@ -59,11 +58,11 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up New Project From Structure Button-->
                 <Button x:Name="BTN_NewProjectFromStructureFile"
                         Grid.Column="1"
                         Style="{StaticResource DropButton}"
                         ToolTip="Create new project from a structure file"
+                        Command="{Binding NewProjectFromStructureCommand}"
                         HorizontalContentAlignment="Stretch">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/NewStructureProjectButton.png"
@@ -77,10 +76,10 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up Add Structure Button-->
                 <Button x:Name="BTN_AddStructureToProject"
                         Grid.Column="2"
                         Style="{StaticResource DropButton}"
+                        Command="{Binding AddStructureToProjectCommand}"
                         ToolTip="Add a structure file to the current project">
                     <StackPanel>
                         <Image Source="pack://application:,,,/Images/App/MenuBarIcons/AddStructureButton.png"
@@ -93,7 +92,6 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up Load Project Button-->
                 <Button x:Name="BTN_LoadProjectFromFile"
                         Grid.Column="3"
                         Style="{StaticResource DropButton}"
@@ -110,7 +108,6 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up Save to File Button-->
                 <Button x:Name="BTN_SaveProjectToFile"
                         Grid.Column="4"
                         Style="{StaticResource DropButton}"
@@ -128,7 +125,6 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up Load Project Code Button-->
                 <Button x:Name="BTN_LoadProjectFromProjectCode"
                         Grid.Column="5"
                         Style="{StaticResource DropButton}"
@@ -146,7 +142,6 @@
                     </StackPanel>
                 </Button>
 
-                <!-- TODO: Hook up Generate Project Code Button-->
                 <Button x:Name="BTN_SaveProjectToProjectString"
                         Grid.Column="6"
                         Style="{StaticResource DropButton}"
@@ -202,7 +197,7 @@
                      Grid.Row="0"
                      Grid.RowSpan="2"
                      Grid.Column="0"
-                     Text="{Binding ProjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=New Project}"
+                     Text="{Binding Project.ProjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=New Project}"
                      FontSize="40"
                      Margin="40 5 0 0"
                      FontWeight="Medium"
@@ -315,7 +310,7 @@
         <Grid x:Name="Grid_ProjectView"
               Background="{StaticResource RSBeige}">
             <uc:ucCraftingTree x:Name="uc_CraftingTree"
-                               Items="{Binding CraftingTree.Items}"
+                               Items="{Binding Project.CraftingTree.Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                Visibility="Visible" />
 
             <uc:ucGatheringList x:Name="uc_GatheringList"

@@ -413,7 +413,7 @@ Id,Name,ImagePath,MinecraftId,Category
 412,Lime Concrete,/Images/Blocks/LimeConcrete.png,minecraft:lime_concrete,1
 413,Pink Concrete,/Images/Blocks/PinkConcrete.png,minecraft:pink_concrete,1
 414,Gray Concrete,/Images/Blocks/GrayConcrete.png,minecraft:gray_concrete,1
-415,Light Gray Concrete,/Images/Blocks/LightGrayConcrete.png,minecraft:light_concrete,1
+415,Light Gray Concrete,/Images/Blocks/LightGrayConcrete.png,minecraft:light_gray_concrete,1
 416,Cyan Concrete,/Images/Blocks/CyanConcrete.png,minecraft:cyan_concrete,1
 417,Purple Concrete,/Images/Blocks/PurpleConcrete.png,minecraft:purple_concrete,1
 418,Blue Concrete,/Images/Blocks/BlueConcrete.png,minecraft:blue_concrete,1
@@ -429,7 +429,7 @@ Id,Name,ImagePath,MinecraftId,Category
 428,Lime Concrete Powder,/Images/Blocks/LimeConcretePowder.png,minecraft:lime_concrete_powder,1
 429,Pink Concrete Powder,/Images/Blocks/PinkConcretePowder.png,minecraft:pink_concrete_powder,1
 430,Gray Concrete Powder,/Images/Blocks/GrayConcretePowder.png,minecraft:gray_concrete_powder,1
-431,Light Gray Concrete Powder,/Images/Blocks/LightGrayConcretePowder.png,minecraft:light_concrete_powder,1
+431,Light Gray Concrete Powder,/Images/Blocks/LightGrayConcretePowder.png,minecraft:light_gray_concrete_powder,1
 432,Cyan Concrete Powder,/Images/Blocks/CyanConcretePowder.png,minecraft:cyan_concrete_powder,1
 433,Purple Concrete Powder,/Images/Blocks/PurpleConcretePowder.png,minecraft:purple_concrete_powder,1
 434,Blue Concrete Powder,/Images/Blocks/BlueConcretePowder.png,minecraft:blue_concrete_powder,1

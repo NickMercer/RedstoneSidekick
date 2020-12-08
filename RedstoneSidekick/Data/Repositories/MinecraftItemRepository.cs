@@ -36,6 +36,15 @@ namespace RedstoneSidekick.Data.Repositories
             }
         }
 
+        public Dictionary<string, int> GetMinecraftIdToIdDictionary()
+        {
+            using (IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
+            {
+                var commandString = "SELECT MinecraftId AS [Key], Id AS [Value] FROM MinecraftItems;";
+                return conn.Query<KeyValuePair<string, int>>(commandString).ToDictionary(pair => pair.Key, pair => pair.Value);
+            }
+        }
+
         public int GetIdByMinecraftId(string minecraftId)
         {
             using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))

@@ -3,6 +3,7 @@ using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.Projects;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using static RedstoneSidekick.Logic.ProjectStrings.ProjectStringEncoder;
@@ -30,16 +31,22 @@ namespace RedstoneSidekick.Logic.ProjectStrings
 
         public static RedstoneSidekickProject Decode(string projectString)
         {
-            var project = new RedstoneSidekickProject();
+            RedstoneSidekickProject project = null;
 
             projectString = projectString.Trim();
             string[] projectSections = projectString.Split('|');
             
             try
             {
-                project.ProjectName = DecodeProjectName(projectSections[0]);
-                project.CraftingTree = DecodeCraftingTreeItems(projectSections[1]);
-                var shoppingList = DecodeShoppingList(projectSections[2]);
+                var projectName = DecodeProjectName(projectSections[0]);
+                var projectCraftingTree = DecodeCraftingTreeItems(projectSections[1]);
+                var projectShoppingList = DecodeShoppingList(projectSections[2]);
+
+                project = new RedstoneSidekickProject
+                {
+                    ProjectName = projectName,
+                    CraftingTree = projectCraftingTree
+                };
             }
             catch
             {
@@ -103,7 +110,7 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                         TypeNameHandling = TypeNameHandling.All
                     };
 
-                    craftingTree.Items = JsonConvert.DeserializeObject<List<ICraftingTreeItem>>(treeJson, settings);
+                    craftingTree.Items = JsonConvert.DeserializeObject<ObservableCollection<ICraftingTreeItem>>(treeJson, settings);
                     //craftingTree = JsonConvert.DeserializeObject<ProjectCraftingTree>(treeJson);
                 }
             }
@@ -154,7 +161,7 @@ namespace RedstoneSidekick.Logic.ProjectStrings
 
         private static object DecodeShoppingList(string shoppingSection)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

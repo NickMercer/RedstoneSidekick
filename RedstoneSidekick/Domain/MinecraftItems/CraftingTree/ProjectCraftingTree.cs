@@ -1,11 +1,12 @@
 ﻿using RedstoneSidekick.Logic.CraftingTree;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
     public class ProjectCraftingTree
     {
-        public List<ICraftingTreeItem> Items { get; set; } = new List<ICraftingTreeItem>();
+        public ObservableCollection<ICraftingTreeItem> Items { get; set; } = new ObservableCollection<ICraftingTreeItem>();
 
         
         public ProjectCraftingTree()
@@ -18,9 +19,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             Items = GenerateItemTree(itemDictionary);
         }
 
-        private List<ICraftingTreeItem> GenerateItemTree(Dictionary<int, int> itemDictionary)
+        private ObservableCollection<ICraftingTreeItem> GenerateItemTree(Dictionary<int, int> itemDictionary)
         {
-            var itemTree = new List<ICraftingTreeItem>();
+            var itemTree = new ObservableCollection<ICraftingTreeItem>();
 
             foreach (var itemPair in itemDictionary)
             {

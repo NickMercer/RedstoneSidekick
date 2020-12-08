@@ -25,7 +25,7 @@ namespace RedstoneSidekickWPF.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _vm.CraftingTree != null && _vm.CraftingTree.Items.Any();
+            return _vm.Project.CraftingTree != null && _vm.Project.CraftingTree.Items.Any();
         }
 
         public void Execute(object parameter)

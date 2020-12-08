@@ -41,6 +41,7 @@
                   ItemsSource="{Binding Items}"
                   HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
+                  VirtualizingPanel.IsVirtualizing="True"
                   ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <TreeView.ItemsPanel>
                 <ItemsPanelTemplate>
