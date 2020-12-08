@@ -194,7 +194,10 @@ namespace RedstoneSidekick.Logic.StructureFiles
                 minecraftId = _conversionDictionary[minecraftId];
             }
 
-            id = _minecraftIdToIdDictionary[minecraftId];
+            if (_minecraftIdToIdDictionary.ContainsKey(minecraftId))
+            {
+                id = _minecraftIdToIdDictionary[minecraftId];
+            }
 
             return id;
         }
