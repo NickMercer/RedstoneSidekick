@@ -15,9 +15,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         public bool IsRootItem { get; set; }
 
-        public bool IsChecked { get; set; }
-
-        //public Dictionary<int, int> CalculateTotalMaterials(Dictionary<int, int> materialsDictionary);
+        public bool IsSmeltingIngredient { get; set; }
 
     }
 }

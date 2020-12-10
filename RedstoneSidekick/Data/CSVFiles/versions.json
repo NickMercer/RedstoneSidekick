@@ -6,6 +6,10 @@
   {
     "FileName": "ItemCraftingRecipes.csv",
     "Version": "1.0.0"
+  },
+  {
+    "FileName": "ItemSmeltingData.csv",
+    "Version": "1.0.0"
   }
 ]
 

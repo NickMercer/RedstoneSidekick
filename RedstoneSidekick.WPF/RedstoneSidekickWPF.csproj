@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\App\CraftingTreeIcons\CraftingIcon.png" />
+    <None Remove="Images\App\CraftingTreeIcons\MinusButton.png" />
+    <None Remove="Images\App\CraftingTreeIcons\PlusButton.png" />
+    <None Remove="Images\App\CraftingTreeIcons\SmeltingIcon.png" />
     <None Remove="RedstoneSidekickDB.db" />
   </ItemGroup>
 
@@ -29,6 +33,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\App\CraftingTreeIcons\CraftingIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\App\CraftingTreeIcons\MinusButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\App\CraftingTreeIcons\PlusButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\App\CraftingTreeIcons\SmeltingIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Decorations\MagentaBed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -176,9 +192,6 @@
     <Resource Include="Images\Decorations\RedShulkerBox.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\App\IngredientArrow.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\App\MenuBarIcons\AddStructureButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -200,12 +213,6 @@
     <Resource Include="Images\App\MenuBarIcons\SaveProjectButton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\App\MinusButton.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\App\PlusButton.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\App\ProjectTabIcons\CraftingTreeTab.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -216,9 +223,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\App\RSLogo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\App\Smelting.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Blocks\AcaciaLog.png">

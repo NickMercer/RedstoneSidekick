@@ -8,7 +8,9 @@
         Title="Input Project Code"
         Height="180"
         Width="400"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStyle="ThreeDBorderWindow"
+        Icon="{StaticResource RSLogo}">
     <Grid Margin="20 20 20 0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -24,12 +26,14 @@
         
         <Label Grid.Column="0"
                Grid.Row="0"
-               Content="Input Project Code" />
+               Content="Input Project Code" 
+               FontWeight="DemiBold"/>
 
         <TextBox x:Name="TB_ProjectCode"
                  Grid.Column="0"
                  Grid.ColumnSpan="3"
-                 Grid.Row="1" />
+                 Grid.Row="1" 
+                 BorderBrush="{StaticResource RSDarkRed}"/>
 
         <Border Grid.Column="0"
                 Grid.Row="2"

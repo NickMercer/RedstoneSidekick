@@ -38,7 +38,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         public int RecipeAmount { get; set; }
 
-        public bool IsChecked { get; set; }
+        public bool IsSmeltingIngredient { get; set; }
         
         public List<ICraftingTreeItem> Ingredients { get; set; }
         
@@ -53,7 +53,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         
         
-        public CraftingTreeCompoundItem(MinecraftItem item, List<ICraftingTreeItem> ingredients, int requiredAmount = 0, int recipeResultCount = 0, int recipeAmount = 0, int currentAmount = 0, bool isRootItem = false)
+        public CraftingTreeCompoundItem(MinecraftItem item, List<ICraftingTreeItem> ingredients, int requiredAmount = 0, int recipeResultCount = 0, int recipeAmount = 0, int currentAmount = 0, bool isRootItem = false, bool isSmeltingIngredient = false)
         {
             Item = item;
             RequiredAmount = requiredAmount;
@@ -62,6 +62,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             RecipeAmount = recipeAmount;
             CurrentAmount = currentAmount;
             IsRootItem = isRootItem;
+            IsSmeltingIngredient = isSmeltingIngredient;
 
             UpdateIngredientCounts();
         }

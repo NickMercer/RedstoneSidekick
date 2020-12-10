@@ -18,9 +18,8 @@ namespace RedstoneSidekick.Logic.StructureFiles
 
     public static class MinecraftStructureProcessor
     {
-        private static MinecraftItemRepository _minecraftItemRepository = new MinecraftItemRepository();
-        private static Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
-        private static Dictionary<string, int> _minecraftIdToIdDictionary = new MinecraftItemRepository().GetMinecraftIdToIdDictionary();
+        private static readonly Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
+        private static readonly Dictionary<string, int> _minecraftIdToIdDictionary = new MinecraftItemRepository().GetMinecraftIdToIdDictionary();
 
         public static RedstoneSidekickProject CreateProjectFromStructureFile(string filePath, string fileName)
         {
@@ -38,10 +37,6 @@ namespace RedstoneSidekick.Logic.StructureFiles
                 var itemDictionary = CreateBlockList(structure);
                 project.CraftingTree = new ProjectCraftingTree(itemDictionary);
             }
-            else
-            {
-                MessageBox.Show("File does not exist. Please try again", "File Does Not Exist", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
 
             return project;
         }
@@ -49,6 +44,11 @@ namespace RedstoneSidekick.Logic.StructureFiles
         public static RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
         {
             var addedStructureTree = CreateProjectFromStructureFile(filePath, fileName).CraftingTree;
+
+            if (addedStructureTree == null)
+            {
+                return project;
+            }
 
             foreach (var item in addedStructureTree.Items)
             {

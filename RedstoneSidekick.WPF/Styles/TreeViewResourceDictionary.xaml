@@ -16,13 +16,13 @@
                            RenderOptions.BitmapScalingMode="HighQuality"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Source="pack://application:,,,/RedstoneSidekickWPF;component/Images/App/PlusButton.png" />
+                           Source="pack://application:,,,/RedstoneSidekickWPF;component/Images/App/CraftingTreeIcons/PlusButton.png" />
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked"
                                  Value="true">
                             <Setter TargetName="image"
                                     Property="Source"
-                                    Value="pack://application:,,,/RedstoneSidekickWPF;component/Images/App/MinusButton.png" />
+                                    Value="pack://application:,,,/RedstoneSidekickWPF;component/Images/App/CraftingTreeIcons/MinusButton.png" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

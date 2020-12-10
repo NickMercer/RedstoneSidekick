@@ -11,9 +11,11 @@ namespace RedstoneSidekick.Logic.CraftingTree
 {
     public static class CraftingTreeItemBuilder
     {
-        private static MinecraftItemRepository _minecraftItemRepository = new MinecraftItemRepository();
-        private static CraftingRecipeRepository _craftingRecipeRepository = new CraftingRecipeRepository();
-        private static Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
+        private static readonly MinecraftItemRepository _minecraftItemRepository = new MinecraftItemRepository();
+        private static readonly CraftingRecipeRepository _craftingRecipeRepository = new CraftingRecipeRepository();
+        private static readonly Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
+        private static readonly IEnumerable<SmeltingRecipe> _smeltingRecipes = new SmeltingRecipeRepository().GetSmeltingRecipes();
+
 
         public static ICraftingTreeItem CreateCraftingTreeItem(int itemId, int requiredAmount, int currentAmount = 0)
         {
@@ -24,7 +26,16 @@ namespace RedstoneSidekick.Logic.CraftingTree
 
             if (recipe == null)
             {
-                treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount, isRootItem: true);
+                var smeltingRecipe = _smeltingRecipes.FirstOrDefault(x => x.ResultId == mcItem.Id);
+
+                if(smeltingRecipe != null)
+                {
+                    treeItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, true);
+                }
+                else
+                {
+                    treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount, isRootItem: true);
+                }
             }
             else
             {
@@ -32,6 +43,64 @@ namespace RedstoneSidekick.Logic.CraftingTree
             }
 
             return treeItem;
+        }
+
+        private static CraftingTreeCompoundItem CreateSmeltingItem(MinecraftItem mcItem, SmeltingRecipe smeltingRecipe, int requiredAmount, int currentAmount, bool isRootItem = false, int recipeAmount = 1)
+        {
+            List<ICraftingTreeItem> ingredients = new List<ICraftingTreeItem>();
+
+            var smeltingIngredientMCItem = _minecraftItemRepository.GetMinecraftItemById(smeltingRecipe.IngredientId);
+            var smeltingIngredientItem = CreateSmeltingIngredient(smeltingIngredientMCItem, currentAmount);
+            ingredients.Add(smeltingIngredientItem);
+
+
+            return new CraftingTreeCompoundItem(item: mcItem,
+                                                requiredAmount: requiredAmount,
+                                                ingredients: ingredients,
+                                                recipeResultCount: 1,
+                                                recipeAmount: recipeAmount,
+                                                currentAmount: currentAmount,
+                                                isRootItem: isRootItem);
+        }
+
+        private static ICraftingTreeItem CreateSmeltingIngredient(MinecraftItem mcItem, int currentAmount)
+        {
+            ICraftingTreeItem childItem;
+            var createSimpleItem = true;
+
+            var recipe = _craftingRecipeRepository.GetRecipesByMinecraftId(mcItem.MinecraftId).FirstOrDefault();
+            if (recipe != null)
+            {
+                createSimpleItem = false;
+            }
+
+            if (createSimpleItem)
+            {
+                var recipeAmount = 1;
+                childItem = new CraftingTreeSimpleItem(item: mcItem, recipeAmount: recipeAmount, currentAmount: currentAmount, isSmeltingIngredient: true);
+            }
+            else
+            {
+                List<ICraftingTreeItem> ingredients = new List<ICraftingTreeItem>();
+
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    var childMCItem = _minecraftItemRepository.GetMinecraftItemById(ingredient.Id);
+                    var ingredientItem = CreateChildItem(childMCItem, recipe, ingredient.Count, 0);
+                    ingredients.Add(ingredientItem);
+                }
+
+                var recipeAmount = 1;
+
+                childItem = new CraftingTreeCompoundItem(item: mcItem,
+                                                         ingredients: ingredients,
+                                                         recipeResultCount: recipe.ResultCount,
+                                                         recipeAmount: recipeAmount,
+                                                         currentAmount: currentAmount,
+                                                         isSmeltingIngredient: true);
+            }
+
+            return childItem;
         }
 
         private static CraftingTreeCompoundItem CreateRootCompoundItem(MinecraftItem mcItem, CraftingRecipe rootRecipe, int requiredAmount, int currentAmount)
@@ -62,6 +131,15 @@ namespace RedstoneSidekick.Logic.CraftingTree
             var createSimpleItem = true;
 
             var recipe = _craftingRecipeRepository.GetRecipesByMinecraftId(mcItem.MinecraftId).FirstOrDefault();
+            var smeltingRecipe = _smeltingRecipes.FirstOrDefault(x => x.ResultId == mcItem.Id);
+
+            if(smeltingRecipe != null)
+            {
+                var recipeAmount = parentRecipe.Ingredients.Where(x => x.Id == mcItem.Id).First().Count;
+                childItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, false, recipeAmount);
+                return childItem;
+            }
+
             if (recipe != null)
             {
                 recipe.Ingredients = _craftingRecipeRepository.GetIngredientsByRecipeId(recipe.Id).ToList();

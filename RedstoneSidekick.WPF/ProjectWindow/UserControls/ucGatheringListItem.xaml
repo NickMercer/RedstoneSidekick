@@ -1,15 +1,16 @@
-﻿<UserControl x:Class="RedstoneSidekickWPF.ProjectWindow.UserControls.ucCraftingTreeItem"
+﻿<UserControl x:Class="RedstoneSidekickWPF.ProjectWindow.UserControls.ucGatheringListItem"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RedstoneSidekickWPF.ProjectWindow.UserControls"
              xmlns:ucl="clr-namespace:RedstoneSidekickWPF.UserControlLibrary"
              xmlns:converters="clr-namespace:RedstoneSidekickWPF.Converters"
              mc:Ignorable="d"
              Height="Auto"
              HorizontalAlignment="Stretch"
-             HorizontalContentAlignment="Stretch">
+             HorizontalContentAlignment="Stretch"
+             d:Background="White">
     <UserControl.Resources>
         <Style TargetType="Label">
             <Setter Property="FontWeight"
@@ -29,12 +30,9 @@
     </UserControl.Resources>
 
     <Border x:Name="LayoutRoot"
-            BorderBrush="Black"
-            BorderThickness="2"
-            CornerRadius="8"
-            Padding="0 0 15 0"
+            BorderThickness="0"
             HorizontalAlignment="Stretch"
-            Background="White">
+            Background="Transparent">
 
         <Grid Margin="3"
               VerticalAlignment="Center"
@@ -58,47 +56,33 @@
                     <DropShadowEffect BlurRadius="4"
                                       ShadowDepth="3"
                                       Direction="315"
-                                      Opacity="0.4" />
+                                      Opacity="0.4"/>
                 </Border.Effect>
-                <Image Source="{Binding Item.Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}" ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Image Source="{Binding Item.Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}"
+                       ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
             </Border>
 
-            <Image Grid.Column="1" 
-                   Visibility="{Binding SmeltingVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToVisibilityConverter}}"
-                   Height="20"
-                   Width="20"
-                   Margin="5 0"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Center"
-                   ToolTip="This is a Smelting recipe"
-                   Source="pack://application:,,,/Images/App/CraftingTreeIcons/SmeltingIcon.png" />
-            <Image Grid.Column="1" 
-                   Visibility="{Binding CraftingVisible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToVisibilityConverter}}"
-                   Height="20"
-                   Width="20"
-                   Margin="5 0"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Center"
-                   ToolTip="This is a Crafting recipe"
-                   Source="pack://application:,,,/Images/App/CraftingTreeIcons/CraftingIcon.png" />
-
-            <ucl:ucLabeledTextBox Grid.Column="2"
-                                  Label="x"
-                                  InputType="Int"
-                                  Editable="{Binding Item.IsRootItem, UpdateSourceTrigger=PropertyChanged}"
-                                  Value="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
-
-            <Label Grid.Column="3"
+            <Label Grid.Column="1" 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
+                   Margin="5 0"
                    Content="{Binding Item.Item.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Error}" />
 
-
-            <ucl:ucLabeledTextBox Grid.Column="4"
-                                  Label="Have: "
-                                  HorizontalAlignment="Right"
+            <ucl:ucLabeledTextBox Grid.Column="2"
                                   InputType="Int"
-                                  Value="{Binding Item.CurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                  Value="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
+            <Label Grid.Column="3"
+                   ContentStringFormat="{}/ {0}"
+                   Margin="-5 0 0 0"
+                   VerticalAlignment="Center"
+                   Content="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=10}" />
+            
+            <Label Grid.Column="4"
+                   ContentStringFormat="{}{0}%"
+                   Margin="10 0"
+                   VerticalAlignment="Center"
+                   Content="{Binding Item.GatheredPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=10}" />
+
         </Grid>
     </Border>
 </UserControl>

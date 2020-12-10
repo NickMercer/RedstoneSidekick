@@ -24,6 +24,9 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
         private readonly CraftingRecipeCSVReader _craftingRecipeCSVReader = new CraftingRecipeCSVReader();
         private readonly CraftingRecipeRepository _craftingRecipeRepository = new CraftingRecipeRepository();
 
+        private readonly SmeltingRecipeCSVReader _smeltingRecipeCSVReader = new SmeltingRecipeCSVReader();
+        private readonly SmeltingRecipeRepository _smeltingRecipeRepository = new SmeltingRecipeRepository();
+
         public ItemDataUpdateHandler()
         {
             _csvVersions = GetVersionInfo();
@@ -31,68 +34,67 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
 
         public void RefreshAllData()
         {
-            RefreshMinecraftItemData();
-            RefreshCraftingData();
+            RefreshMinecraftItemData("ItemData.csv");
+            RefreshCraftingData("ItemCraftingRecipes.csv");
+            RefreshSmeltingData("ItemSmeltingData.csv");
         }
 
-        #region Item Data
 
-        public void RefreshMinecraftItemData()
+
+        public void RefreshMinecraftItemData(string fileName)
         {
-            var itemFile = "ItemData.csv";
-            var itemVersion = _csvVersions.Where(x => x.FileName == itemFile).FirstOrDefault();
-
-            bool itemsRequireUpdate = CheckForMinecraftItemUpdate(itemFile, itemVersion);
-            if (!itemsRequireUpdate) return;
-
+            if (FileRequiresUpdate(fileName) == false) return;
 
             var itemData = _minecraftItemCSVReader.LoadItemData();
             var itemsInserted = _minecraftItemRepository.InsertMinecraftItems(itemData);
 
-            if (itemsInserted > 0)
-            {
-                _csvFileVersionsRepository.UpdateCSVFileVersion(itemVersion);
-            }
+            UpdateFileVersion(fileName, itemsInserted);
         }
 
 
-        private bool CheckForMinecraftItemUpdate(string fileName, CSVFileVersion itemVersion)
+
+        public void RefreshCraftingData(string fileName)
         {
-            var dbVersion = _csvFileVersionsRepository.GetCSVFileVersion(fileName);
+            if (FileRequiresUpdate(fileName) == false) return;
 
-            return itemVersion.Version != dbVersion.Version;
+            var craftingData = _craftingRecipeCSVReader.LoadCraftingRecipes();
+            var recipesInserted = _craftingRecipeRepository.InsertCraftingRecipes(craftingData);
+
+            UpdateFileVersion(fileName, recipesInserted);
         }
 
 
-        #endregion
 
-        #region Crafting Data
-
-        public void RefreshCraftingData()
+        private void RefreshSmeltingData(string fileName)
         {
-            var craftingFile = "ItemCraftingRecipes.csv";
-            var craftingVersion = _csvVersions.Where(x => x.FileName == craftingFile).FirstOrDefault();
+            if (FileRequiresUpdate(fileName) == false) return;
 
-            bool craftingRequiresUpdate = CheckForCraftingRecipeUpdate(craftingFile, craftingVersion);
-            if (!craftingRequiresUpdate) return;
+            var smeltingData = _smeltingRecipeCSVReader.LoadSmeltingRecipes();
+            var recipesInserted = _smeltingRecipeRepository.InsertSmeltingRecipes(smeltingData);
 
-            var craftingRecipes = _craftingRecipeCSVReader.LoadCraftingRecipes();
-            var recipesInserted = _craftingRecipeRepository.InsertCraftingRecipes(craftingRecipes);
-
-            if (recipesInserted > 0)
-            {
-                _csvFileVersionsRepository.UpdateCSVFileVersion(craftingVersion);
-            }
+            UpdateFileVersion(fileName, recipesInserted);
         }
 
-        private bool CheckForCraftingRecipeUpdate(string craftingFile, CSVFileVersion craftingVersion)
+        private bool FileRequiresUpdate(string fileName)
         {
-            var dbVersion = _csvFileVersionsRepository.GetCSVFileVersion(craftingFile);
+            var fileVersion = _csvVersions.Where(x => x.FileName == fileName).FirstOrDefault();
 
-            return craftingVersion.Version != dbVersion.Version;
+            bool fileRequiresUpdate = CheckForUpdate(fileName, fileVersion);
+            return fileRequiresUpdate;
         }
+        private bool CheckForUpdate(string file, CSVFileVersion fileVersion)
+        {
+            var dbVersion = _csvFileVersionsRepository.GetCSVFileVersion(file);
 
-        #endregion
+            return fileVersion.Version != dbVersion.Version;
+        }
+        private void UpdateFileVersion(string fileName, int rowsInserted)
+        {
+            if (rowsInserted <= 0) return;
+
+            var fileVersion = _csvVersions.Where(x => x.FileName == fileName).FirstOrDefault();
+            _csvFileVersionsRepository.UpdateCSVFileVersion(fileVersion);
+        }
 
         private List<CSVFileVersion> GetVersionInfo()
         {
@@ -102,7 +104,6 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
             using (StreamReader reader = new StreamReader(versionFilePath))
             {
                 string json = reader.ReadToEnd();
-
 
                 version = JsonConvert.DeserializeObject<List<CSVFileVersion>>(json);
             }

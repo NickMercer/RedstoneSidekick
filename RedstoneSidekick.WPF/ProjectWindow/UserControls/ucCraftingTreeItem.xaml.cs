@@ -30,7 +30,16 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
         }
 
         public static readonly DependencyProperty ItemProperty =
-            DependencyProperty.Register("Item", typeof(ICraftingTreeItem), typeof(ucCraftingTreeItem), new PropertyMetadata(null));
+            DependencyProperty.Register("Item", typeof(ICraftingTreeItem), typeof(ucCraftingTreeItem), new PropertyMetadata(null, SetItem));
+
+        private static void SetItem(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as ucCraftingTreeItem;
+            var item = e.NewValue as ICraftingTreeItem;
+
+            uc.CraftingVisible = item.IsSmeltingIngredient == false && item.IsRootItem == false;
+            uc.SmeltingVisible = item.IsSmeltingIngredient == true && item.IsRootItem == false;
+        }
 
         public bool Selected
         {
@@ -56,6 +65,8 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             }
         }
 
+        public bool CraftingVisible { get; set; }
+        public bool SmeltingVisible { get; set; }
 
         public ucCraftingTreeItem()
         {

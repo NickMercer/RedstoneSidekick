@@ -94,6 +94,17 @@ namespace RedstoneSidekickWPF.ProjectWindow
                 {
                     Project = project;
                 }
+                else
+                {
+                    MessageBoxWindow window = new MessageBoxWindow()
+                    {
+                        Title = "File Does Not Exist",
+                        MessageText = "File does not exist. Please try again",
+                        WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                        ShowActivated = true
+                    };
+                    window.Show();
+                }
             }
             Mouse.OverrideCursor = null;
         }
@@ -118,7 +129,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         internal void LoadProject()
         {
-            RedstoneSidekickProject project = null;
+            RedstoneSidekickProject project;
 
             OpenFileDialog dialog = new OpenFileDialog
             {
@@ -142,7 +153,14 @@ namespace RedstoneSidekickWPF.ProjectWindow
             else
             {
                 //TODO: Log Error.
-                MessageBox.Show("File was not a valid .rsp file. Please try again", "File Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxWindow window = new MessageBoxWindow()
+                {
+                    Title = "File Invalid",
+                    MessageText = "File was not a valid .rsp file. Please try again.",
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                    ShowActivated = true
+                };
+                window.Show();
             }
         }
 
@@ -187,7 +205,15 @@ namespace RedstoneSidekickWPF.ProjectWindow
             Clipboard.Clear();
             Clipboard.SetText(projectCode);
 
-            MessageBox.Show("Redstone Sidekick Project Code copied to clipboard!", "Created Project Code", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxWindow window = new MessageBoxWindow()
+            {
+                Title = "Created Project Code",
+                MessageText = "Redstone Sidekick Project Code copied to clipboard!",
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                ShowActivated = true
+            };
+            window.Show();
+
         }
 
         #endregion
@@ -198,12 +224,15 @@ namespace RedstoneSidekickWPF.ProjectWindow
             var itemDictionary = new Dictionary<int, int>
             {
                 { 10, 5 },
+                { 2, 1 },
                 { 157, 1000 },
                 { 183, 40 },
                 { 214, 1 },
                 { 521, 12 },
                 { 325, 1 },
-                { 568, 14 }
+                { 568, 14 },
+                { 722, 1 },
+                { 205, 7 }
             };
 
             var craftingTree = new ProjectCraftingTree(itemDictionary);

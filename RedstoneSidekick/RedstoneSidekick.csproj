@@ -8,6 +8,8 @@
   <ItemGroup>
     <None Remove="Data\CSVFiles\ItemCraftingRecipes.csv" />
     <None Remove="Data\CSVFiles\ItemData.csv" />
+    <None Remove="Data\CSVFiles\ItemSmeltingData.csv" />
+    <None Remove="Data\CSVFiles\ItemSmeltingRecipes.csv" />
     <None Remove="Data\CSVFiles\versions.json" />
   </ItemGroup>
 
@@ -16,6 +18,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\CSVFiles\ItemData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\CSVFiles\ItemSmeltingData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\CSVFiles\versions.json">
@@ -39,6 +44,10 @@
     <Reference Include="PresentationFramework">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationFramework.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\CSVFiles\ItemSmeltingRecipes.csv" />
   </ItemGroup>
 
 </Project>
