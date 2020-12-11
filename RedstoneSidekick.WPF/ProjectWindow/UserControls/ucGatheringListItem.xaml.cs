@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
     /// </summary>
     public partial class ucGatheringListItem : UserControl
     {
+        public IGatheringListItem Item
+        {
+            get { return (IGatheringListItem)GetValue(ItemProperty); }
+            set { SetValue(ItemProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemProperty =
+            DependencyProperty.Register("Item", typeof(IGatheringListItem), typeof(ucGatheringListItem), new PropertyMetadata(null));
+
         public ucGatheringListItem()
         {
             InitializeComponent();
+            LayoutRoot.DataContext = this;
         }
     }
 }

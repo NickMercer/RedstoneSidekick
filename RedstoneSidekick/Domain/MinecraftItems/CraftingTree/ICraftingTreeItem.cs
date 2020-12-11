@@ -5,7 +5,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
     public interface ICraftingTreeItem
     {
-        public MinecraftItem Item { get; set; }
+        public IMinecraftItem Item { get; set; }
 
         public int RequiredAmount { get; set; }
 

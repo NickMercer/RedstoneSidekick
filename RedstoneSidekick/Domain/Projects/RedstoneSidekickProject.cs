@@ -1,5 +1,6 @@
 ﻿using NatickCommon.WPF;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,15 @@ namespace RedstoneSidekick.Domain.Projects
             }
         }
 
+        private ProjectGatheringList _gatheringList = new ProjectGatheringList();
+        public ProjectGatheringList GatheringList
+        {
+            get { return _gatheringList; }
+            set
+            {
+                SetProperty(ref _gatheringList, value);
+            }
+        }
 
         public RedstoneSidekickProject()
         {

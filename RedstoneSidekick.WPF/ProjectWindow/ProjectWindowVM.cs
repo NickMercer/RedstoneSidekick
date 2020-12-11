@@ -4,6 +4,7 @@ using RedstoneSidekick;
 using RedstoneSidekick.Data;
 using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using RedstoneSidekick.Domain.Projects;
 using RedstoneSidekick.Logic.ProjectStrings;
 using RedstoneSidekick.Logic.RSPFiles;
@@ -54,6 +55,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
             RegisterCommands();
 
             Project.CraftingTree = CreateTestData();
+            Project.GatheringList = new ProjectGatheringList();
         }
 
         private void RegisterCommands()

@@ -12,6 +12,6 @@ namespace RedstoneSidekick.Domain.Recipes
 
         public int ResultCount { get; set; }
         
-        public List<CraftingIngredient> Ingredients { get; set; }
+        public IEnumerable<CraftingIngredient> Ingredients { get; set; }
     }
 }

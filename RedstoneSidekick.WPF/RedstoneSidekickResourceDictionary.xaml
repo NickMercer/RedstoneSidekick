@@ -99,11 +99,12 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#FFBCDDEE" />
+                                    Value="Transparent" />
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#FF245A83" />
+                                    Value="Transparent" />
                         </Trigger>
+
                         <Trigger Property="IsEnabled"
                                  Value="False">
                             <Setter Property="Background"

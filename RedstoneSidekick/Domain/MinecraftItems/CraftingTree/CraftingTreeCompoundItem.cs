@@ -10,7 +10,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
     public class CraftingTreeCompoundItem : ICraftingTreeCompoundItem, INotifyPropertyChanged
     {
-        public MinecraftItem Item { get; set; }
+        public IMinecraftItem Item { get; set; }
 
         private int _requiredAmount;
         public int RequiredAmount

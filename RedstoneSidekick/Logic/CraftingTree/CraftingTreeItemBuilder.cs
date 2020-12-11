@@ -71,6 +71,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
             var recipe = _craftingRecipeRepository.GetRecipesByMinecraftId(mcItem.MinecraftId).FirstOrDefault();
             if (recipe != null)
             {
+
                 createSimpleItem = false;
             }
 
@@ -81,6 +82,9 @@ namespace RedstoneSidekick.Logic.CraftingTree
             }
             else
             {
+                recipe.Ingredients = _craftingRecipeRepository.GetIngredientsByRecipeId(recipe.Id);
+                recipe.Ingredients.ToList().ForEach(x => x = MinecraftIdConversion(x));
+
                 List<ICraftingTreeItem> ingredients = new List<ICraftingTreeItem>();
 
                 foreach (var ingredient in recipe.Ingredients)
@@ -106,7 +110,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
         private static CraftingTreeCompoundItem CreateRootCompoundItem(MinecraftItem mcItem, CraftingRecipe rootRecipe, int requiredAmount, int currentAmount)
         {
             rootRecipe.Ingredients = _craftingRecipeRepository.GetIngredientsByRecipeId(rootRecipe.Id).ToList();
-            rootRecipe.Ingredients.ForEach(x => x = MinecraftIdConversion(x));
+            rootRecipe.Ingredients.ToList().ForEach(x => x = MinecraftIdConversion(x));
 
             List<ICraftingTreeItem> ingredients = new List<ICraftingTreeItem>();
 
@@ -143,7 +147,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
             if (recipe != null)
             {
                 recipe.Ingredients = _craftingRecipeRepository.GetIngredientsByRecipeId(recipe.Id).ToList();
-                recipe.Ingredients.ForEach(x => x = MinecraftIdConversion(x));
+                recipe.Ingredients.ToList().ForEach(x => x = MinecraftIdConversion(x));
 
                 createSimpleItem = recipe.Ingredients.Select(x => x.IngredientMinecraftId).Contains(parentRecipe.ResultItemMinecraftId);
             }

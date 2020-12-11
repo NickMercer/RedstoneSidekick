@@ -314,6 +314,7 @@
                                Visibility="Visible" />
 
             <uc:ucGatheringList x:Name="uc_GatheringList"
+                                Items="{Binding Project.GatheringList.Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 Visibility="Collapsed" />
         </Grid>
 

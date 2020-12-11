@@ -24,8 +24,14 @@
             <Setter Property="FontSize"
                     Value="14" />
         </Style>
-
+        <Style x:Key="InvisibleToggleButton" TargetType="ToggleButton">
+            
+        </Style>
+        
+        
         <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+        <converters:BoolToVisibilityHiddenConverter x:Key="boolToVisibilityHiddenConverter" />
+        <converters:BoolToThickness2Converter x:Key="boolToThickness2Converter" />
 
     </UserControl.Resources>
 
@@ -58,19 +64,51 @@
                                       Direction="315"
                                       Opacity="0.4"/>
                 </Border.Effect>
-                <Image Source="{Binding Item.Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}"
-                       ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Grid>
+                    <Image Source="{Binding Item.Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}"
+                           ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <ToggleButton Background="Transparent"
+                                  Foreground="Transparent"
+                                  BorderBrush="Transparent"
+                                  IsChecked="{Binding Item.IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <Image Source="pack://application:,,,/Images/App/GatheringListIcons/Checkmark.png"
+                               Width="32"
+                               Height="32"
+                               Visibility="{Binding Item.IsChecked, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToVisibilityHiddenConverter}}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                    </ToggleButton>
+                </Grid>
             </Border>
 
-            <Label Grid.Column="1" 
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="5 0"
-                   Content="{Binding Item.Item.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Error}" />
+
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="5 0"
+                       Text="{Binding Item.Item.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=Error}">
+                <TextBlock.TextDecorations>
+                    <TextDecoration Location="Strikethrough" PenThicknessUnit="Pixel">
+                        <TextDecoration.Pen>
+                            <Pen Thickness="{Binding Item.IsChecked, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToThickness2Converter}, FallbackValue=0}">
+                                <Pen.Brush>
+                                    <RadialGradientBrush  GradientOrigin="-1,1" RadiusX="1" RadiusY="0.6">
+                                        <GradientStop Color="LimeGreen" Offset="0"/>
+                                        <GradientStop Color="Green" Offset="1"/>
+                                    </RadialGradientBrush>
+                                </Pen.Brush>
+                            </Pen> 
+                            
+                        </TextDecoration.Pen>
+                    </TextDecoration>
+                </TextBlock.TextDecorations>
+            </TextBlock>
+
 
             <ucl:ucLabeledTextBox Grid.Column="2"
                                   InputType="Int"
-                                  Value="{Binding Item.RequiredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
+                                  Margin="5"
+                                  Value="{Binding Item.CurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
             <Label Grid.Column="3"
                    ContentStringFormat="{}/ {0}"
                    Margin="-5 0 0 0"
@@ -81,7 +119,7 @@
                    ContentStringFormat="{}{0}%"
                    Margin="10 0"
                    VerticalAlignment="Center"
-                   Content="{Binding Item.GatheredPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=10}" />
+                   Content="{Binding Item.GatheredPercent, UpdateSourceTrigger=PropertyChanged, FallbackValue=10}" />
 
         </Grid>
     </Border>
