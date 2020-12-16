@@ -1,6 +1,4 @@
-﻿using NatickCommon.ExtensionMethods;
-using RedstoneSidekick.Domain.Recipes;
-using RedstoneSidekick.Logic.CraftingTree;
+﻿using Natick.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

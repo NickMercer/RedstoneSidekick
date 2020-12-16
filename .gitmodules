@@ -1,0 +1,6 @@
+[submodule "Natick.WPF"]
+	path = Natick.WPF
+	url = https://github.com/NickMercer/Natick.WPF.git
+[submodule "Natick.Utilities"]
+	path = Natick.Utilities
+	url = https://github.com/NickMercer/Natick.Utilities.git

@@ -3,7 +3,7 @@ using RedstoneSidekick.Logic.GatheringList;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using NatickCommon.ExtensionMethods;
+using Natick.Utilities;
 using System.Text;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList

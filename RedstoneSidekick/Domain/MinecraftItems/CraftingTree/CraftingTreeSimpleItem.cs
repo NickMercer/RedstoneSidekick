@@ -1,4 +1,4 @@
-﻿using NatickCommon.ExtensionMethods;
+﻿using Natick.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

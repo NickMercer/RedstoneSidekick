@@ -1,5 +1,5 @@
 ﻿using Microsoft.Win32;
-using NatickCommon.WPF;
+using Natick.Utilities.ViewModels;
 using RedstoneSidekick;
 using RedstoneSidekick.Data;
 using RedstoneSidekick.Domain.MinecraftItems;

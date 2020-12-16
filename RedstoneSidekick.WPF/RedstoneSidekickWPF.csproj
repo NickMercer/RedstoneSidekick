@@ -29,7 +29,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\NatickCommon\NatickCommon.csproj" />
+    <ProjectReference Include="..\Natick.Utilities\Natick.Utilities.csproj" />
+    <ProjectReference Include="..\Natick.WPF\Natick.WPF.csproj" />
     <ProjectReference Include="..\RedstoneSidekick\RedstoneSidekick.csproj" />
   </ItemGroup>
 

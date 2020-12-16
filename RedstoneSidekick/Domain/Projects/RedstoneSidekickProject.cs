@@ -1,4 +1,4 @@
-﻿using NatickCommon.WPF;
+﻿using Natick.Utilities.ViewModels;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using System;

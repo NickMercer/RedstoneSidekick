@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedstoneSidekickWPF", "RedstoneSidekick.WPF\RedstoneSidekickWPF.csproj", "{B467694B-89D3-4FD5-8F69-4233CB8AB268}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatickCommon", "NatickCommon\NatickCommon.csproj", "{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BF9DBAE-18AF-4121-9307-79945B4FE699}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -14,7 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedstoneSidekick", "RedstoneSidekick\RedstoneSidekick.csproj", "{D8973397-94CD-4961-824F-539E738F9529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedstoneSidekickTests", "RedstoneSidekickTests\RedstoneSidekickTests.csproj", "{EDE8FDDE-B8D5-4FB3-A7E9-AFEF4CBF7716}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedstoneSidekickTests", "RedstoneSidekickTests\RedstoneSidekickTests.csproj", "{EDE8FDDE-B8D5-4FB3-A7E9-AFEF4CBF7716}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Natick.WPF", "Natick.WPF\Natick.WPF.csproj", "{11D37813-26E4-42A1-9920-DE3C7647C10F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Natick.Utilities", "Natick.Utilities\Natick.Utilities.csproj", "{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,14 +34,6 @@ Global
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.ActiveCfg = Release|x64
 		{B467694B-89D3-4FD5-8F69-4233CB8AB268}.Release|x64.Build.0 = Release|x64
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|x64.ActiveCfg = Debug|x64
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Debug|x64.Build.0 = Debug|x64
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|x64.ActiveCfg = Release|x64
-		{4542D3A1-602B-4DB7-B8C6-1C2FE61BF773}.Release|x64.Build.0 = Release|x64
 		{D8973397-94CD-4961-824F-539E738F9529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8973397-94CD-4961-824F-539E738F9529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8973397-94CD-4961-824F-539E738F9529}.Debug|x64.ActiveCfg = Debug|x64
@@ -56,6 +50,22 @@ Global
 		{EDE8FDDE-B8D5-4FB3-A7E9-AFEF4CBF7716}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDE8FDDE-B8D5-4FB3-A7E9-AFEF4CBF7716}.Release|x64.ActiveCfg = Release|x64
 		{EDE8FDDE-B8D5-4FB3-A7E9-AFEF4CBF7716}.Release|x64.Build.0 = Release|x64
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Debug|x64.Build.0 = Debug|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Release|x64.ActiveCfg = Release|Any CPU
+		{11D37813-26E4-42A1-9920-DE3C7647C10F}.Release|x64.Build.0 = Release|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E03FD39-3FD1-4B21-8ED2-6BAAF5F14F8F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
