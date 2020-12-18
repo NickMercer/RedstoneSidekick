@@ -1,4 +1,5 @@
 ﻿using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
+using RedstoneSidekickWPF.UserControlLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,29 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
         public static readonly DependencyProperty ItemProperty =
             DependencyProperty.Register("Item", typeof(IGatheringListItem), typeof(ucGatheringListItem), new PropertyMetadata(null));
 
+
+
+        public ListView ParentListView
+        {
+            get { return (ListView)GetValue(ParentListViewProperty); }
+            set { SetValue(ParentListViewProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ParentListView.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ParentListViewProperty =
+            DependencyProperty.Register("ParentListView", typeof(ListView), typeof(ucGatheringListItem), new PropertyMetadata(null));
+
+
+
         public ucGatheringListItem()
         {
             InitializeComponent();
             LayoutRoot.DataContext = this;
+        }
+
+        private void ChildItem_Click(object sender, RoutedEventArgs e)
+        {
+            ParentListView.SelectedIndex = ParentListView.Items.IndexOf(this.Item);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace RedstoneSidekickWPF.UserControlLibrary
         public static readonly DependencyProperty EditableProperty =
             DependencyProperty.Register("Editable", typeof(bool), typeof(ucLabeledTextBox), new PropertyMetadata(true));
 
-
+        private MouseButtonEventHandler _clickOutsideControlEvent;
 
 
         public ucLabeledTextBox()
@@ -73,13 +73,33 @@ namespace RedstoneSidekickWPF.UserControlLibrary
             LayoutRoot.DataContext = this;
         }
 
+        private void AddMouseCaptureHandler()
+        {
+            _clickOutsideControlEvent = new MouseButtonEventHandler(HandleClickOutsideOfControl);
+            AddHandler(Mouse.PreviewMouseDownOutsideCapturedElementEvent, _clickOutsideControlEvent, true);
+        }
+
+        private void RemoveMouseCaptureHandler()
+        {
+            ReleaseMouseCapture();
+            RemoveHandler(Mouse.PreviewMouseDownOutsideCapturedElementEvent, _clickOutsideControlEvent);
+        }
+
+        private void HandleClickOutsideOfControl(object sender, MouseButtonEventArgs e)
+        {
+            ToggleToLabel();
+        }
+
         private void ToggleToTextBox()
         {
             BTN_Label.Visibility = Visibility.Collapsed;
             SP_TextBox.Visibility = Visibility.Visible;
             TB_Input.Focus();
             TB_Input.Text = Value;
+            Mouse.Capture(this, CaptureMode.SubTree);
+            AddMouseCaptureHandler();
         }
+
 
         private void ToggleToLabel()
         {
@@ -97,6 +117,7 @@ namespace RedstoneSidekickWPF.UserControlLibrary
             {
                 Value = editValue;
             }
+            RemoveMouseCaptureHandler();
         }
 
         private void BTN_Label_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RedstoneSidekickWPF": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

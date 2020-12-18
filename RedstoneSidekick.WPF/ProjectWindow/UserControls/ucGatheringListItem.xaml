@@ -24,11 +24,8 @@
             <Setter Property="FontSize"
                     Value="14" />
         </Style>
-        <Style x:Key="InvisibleToggleButton" TargetType="ToggleButton">
-            
-        </Style>
-        
-        
+
+
         <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
         <converters:BoolToVisibilityHiddenConverter x:Key="boolToVisibilityHiddenConverter" />
         <converters:BoolToThickness2Converter x:Key="boolToThickness2Converter" />
@@ -37,7 +34,7 @@
 
     <Border x:Name="LayoutRoot"
             BorderThickness="0"
-            HorizontalAlignment="Stretch"
+            HorizontalAlignment="Left"
             Background="Transparent">
 
         <Grid Margin="3"
@@ -66,10 +63,14 @@
                 </Border.Effect>
                 <Grid>
                     <Image Source="{Binding Item.Item.ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue={StaticResource BlockErrorImage}}"
-                           ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-                    <ToggleButton Background="Transparent"
-                                  Foreground="Transparent"
-                                  BorderBrush="Transparent"
+                           ToolTip="{Binding Item.Item.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                           Height="32"
+                           Width="32" />
+                    <ToggleButton Style="{DynamicResource ToggleButtonStyle}" 
+                                  Height="36"
+                                  Margin="-4"
+                                  Width="36"
+                                  Click="ChildItem_Click"
                                   IsChecked="{Binding Item.IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <Image Source="pack://application:,,,/Images/App/GatheringListIcons/Checkmark.png"
                                Width="32"
@@ -108,6 +109,7 @@
             <ucl:ucLabeledTextBox Grid.Column="2"
                                   InputType="Int"
                                   Margin="5"
+                                  GotFocus="ChildItem_Click"
                                   Value="{Binding Item.CurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
             <Label Grid.Column="3"
                    ContentStringFormat="{}/ {0}"
