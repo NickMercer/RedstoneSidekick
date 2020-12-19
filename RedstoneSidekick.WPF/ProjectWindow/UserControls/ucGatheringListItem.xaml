@@ -29,6 +29,8 @@
         <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
         <converters:BoolToVisibilityHiddenConverter x:Key="boolToVisibilityHiddenConverter" />
         <converters:BoolToThickness2Converter x:Key="boolToThickness2Converter" />
+        <converters:DoubleToVariablePrecisionConverter x:Key="doubleToVariablePrecisionConverter" />
+        <converters:BoolToInverseConverter x:Key="boolToInverseConverter" />
 
     </UserControl.Resources>
 
@@ -71,6 +73,8 @@
                                   Margin="-4"
                                   Width="36"
                                   Click="ChildItem_Click"
+                                  Checked="ToggleButton_Checked"
+                                  Unchecked="ToggleButton_Unchecked"
                                   IsChecked="{Binding Item.IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <Image Source="pack://application:,,,/Images/App/GatheringListIcons/Checkmark.png"
                                Width="32"
@@ -110,7 +114,7 @@
                                   InputType="Int"
                                   Margin="5"
                                   GotFocus="ChildItem_Click"
-                                  Value="{Binding Item.CurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
+                                  Value="{Binding DisplayCurrentAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <Label Grid.Column="3"
                    ContentStringFormat="{}/ {0}"
                    Margin="-5 0 0 0"
@@ -121,7 +125,7 @@
                    ContentStringFormat="{}{0}%"
                    Margin="10 0"
                    VerticalAlignment="Center"
-                   Content="{Binding Item.GatheredPercent, UpdateSourceTrigger=PropertyChanged, FallbackValue=10}" />
+                   Content="{Binding Item.GatheredPercent, UpdateSourceTrigger=PropertyChanged, FallbackValue=10, Converter={StaticResource doubleToVariablePrecisionConverter}}" />
 
         </Grid>
     </Border>

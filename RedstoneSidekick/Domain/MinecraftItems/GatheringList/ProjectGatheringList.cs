@@ -15,7 +15,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
         public ProjectGatheringList()
         {
             GatheringListItem item1 = new GatheringListItem(new MinecraftItem(), 10, 1);
-            GatheringListItem item2 = new GatheringListItem(new MinecraftItem(), 12, 0, true);
+            GatheringListItem item2 = new GatheringListItem(new MinecraftItem(), 12, 0);
 
             Items.Add(item1);
             Items.Add(item2);

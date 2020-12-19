@@ -68,7 +68,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
                     sortedItems = Items.OrderBy(x => x.RequiredAmount).ToObservableCollection();
                     break;
 
-                case "Pecent Gathered (High to Low)":
+                case "Percent Gathered (High to Low)":
                     sortedItems = Items.OrderByDescending(x => x.GatheredPercent).ToObservableCollection();
                     break;
 
