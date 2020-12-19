@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using Natick.Utilities.ViewModels;
 
 namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 {
@@ -23,61 +25,114 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
     /// </summary>
     public partial class ucGatheringList : UserControl
     { 
-        public ObservableCollection<IGatheringListItem> Items
+        public RecursiveObservableCollection<IGatheringListItem> Items
         {
-            get { return (ObservableCollection<IGatheringListItem>)GetValue(ItemsProperty); }
+            get { return (RecursiveObservableCollection<IGatheringListItem>)GetValue(ItemsProperty); }
             set { SetValue(ItemsProperty, value); }
         }
 
         public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ObservableCollection<IGatheringListItem>), typeof(ucGatheringList), new PropertyMetadata(null));
+            DependencyProperty.Register("Items", typeof(RecursiveObservableCollection<IGatheringListItem>), typeof(ucGatheringList), new PropertyMetadata(null, SetItems));
+
+        private static void SetItems(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as ucGatheringList;
+            var newItems = e.NewValue as RecursiveObservableCollection<IGatheringListItem>;
+            var oldItems = e.OldValue as RecursiveObservableCollection<IGatheringListItem>;
+
+            if(oldItems != null && newItems != oldItems)
+            {
+                oldItems.ChildElementPropertyChanged -= uc.ResetSortType;
+            }
+
+            if(newItems != null && newItems != oldItems)
+            {
+                newItems.ChildElementPropertyChanged += uc.ResetSortType;
+            }
+        }
 
         public ObservableCollection<string> SortingTypes { get; set; }
 
         public string SortType { get; set; }
 
+        private bool _canResetSort = false;
   
         public ucGatheringList()
         {
-            SortingTypes = new ObservableCollection<string> { "Name", "Category", "Required (High to Low)", "Required (Low to High)", "Percent Gathered (High to Low)", "Percent Gathered (Low to High)" };
-            SortType = "Name";
+            SortingTypes = new ObservableCollection<string> { "----------", "Name", "Category", "Required (High to Low)", "Required (Low to High)", "Percent Gathered (High to Low)", "Percent Gathered (Low to High)" };
+            SortType = "----------";
 
             InitializeComponent();
             LayoutRoot.DataContext = this;
         }
 
+        private void ResetSortType(RecursiveObservableCollection<IGatheringListItem>.ChildElementPropertyChangedEventArgs e)
+        {
+            if (_canResetSort)
+            {
+                SortType = "----------";
+                CB_SortingTypes.SelectedIndex = SortingTypes.IndexOf(SortType);
+            }
+        }
+
+
         private void SortingTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var sortedItems = Items;
+            if (GatheringListView.ItemsSource == null) return;
+
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(GatheringListView.ItemsSource);
 
             switch (SortType)
             {
                 case "Name":
-                    sortedItems = Items.OrderBy(x => x.Item.Name).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
 
                 case "Category":
-                    sortedItems = Items.OrderBy(x => x.Item.Category).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("Item.Category", ListSortDirection.Ascending));
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
 
                 case "Required (High to Low)":
-                    sortedItems = Items.OrderByDescending(x => x.RequiredAmount).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("RequiredAmount", ListSortDirection.Descending));
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
 
                 case "Required (Low to High)":
-                    sortedItems = Items.OrderBy(x => x.RequiredAmount).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("RequiredAmount", ListSortDirection.Ascending));
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
 
                 case "Percent Gathered (High to Low)":
-                    sortedItems = Items.OrderByDescending(x => x.GatheredPercent).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("GatheredPercent", ListSortDirection.Descending));
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
 
                 case "Percent Gathered (Low to High)":
-                    sortedItems = Items.OrderBy(x => x.GatheredPercent).ToObservableCollection();
+                    view.SortDescriptions.Clear();
+                    view.SortDescriptions.Add(new SortDescription("GatheredPercent", ListSortDirection.Ascending));
+                    view.SortDescriptions.Add(new SortDescription("Item.Name", ListSortDirection.Ascending));
                     break;
             }
 
-            Items = sortedItems;
+        }
+
+        private void CB_SortingTypes_DropDownClosed(object sender, EventArgs e)
+        {
+            var comboBox = (sender as ComboBox);
+            if(comboBox.SelectedItem.ToString() == "----------")
+            {
+                _canResetSort = false;
+            }
+            else
+            {
+                _canResetSort = true;
+            }
         }
     }
 }

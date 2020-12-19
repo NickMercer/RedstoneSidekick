@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using Natick.Utilities;
+using System;
 
 namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 {
@@ -19,9 +20,25 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
         }
 
         public static readonly DependencyProperty ItemProperty =
-            DependencyProperty.Register("Item", typeof(IGatheringListItem), typeof(ucGatheringListItem), new PropertyMetadata(null));
+            DependencyProperty.Register("Item", typeof(IGatheringListItem), typeof(ucGatheringListItem), new PropertyMetadata(null, SetItem));
 
+        private static void SetItem(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as ucGatheringListItem;
+            var item = e.NewValue as IGatheringListItem;
 
+            if(item != null)
+            {
+                if(item.IsChecked == false)
+                {
+                    uc.DisplayCurrentAmount = item.CurrentAmount;
+                }
+                else
+                {
+                    uc.DisplayCurrentAmount = item.RequiredAmount;
+                }
+            }
+        }
 
         public ListView ParentListView
         {
@@ -55,8 +72,6 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             }
         }
 
-        private bool _checkedOverride;
-
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
@@ -76,13 +91,18 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 
         private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            DisplayCurrentAmount = Item.CurrentAmount;
+            if(Item != null)
+            {
+                DisplayCurrentAmount = Item.CurrentAmount;
+            }
         }
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
-            DisplayCurrentAmount = Item.RequiredAmount;
-            _checkedOverride = true;
+            if(Item != null)
+            {
+                DisplayCurrentAmount = Item.RequiredAmount;
+            }
         }
     }
 }

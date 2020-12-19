@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
 {
-    public class GatheringListItem : IGatheringListItem, INotifyPropertyChanged
+    public class GatheringListItem : IGatheringListItem
     {
         private IMinecraftItem _item;
         public IMinecraftItem Item
@@ -38,9 +38,14 @@ namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
             get { return _currentAmount; }
             set
             {
+                var oldAmount = _currentAmount;
                 _currentAmount = value.Clamp(0, RequiredAmount);
-                OnPropertyChanged();
-                UpdateGatheredPercent();
+                
+                if(oldAmount != CurrentAmount)
+                {
+                    OnPropertyChanged();
+                    UpdateGatheredPercent();
+                }
             }
         }
 
@@ -61,9 +66,13 @@ namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
             get { return _isChecked; }
             set
             {
+                var oldValue = _isChecked;
                 _isChecked = value;
-                OnPropertyChanged();
-                UpdateGatheredPercent();
+                if(_isChecked != oldValue)
+                { 
+                    OnPropertyChanged();
+                    UpdateGatheredPercent();
+                }
             }
         }
 

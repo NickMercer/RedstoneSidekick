@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
 {
-    public interface IGatheringListItem
+    public interface IGatheringListItem : INotifyPropertyChanged
     {
         public IMinecraftItem Item { get; set; }
 

@@ -40,6 +40,7 @@
                    Margin="0 10"/>
             
             <ComboBox Grid.Column="1"
+                      Name="CB_SortingTypes"
                       Height="20"
                       Width="200"
                       Margin="10"
@@ -48,6 +49,7 @@
                       VerticalAlignment="Center"
                       VerticalContentAlignment="Center"
                       SelectionChanged="SortingTypes_SelectionChanged"
+                      DropDownClosed="CB_SortingTypes_DropDownClosed"
                       SelectedItem="{Binding SortType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       ItemsSource="{Binding SortingTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>

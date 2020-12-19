@@ -135,7 +135,7 @@ namespace RedstoneSidekickWPF.UserControlLibrary
 
         private void TB_Input_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter && SP_TextBox.Visibility == Visibility.Visible)
+            if((e.Key == Key.Enter || e.Key == Key.Tab) && SP_TextBox.Visibility == Visibility.Visible)
             {
                 ToggleToLabel();
             }
