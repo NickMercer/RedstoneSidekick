@@ -1,6 +1,8 @@
-﻿using RedstoneSidekick.Logic.CraftingTree;
+﻿using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
+using RedstoneSidekick.Logic.CraftingTree;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
@@ -33,6 +35,41 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             }
 
             return itemTree;
+        }
+
+        public void UpdateItemTree(IEnumerable<IGatheringListItem> gatheringList)
+        {
+            var allItems = Items.Descendants();
+
+            foreach (var gatheringItem in gatheringList)
+            {
+                var craftingItems = allItems.Where(x => x.Item.Id == gatheringItem.Item.Id);
+
+                var amountToAdd = gatheringItem.CurrentAmount;
+                if (gatheringItem.IsChecked) amountToAdd = gatheringItem.RequiredAmount;
+
+                foreach (var item in craftingItems)
+                {
+                    if (amountToAdd <= 0)
+                    {
+                        item.CurrentAmount = 0;
+                        break;
+                    }
+
+                    if (amountToAdd > item.RequiredAmount)
+                    {
+                        item.CurrentAmount = item.RequiredAmount;
+                        amountToAdd -= item.RequiredAmount;
+                    }
+                    else
+                    {
+                        item.CurrentAmount = amountToAdd;
+                        amountToAdd = 0;
+                    }
+                    
+                }
+            }
+
         }
     }
 }

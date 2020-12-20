@@ -25,11 +25,10 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
         private static void SetItem(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var uc = d as ucGatheringListItem;
-            var item = e.NewValue as IGatheringListItem;
 
-            if(item != null)
+            if (e.NewValue is IGatheringListItem item)
             {
-                if(item.IsChecked == false)
+                if (item.IsChecked == false)
                 {
                     uc.DisplayCurrentAmount = item.CurrentAmount;
                 }

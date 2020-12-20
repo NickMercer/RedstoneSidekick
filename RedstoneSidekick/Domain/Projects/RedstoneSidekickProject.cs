@@ -29,7 +29,7 @@ namespace RedstoneSidekick.Domain.Projects
             }
         }
 
-        private ProjectGatheringList _gatheringList = new ProjectGatheringList();
+        private ProjectGatheringList _gatheringList;
         public ProjectGatheringList GatheringList
         {
             get { return _gatheringList; }

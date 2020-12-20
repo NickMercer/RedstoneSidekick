@@ -40,12 +40,12 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             var newItems = e.NewValue as RecursiveObservableCollection<IGatheringListItem>;
             var oldItems = e.OldValue as RecursiveObservableCollection<IGatheringListItem>;
 
-            if(oldItems != null && newItems != oldItems)
+            if(oldItems != null && !oldItems.SequenceEqual(newItems))
             {
                 oldItems.ChildElementPropertyChanged -= uc.ResetSortType;
             }
 
-            if(newItems != null && newItems != oldItems)
+            if(newItems != null && (oldItems == null ||!newItems.SequenceEqual(oldItems)))
             {
                 newItems.ChildElementPropertyChanged += uc.ResetSortType;
             }
@@ -55,7 +55,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 
         public string SortType { get; set; }
 
-        private bool _canResetSort = false;
+        private bool _canResetSort = true;
   
         public ucGatheringList()
         {
@@ -66,7 +66,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             LayoutRoot.DataContext = this;
         }
 
-        private void ResetSortType(RecursiveObservableCollection<IGatheringListItem>.ChildElementPropertyChangedEventArgs e)
+        public void ResetSortType(RecursiveObservableCollection<IGatheringListItem>.ChildElementPropertyChangedEventArgs e)
         {
             if (_canResetSort)
             {

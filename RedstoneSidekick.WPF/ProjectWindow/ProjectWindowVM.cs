@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -55,7 +56,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
             RegisterCommands();
 
             Project.CraftingTree = CreateTestData();
-            Project.GatheringList = new ProjectGatheringList();
+            Project.GatheringList = new ProjectGatheringList(Project.CraftingTree.Items.ToList());
         }
 
         private void RegisterCommands()
@@ -220,6 +221,16 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         #endregion
 
+
+        internal void RefreshCraftingTree()
+        {
+            Project.CraftingTree.UpdateItemTree(Project.GatheringList.Items);
+        }
+
+        internal void RefreshGatheringList()
+        {
+            Project.GatheringList.UpdateList(Project.CraftingTree.Items);
+        }
 
         private static ProjectCraftingTree CreateTestData()
         {

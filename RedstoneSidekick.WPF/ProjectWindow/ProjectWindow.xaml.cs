@@ -87,12 +87,14 @@ namespace RedstoneSidekickWPF.ProjectWindow
                 {
                     case 1:
                         FocusButton(BTN_CraftingTreeTab);
+                        _projectWindowVM.RefreshCraftingTree();
                         DeFocusButton(BTN_GatheringListTab);
                         uc_CraftingTree.Visibility = Visibility.Visible;
                         uc_GatheringList.Visibility = Visibility.Collapsed;
                         break;
                     case 2:
                         FocusButton(BTN_GatheringListTab);
+                        _projectWindowVM.RefreshGatheringList();
                         DeFocusButton(BTN_CraftingTreeTab);
                         uc_CraftingTree.Visibility = Visibility.Collapsed;
                         uc_GatheringList.Visibility = Visibility.Visible;
