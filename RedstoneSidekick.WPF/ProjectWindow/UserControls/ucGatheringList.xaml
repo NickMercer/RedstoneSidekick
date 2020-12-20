@@ -57,7 +57,9 @@
         <ListView Grid.Row="1"
                   Background="{StaticResource RSBeige}"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
                   Name="GatheringListView"
                   ItemsSource="{Binding Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <ListView.Resources>
@@ -83,7 +85,13 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
+                
             </ListView.Resources>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <local:ucGatheringListItem Item="{Binding }"

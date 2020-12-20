@@ -15,7 +15,11 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         public bool IsRootItem { get; set; }
 
+        public ICraftingTreeCompoundItem Parent { get; set; }
+
         public bool IsSmeltingIngredient { get; set; }
+
+        public void UpdateParent();
 
     }
 }

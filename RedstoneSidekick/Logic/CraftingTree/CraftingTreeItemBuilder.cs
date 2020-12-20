@@ -30,11 +30,11 @@ namespace RedstoneSidekick.Logic.CraftingTree
 
                 if(smeltingRecipe != null)
                 {
-                    treeItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, true);
+                    treeItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, parent: null);
                 }
                 else
                 {
-                    treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount, isRootItem: true);
+                    treeItem = new CraftingTreeSimpleItem(item: mcItem, requiredAmount: requiredAmount, currentAmount: currentAmount, parent: null);
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
             return treeItem;
         }
 
-        private static CraftingTreeCompoundItem CreateSmeltingItem(MinecraftItem mcItem, SmeltingRecipe smeltingRecipe, int requiredAmount, int currentAmount, bool isRootItem = false, int recipeAmount = 1)
+        private static CraftingTreeCompoundItem CreateSmeltingItem(MinecraftItem mcItem, SmeltingRecipe smeltingRecipe, int requiredAmount, int currentAmount, ICraftingTreeCompoundItem parent = null, int recipeAmount = 1)
         {
             List<ICraftingTreeItem> ingredients = new List<ICraftingTreeItem>();
 
@@ -54,13 +54,17 @@ namespace RedstoneSidekick.Logic.CraftingTree
             ingredients.Add(smeltingIngredientItem);
 
 
-            return new CraftingTreeCompoundItem(item: mcItem,
+            var smeltingItem = new CraftingTreeCompoundItem(item: mcItem,
                                                 requiredAmount: requiredAmount,
                                                 ingredients: ingredients,
                                                 recipeResultCount: 1,
                                                 recipeAmount: recipeAmount,
                                                 currentAmount: currentAmount,
-                                                isRootItem: isRootItem);
+                                                parent: parent);
+
+            smeltingIngredientItem.Parent = smeltingItem;
+
+            return smeltingItem;
         }
 
         private static ICraftingTreeItem CreateSmeltingIngredient(MinecraftItem mcItem, int currentAmount)
@@ -102,6 +106,8 @@ namespace RedstoneSidekick.Logic.CraftingTree
                                                          recipeAmount: recipeAmount,
                                                          currentAmount: currentAmount,
                                                          isSmeltingIngredient: true);
+
+                ingredients.ForEach(x => x.Parent = childItem as ICraftingTreeCompoundItem);
             }
 
             return childItem;
@@ -121,12 +127,16 @@ namespace RedstoneSidekick.Logic.CraftingTree
                 ingredients.Add(childItem);
             }
 
-            return new CraftingTreeCompoundItem(item: mcItem, 
+            var rootItem = new CraftingTreeCompoundItem(item: mcItem, 
                                                 requiredAmount: requiredAmount, 
                                                 ingredients: ingredients, 
                                                 recipeResultCount: rootRecipe.ResultCount, 
                                                 currentAmount: currentAmount,
-                                                isRootItem: true);
+                                                parent: null);
+
+            ingredients.ForEach(x => x.Parent = rootItem);
+
+            return rootItem;
         }
 
         private static ICraftingTreeItem CreateChildItem(MinecraftItem mcItem, CraftingRecipe parentRecipe, int requiredAmount, int currentAmount)
@@ -140,7 +150,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
             if(smeltingRecipe != null)
             {
                 var recipeAmount = parentRecipe.Ingredients.Where(x => x.Id == mcItem.Id).First().Count;
-                childItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, false, recipeAmount);
+                childItem = CreateSmeltingItem(mcItem, smeltingRecipe, requiredAmount, currentAmount, recipeAmount: recipeAmount);
                 return childItem;
             }
 
@@ -175,6 +185,8 @@ namespace RedstoneSidekick.Logic.CraftingTree
                                                          recipeResultCount: recipe.ResultCount, 
                                                          recipeAmount: recipeAmount, 
                                                          currentAmount: currentAmount);
+
+                ingredients.ForEach(x => x.Parent = childItem as ICraftingTreeCompoundItem);
             }
 
             return childItem;

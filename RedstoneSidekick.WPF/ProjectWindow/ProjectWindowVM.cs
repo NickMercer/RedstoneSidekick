@@ -6,6 +6,7 @@ using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using RedstoneSidekick.Domain.Projects;
+using RedstoneSidekick.Logic.GatheringList;
 using RedstoneSidekick.Logic.ProjectStrings;
 using RedstoneSidekick.Logic.RSPFiles;
 using RedstoneSidekick.Logic.StartupDataProcess;
@@ -229,7 +230,14 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         internal void RefreshGatheringList()
         {
-            Project.GatheringList.UpdateList(Project.CraftingTree.Items);
+            if(Project.GatheringList == null)
+            {
+                Project.GatheringList = new ProjectGatheringList(Project.CraftingTree.Items);
+            }
+            else
+            {
+                Project.GatheringList.UpdateList(Project.CraftingTree.Items);
+            }
         }
 
         private static ProjectCraftingTree CreateTestData()

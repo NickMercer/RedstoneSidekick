@@ -17,5 +17,10 @@ namespace RedstoneSidekick.Domain
 
         public ItemCategory Category { get; set; } = ItemCategory.Error;
 
+        public override string ToString()
+        {
+            return $"{Id} - {Name} - {MinecraftId}";
+        }
+
     }
 }

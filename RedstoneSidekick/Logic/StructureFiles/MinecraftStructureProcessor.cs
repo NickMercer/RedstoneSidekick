@@ -2,6 +2,7 @@
 using RedstoneSidekick.Data.Repositories;
 using RedstoneSidekick.Domain;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using RedstoneSidekick.Domain.MinecraftStructures;
 using RedstoneSidekick.Domain.Projects;
 using System;

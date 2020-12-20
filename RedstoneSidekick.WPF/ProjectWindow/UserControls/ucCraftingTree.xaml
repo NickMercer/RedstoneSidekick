@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:RedstoneSidekickWPF.ProjectWindow.UserControls"
              xmlns:uc="clr-namespace:RedstoneSidekickWPF.ProjectWindow.UserControls"
              xmlns:items="clr-namespace:RedstoneSidekick.Domain.MinecraftItems.CraftingTree;assembly=RedstoneSidekick"
+             xmlns:converters="clr-namespace:RedstoneSidekickWPF.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -15,7 +16,7 @@
                 <ResourceDictionary Source="pack://application:,,,/RedstoneSidekickWPF;component/Styles/TreeViewResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-
+            <converters:RemainingCountToIngredientsConverter x:Key="remainingCountToIngredientsConverter" />
 
             <Style TargetType="uc:ucCraftingTreeItem">
                 <Setter Property="Background"
@@ -49,9 +50,21 @@
                 </ItemsPanelTemplate>
             </TreeView.ItemsPanel>
             <TreeView.Resources>
-                
-                <HierarchicalDataTemplate DataType="{x:Type items:CraftingTreeCompoundItem}"
-                                          ItemsSource="{Binding Ingredients}">
+
+                <HierarchicalDataTemplate DataType="{x:Type items:CraftingTreeCompoundItem}">
+                    <HierarchicalDataTemplate.ItemsSource>
+                        <MultiBinding Converter="{StaticResource remainingCountToIngredientsConverter}">
+                            <Binding Path="Ingredients"
+                                     Mode="OneWay"
+                                     UpdateSourceTrigger="PropertyChanged" />
+                            <Binding Path="CurrentAmount"
+                                     Mode="OneWay"
+                                     UpdateSourceTrigger="PropertyChanged" />
+                            <Binding Path="RequiredAmount"
+                                     Mode="OneWay"
+                                     UpdateSourceTrigger="PropertyChanged" />
+                        </MultiBinding>
+                    </HierarchicalDataTemplate.ItemsSource>
                     <uc:ucCraftingTreeItem Item="{Binding}"
                                            Margin="0 2"/>
                     

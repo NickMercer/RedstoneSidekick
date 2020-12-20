@@ -17,7 +17,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _requiredAmount; }
             set
             {
+                var prevAmount = _requiredAmount;
                 _requiredAmount = value.Clamp(0, int.MaxValue);
+                if(_requiredAmount != prevAmount) UpdateParent();
                 OnPropertyChanged();
             }
         }
@@ -28,7 +30,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             get { return _currentAmount; }
             set
             {
+                var prevAmount = _currentAmount;
                 _currentAmount = value.Clamp(0, RequiredAmount);
+                if(_currentAmount != prevAmount) UpdateParent();
                 OnPropertyChanged();
             }
         }
@@ -38,8 +42,18 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         public bool IsSmeltingIngredient { get; set; }
 
         public bool IsRootItem { get; set; }
-
         
+        private ICraftingTreeCompoundItem _parent;
+        public ICraftingTreeCompoundItem Parent
+        {
+            get { return _parent; }
+            set
+            {
+                _parent = value;
+                IsRootItem = (_parent == null);
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
@@ -47,15 +61,28 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         }
 
 
-        public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0, bool isRootItem = false, bool isSmeltingIngredient = false)
+        public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0, ICraftingTreeCompoundItem parent = null, bool isSmeltingIngredient = false)
         {
             Item = item;
             RequiredAmount = requiredAmount;
             RecipeAmount = recipeAmount;
             CurrentAmount = currentAmount;
-            IsRootItem = isRootItem;
+            Parent = parent;
+            IsRootItem = (Parent == null);
             IsSmeltingIngredient = isSmeltingIngredient;
         }
 
+        public override string ToString()
+        {
+            return $"Simple Item: {Item.Id} - {Item.Name} - {Item.MinecraftId}";
+        }
+
+        public void UpdateParent()
+        {
+            if (Parent != null)
+            {
+                Parent.UpdateGatheredStatuses();
+            }
+        }
     }
 }

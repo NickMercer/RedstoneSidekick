@@ -40,7 +40,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             var newItems = e.NewValue as RecursiveObservableCollection<IGatheringListItem>;
             var oldItems = e.OldValue as RecursiveObservableCollection<IGatheringListItem>;
 
-            if(oldItems != null && !oldItems.SequenceEqual(newItems))
+            if(oldItems != null && (newItems == null || !oldItems.SequenceEqual(newItems)))
             {
                 oldItems.ChildElementPropertyChanged -= uc.ResetSortType;
             }

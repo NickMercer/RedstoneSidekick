@@ -9,5 +9,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         public int RecipeResultCount { get; set; }
 
         public void UpdateIngredientCounts();
+
+        public void UpdateGatheredStatuses();
     }
 }
