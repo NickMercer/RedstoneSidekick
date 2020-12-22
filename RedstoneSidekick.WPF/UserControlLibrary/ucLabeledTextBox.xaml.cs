@@ -96,6 +96,8 @@ namespace RedstoneSidekickWPF.UserControlLibrary
             SP_TextBox.Visibility = Visibility.Visible;
             TB_Input.Focus();
             TB_Input.Text = Value;
+            if (Value == "0") TB_Input.Text = "";
+            TB_Input.CaretIndex = TB_Input.Text.Length;
             Mouse.Capture(this, CaptureMode.SubTree);
             AddMouseCaptureHandler();
         }
@@ -116,6 +118,10 @@ namespace RedstoneSidekickWPF.UserControlLibrary
             else if(IntValidation(editValue))
             {
                 Value = editValue;
+                if (String.IsNullOrWhiteSpace(editValue))
+                {
+                    Value = "0";
+                }
             }
             RemoveMouseCaptureHandler();
         }
@@ -159,7 +165,7 @@ namespace RedstoneSidekickWPF.UserControlLibrary
                 return false;
             }
 
-            return int.TryParse(input, out _);
+            return int.TryParse(input, out _) || String.IsNullOrWhiteSpace(input);
         }
 
         public enum Inputs

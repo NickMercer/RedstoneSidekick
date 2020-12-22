@@ -115,17 +115,24 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         public void UpdateGatheredStatuses()
         {
-            //Update your current amount to the amount of complete recipes you have.
-            //Recalculate the ingredients required amounts to match.
-
-            var finished = Ingredients.All(x => x.CurrentAmount == x.RequiredAmount);
-
-            if (finished)
+            //Figure out how many recipes are completed now by this change.
+            //add that amount to this objects have count.
+            //Then set ingredients counts to the remainder and lower their required amounts.
+            var satisfiedIngredients = new List<int>();
+            foreach (var ingredient in Ingredients)
             {
-                CurrentAmount = RequiredAmount;
+                var recipeCount = ingredient.CurrentAmount / ingredient.RecipeAmount;
+                satisfiedIngredients.Add(recipeCount);
             }
 
+            var recipesToFulfill = satisfiedIngredients.Min();
 
+            foreach (var ingredient in Ingredients)
+            {
+                ingredient.CurrentAmount -= recipesToFulfill * ingredient.RecipeAmount;
+            }
+
+            CurrentAmount += recipesToFulfill * RecipeResultCount;
         }
     }
 }
