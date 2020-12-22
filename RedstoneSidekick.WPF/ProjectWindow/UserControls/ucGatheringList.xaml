@@ -15,8 +15,6 @@
             </ResourceDictionary.MergedDictionaries>
 
 
-
-
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Background="{StaticResource RSRed}" Name="LayoutRoot">
@@ -60,6 +58,7 @@
                   ScrollViewer.VerticalScrollBarVisibility="Disabled"
                   HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
+                  VirtualizingPanel.IsVirtualizing="True"
                   Name="GatheringListView"
                   ItemsSource="{Binding Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <ListView.Resources>

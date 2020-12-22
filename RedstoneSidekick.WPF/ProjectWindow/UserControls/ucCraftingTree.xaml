@@ -36,14 +36,15 @@
     <Grid x:Name="LayoutRoot"
           Background="{StaticResource RSBeige}">
 
-        <TreeView Margin="5"
+        <TreeView BorderBrush="{StaticResource TransparentBlack}"
                   Background="Transparent"
-                  BorderThickness="0"
+                  BorderThickness="3"
                   ItemsSource="{Binding Items}"
                   HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   VirtualizingPanel.IsVirtualizing="True"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
             <TreeView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical"/>

@@ -17,11 +17,11 @@ namespace RedstoneSidekickWPF.Converters
 
             if (val == true)
             {
-                return new Thickness(2);
+                return (double)2;
             }
             else
             {
-                return new Thickness(0);
+                return (double)0;
             }
         }
 

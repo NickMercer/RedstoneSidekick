@@ -95,7 +95,7 @@
                 <TextBlock.TextDecorations>
                     <TextDecoration Location="Strikethrough" PenThicknessUnit="Pixel">
                         <TextDecoration.Pen>
-                            <Pen Thickness="{Binding Item.IsChecked, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToThickness2Converter}, FallbackValue=0}">
+                            <Pen Thickness="{Binding Item.IsChecked, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource boolToThickness2Converter}}">
                                 <Pen.Brush>
                                     <RadialGradientBrush  GradientOrigin="-1,1" RadiusX="1" RadiusY="0.6">
                                         <GradientStop Color="LimeGreen" Offset="0"/>
