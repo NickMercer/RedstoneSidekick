@@ -64,7 +64,7 @@ namespace RedstoneSidekick.Data.CSVDataReaders
 
             var recipe = new CraftingRecipe
             {
-                ResultItemMinecraftId = resultItem,
+                ResultMinecraftId = resultItem,
                 ResultCount = resultCount,
                 Ingredients = ingredients,
             };

@@ -8,7 +8,7 @@ namespace RedstoneSidekick.Domain.Recipes
     {
         public int Id { get; set; }
 
-        public string ResultItemMinecraftId { get; set; }
+        public string ResultMinecraftId { get; set; }
 
         public int ResultCount { get; set; }
         

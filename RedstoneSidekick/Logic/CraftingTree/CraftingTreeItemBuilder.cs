@@ -159,7 +159,7 @@ namespace RedstoneSidekick.Logic.CraftingTree
                 recipe.Ingredients = _craftingRecipeRepository.GetIngredientsByRecipeId(recipe.Id).ToList();
                 recipe.Ingredients.ToList().ForEach(x => x = MinecraftIdConversion(x));
 
-                createSimpleItem = recipe.Ingredients.Select(x => x.IngredientMinecraftId).Contains(parentRecipe.ResultItemMinecraftId);
+                createSimpleItem = recipe.Ingredients.Select(x => x.IngredientMinecraftId).Contains(parentRecipe.ResultMinecraftId);
             }
 
             if (createSimpleItem)

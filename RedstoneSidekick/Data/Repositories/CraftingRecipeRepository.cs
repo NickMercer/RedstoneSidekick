@@ -26,7 +26,7 @@ namespace RedstoneSidekick.Data.Repositories
         {
             using (IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
-                var commandString = "SELECT * FROM CraftingRecipes WHERE ResultItemMinecraftId = @MinecraftId;";
+                var commandString = "SELECT * FROM CraftingRecipes WHERE ResultMinecraftId = @MinecraftId;";
                 return conn.Query<CraftingRecipe>(commandString, new { MinecraftId = minecraftId });
             }
         }
@@ -48,10 +48,10 @@ namespace RedstoneSidekick.Data.Repositories
             {
                 foreach(var recipe in craftingRecipes)
                 {
-                    var commandString = "INSERT INTO CraftingRecipes (ResultItemMinecraftId, ResultCount) " +
+                    var commandString = "INSERT INTO CraftingRecipes (ResultMinecraftId, ResultCount) " +
                                         "VALUES (@ResultMinecraftId, @ResultCount);";
 
-                    conn.Execute(commandString, new { ResultMinecraftId = recipe.ResultItemMinecraftId, ResultCount = recipe.ResultCount });
+                    conn.Execute(commandString, new { ResultMinecraftId = recipe.ResultMinecraftId, ResultCount = recipe.ResultCount });
 
                     var idSelectString = "SELECT MAX(Id) FROM CraftingRecipes";
                     var idLong = conn.ExecuteScalar(idSelectString);

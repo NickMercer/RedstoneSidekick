@@ -14,7 +14,7 @@ namespace RedstoneSidekick.Data.Repositories
         {
             using(IDbConnection conn = new SQLiteConnection(GlobalDataVars.SQLiteConnectionString))
             {
-                var commandString = "SELECT FoundMinecraftId AS [Key], ReplacedMinecraftId AS [Value] FROM ConversionList;";
+                var commandString = "SELECT FoundMinecraftId AS [Key], ReplacedMinecraftId AS [Value] FROM ConversionDictionary;";
                 return conn.Query<KeyValuePair<string, string>>(commandString).ToDictionary(pair => pair.Key, pair => pair.Value);
             }
         }
