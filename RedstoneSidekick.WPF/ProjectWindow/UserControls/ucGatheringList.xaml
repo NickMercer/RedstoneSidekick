@@ -19,7 +19,7 @@
     </UserControl.Resources>
     <Grid Background="{StaticResource RSRed}" Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -54,6 +54,8 @@
 
         <ListView Grid.Row="1"
                   Background="{StaticResource RSBeige}"
+                  BorderBrush="{StaticResource TransparentBlack}"
+                  BorderThickness="3"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
                   ScrollViewer.VerticalScrollBarVisibility="Disabled"
                   HorizontalAlignment="Stretch"

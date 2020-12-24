@@ -1,4 +1,5 @@
 ﻿using RedstoneSidekickWPF.ProjectWindow;
+using RedstoneSidekickWPF.ProjectWindow.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,23 @@ namespace RedstoneSidekickWPF.Commands
 {
     public class AddItemCommand : ICommand
     {
-        private ProjectWindowVM _projectWindowVM;
+        private ucCraftingTree _craftingTreeControl;
 
-        public AddItemCommand(ProjectWindowVM projectWindowVM)
+        public event EventHandler CanExecuteChanged
         {
-            _projectWindowVM = projectWindowVM;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public event EventHandler CanExecuteChanged;
+        public AddItemCommand(ucCraftingTree craftingTreeControl)
+        {
+            _craftingTreeControl = craftingTreeControl;
+        }
 
+        
         public bool CanExecute(object parameter)
         {
-            return _projectWindowVM != null;
+            return _craftingTreeControl != null;
         }
 
         public void Execute(object parameter)

@@ -45,9 +45,6 @@ namespace RedstoneSidekickWPF.ProjectWindow
         public SaveProjectCommand SaveProjectCommand { get; set; }
         public LoadProjectCodeCommand LoadProjectCodeCommand { get; set; }
         public CreateProjectCodeCommand CreateProjectCodeCommand { get; set; }
-        public ToggleItemBrowserCommand ToggleItemBrowserCommand { get; set; }
-        public AddItemCommand AddItemCommand { get; set; }
-        public RemoveItemCommand RemoveItemCommand { get; set; }
 
         #endregion
 
@@ -70,9 +67,6 @@ namespace RedstoneSidekickWPF.ProjectWindow
             SaveProjectCommand = new SaveProjectCommand(this);
             LoadProjectCodeCommand = new LoadProjectCodeCommand(this);
             CreateProjectCodeCommand = new CreateProjectCodeCommand(this);
-            ToggleItemBrowserCommand = new ToggleItemBrowserCommand(this);
-            AddItemCommand = new AddItemCommand(this);
-            RemoveItemCommand = new RemoveItemCommand(this);
         }
 
 

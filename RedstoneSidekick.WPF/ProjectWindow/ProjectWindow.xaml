@@ -193,63 +193,25 @@
                 <RowDefinition Height="10" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0"
-                  Grid.RowSpan="2"
-                  Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="TextBox_ProjectName"
-                         Grid.Column="0"
-                         Text="{Binding Project.ProjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=New Project}"
-                         FontSize="40"
-                         Margin="40 5 0 0"
-                         FontWeight="Medium"
-                         FontStyle="Italic"
-                         VerticalAlignment="Center"
-                         VerticalContentAlignment="Center"
-                         HorizontalAlignment="Left"
-                         HorizontalContentAlignment="Right"
-                         Foreground="{StaticResource RSDarkRed}"
-                         MaxLength="50"
-                         BorderThickness="0"
-                         Focusable="False"
-                         KeyDown="TextBox_ProjectName_KeyDown"
-                         MouseDown="TextBox_ProjectName_MouseDown" />
-
-                <Button Grid.Column="1"
-                        x:Name="BTN_AddItems"
-                        Width="Auto"
-                        Height="40"
-                        Padding="5"
-                        VerticalAlignment="Bottom"
-                        Margin="0 5"
-                        Style="{StaticResource RoundedButton}"
-                        BorderThickness="2"
-                        Background="{StaticResource RSPinkTransparent}"
-                        ToolTip="Show or hide the item browser for manually adding items to a project."
-                        Command="{Binding ToggleItemBrowserCommand}">
-                    <TextBlock Text="Add Items"
-                               FontWeight="DemiBold" />
-                </Button>
-                <Button Grid.Column="2"
-                        x:Name="BTN_RemoveItems"
-                        Width="Auto"
-                        Height="40"
-                        Padding="5"
-                        VerticalAlignment="Bottom"
-                        Margin="5"
-                        Style="{StaticResource RoundedButton}"
-                        BorderThickness="2"
-                        Background="{StaticResource RSPinkTransparent}"
-                        ToolTip="Remove the selected item from the project."
-                        Command="{Binding RemoveItemCommand}">
-                    <TextBlock Text="Remove Selected"
-                               FontWeight="DemiBold" />
-                </Button>
-            </Grid>
+            <TextBox x:Name="TextBox_ProjectName"
+                     Grid.Row="0"
+                     Grid.RowSpan="2"
+                     Grid.Column="0"
+                     Text="{Binding Project.ProjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=New Project}"
+                     FontSize="40"
+                     Margin="40 5 0 0"
+                     FontWeight="Medium"
+                     FontStyle="Italic"
+                     VerticalAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     HorizontalContentAlignment="Right"
+                     Foreground="{StaticResource RSDarkRed}"
+                     MaxLength="50"
+                     BorderThickness="0"
+                     Focusable="False"
+                     KeyDown="TextBox_ProjectName_KeyDown"
+                     MouseDown="TextBox_ProjectName_MouseDown" />
 
 
             <Border Grid.Column="1"

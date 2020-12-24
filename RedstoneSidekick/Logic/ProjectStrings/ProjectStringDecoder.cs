@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Natick.Utilities.ViewModels;
+using Newtonsoft.Json;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.Projects;
 using System;
@@ -110,7 +111,7 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                         TypeNameHandling = TypeNameHandling.All
                     };
 
-                    craftingTree.Items = JsonConvert.DeserializeObject<ObservableCollection<ICraftingTreeItem>>(treeJson, settings);
+                    craftingTree.Items = JsonConvert.DeserializeObject<RecursiveObservableCollection<ICraftingTreeItem>>(treeJson, settings);
                     //craftingTree = JsonConvert.DeserializeObject<ProjectCraftingTree>(treeJson);
                 }
             }

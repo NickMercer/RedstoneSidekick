@@ -1,4 +1,5 @@
-﻿using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
+﻿using Natick.Utilities.ViewModels;
+using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using RedstoneSidekick.Logic.CraftingTree;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
     public class ProjectCraftingTree
     {
-        public ObservableCollection<ICraftingTreeItem> Items { get; set; } = new ObservableCollection<ICraftingTreeItem>();
+        public RecursiveObservableCollection<ICraftingTreeItem> Items { get; set; } = new RecursiveObservableCollection<ICraftingTreeItem>();
 
         
         public ProjectCraftingTree()
@@ -21,9 +22,9 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             Items = GenerateItemTree(itemDictionary);
         }
 
-        private ObservableCollection<ICraftingTreeItem> GenerateItemTree(Dictionary<int, int> itemDictionary)
+        private RecursiveObservableCollection<ICraftingTreeItem> GenerateItemTree(Dictionary<int, int> itemDictionary)
         {
-            var itemTree = new ObservableCollection<ICraftingTreeItem>();
+            var itemTree = new RecursiveObservableCollection<ICraftingTreeItem>();
 
             foreach (var itemPair in itemDictionary)
             {
