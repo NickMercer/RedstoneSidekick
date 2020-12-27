@@ -109,7 +109,6 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 
         private ICollectionView _minecraftItemView;
 
-        public ToggleItemBrowserCommand ToggleItemBrowserCommand { get; set; }
         public AddItemCommand AddItemCommand { get; set; }
         public RemoveItemCommand RemoveItemCommand { get; set; }
 
@@ -132,7 +131,6 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             };
             CategoryIndex = 0;
 
-            ToggleItemBrowserCommand = new ToggleItemBrowserCommand(this);
             AddItemCommand = new AddItemCommand(this);
             RemoveItemCommand = new RemoveItemCommand(this);
 
@@ -279,5 +277,6 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             LV_MinecraftItems.SelectedItem = item;
             AddItemCommand.Execute(item);
         }
+
     }
 }

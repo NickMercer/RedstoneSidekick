@@ -24,6 +24,16 @@
                                     Property="Source"
                                     Value="pack://application:,,,/RedstoneSidekickWPF;component/Images/App/CraftingTreeIcons/MinusButton.png" />
                         </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Cursor"
+                                    Value="Hand" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
+                            <Setter Property="Cursor"
+                                    Value="Arrow" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
