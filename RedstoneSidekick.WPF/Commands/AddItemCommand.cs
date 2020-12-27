@@ -1,4 +1,8 @@
-﻿using RedstoneSidekickWPF.ProjectWindow;
+﻿using Natick.Utilities.ViewModels;
+using RedstoneSidekick.Domain.MinecraftItems;
+using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+using RedstoneSidekick.Logic.CraftingTree;
+using RedstoneSidekickWPF.ProjectWindow;
 using RedstoneSidekickWPF.ProjectWindow.UserControls;
 using System;
 using System.Collections.Generic;
@@ -32,7 +36,12 @@ namespace RedstoneSidekickWPF.Commands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var itemToAdd = _craftingTreeControl.LV_MinecraftItems.SelectedItem as IMinecraftItem;
+            if (itemToAdd != null && _craftingTreeControl.Items.FirstOrDefault(x => x.IsRootItem && x.Item.Id == itemToAdd.Id) == null)
+            {
+                var craftingTree = _craftingTreeControl.Items;
+                craftingTree.Add(CraftingTreeItemBuilder.CreateCraftingTreeItem(itemToAdd.Id, 1));
+            }
         }
     }
 }

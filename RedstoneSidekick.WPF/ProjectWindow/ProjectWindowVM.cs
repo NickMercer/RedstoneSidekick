@@ -2,6 +2,7 @@
 using Natick.Utilities.ViewModels;
 using RedstoneSidekick;
 using RedstoneSidekick.Data;
+using RedstoneSidekick.Data.Repositories;
 using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
@@ -36,6 +37,14 @@ namespace RedstoneSidekickWPF.ProjectWindow
             }
         }
 
+        private ObservableCollection<IMinecraftItem> _minecraftItemList;
+        public ObservableCollection<IMinecraftItem> MinecraftItemList
+        {
+            get { return _minecraftItemList; }
+            set { SetProperty(ref _minecraftItemList, value); }
+        }
+
+
         #region Commands
 
         public NewProjectCommand NewProjectCommand { get; set; }
@@ -51,6 +60,9 @@ namespace RedstoneSidekickWPF.ProjectWindow
         public ProjectWindowVM()
         {
             new ItemDataUpdateHandler().RefreshAllData();
+
+            var items = new MinecraftItemRepository().GetMinecraftItems();
+            MinecraftItemList = new ObservableCollection<IMinecraftItem>(items);
 
             RegisterCommands();
 

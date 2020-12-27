@@ -311,6 +311,7 @@
               Background="{StaticResource RSBeige}">
             <uc:ucCraftingTree x:Name="uc_CraftingTree"
                                Items="{Binding Project.CraftingTree.Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               MinecraftItems="{Binding MinecraftItemList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                Visibility="Visible" />
 
             <uc:ucGatheringList x:Name="uc_GatheringList"

@@ -14,7 +14,6 @@ namespace RedstoneSidekickWPF.Commands
     public class RemoveItemCommand : ICommand
     {
         private ucCraftingTree _craftingTreeControl;
-        private ucCraftingTreeItem _selected;
 
         public event EventHandler CanExecuteChanged
         {

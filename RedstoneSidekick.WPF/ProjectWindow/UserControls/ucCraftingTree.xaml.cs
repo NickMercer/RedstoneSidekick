@@ -1,4 +1,5 @@
 ﻿using Natick.Utilities.ViewModels;
+using RedstoneSidekick.Domain;
 using RedstoneSidekick.Domain.MinecraftItems;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekickWPF.Commands;
@@ -53,6 +54,31 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             }
         }
 
+        public ObservableCollection<IMinecraftItem> MinecraftItems
+        {
+            get { return (ObservableCollection<IMinecraftItem>)GetValue(MinecraftItemsProperty); }
+            set { SetValue(MinecraftItemsProperty, value); }
+        }
+
+        public static readonly DependencyProperty MinecraftItemsProperty =
+            DependencyProperty.Register("MinecraftItems", typeof(ObservableCollection<IMinecraftItem>), typeof(ucCraftingTree), new PropertyMetadata(null, SetMinecraftItems));
+
+        private static void SetMinecraftItems(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as ucCraftingTree;
+            var list = e.NewValue as ObservableCollection<IMinecraftItem>;
+
+            if(uc.MinecraftItems.FirstOrDefault(x => x.Name == "Air") != null)
+            {
+                uc.MinecraftItems.Remove(uc.MinecraftItems.First(x => x.Name == "Air"));
+            }
+
+            uc._minecraftItemView = (CollectionView)CollectionViewSource.GetDefaultView(uc.MinecraftItems);
+            uc._minecraftItemView.Filter = uc.MinecraftItemFilter;
+            uc._filters.Add("Category", uc.ItemCategoryFilter);
+            uc._filters.Add("Search Text", uc.SearchTextFilter);
+        }
+
         public ObservableCollection<string> SortingTypes { get; set; }
 
         public string SortType { get; set; }
@@ -66,6 +92,23 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public List<string> Categories { get; set; }
+
+        private int _categoryIndex;
+        public int CategoryIndex
+        {
+            get { return _categoryIndex; }
+            set 
+            { 
+                _categoryIndex = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Dictionary<string, Predicate<IMinecraftItem>> _filters = new Dictionary<string, Predicate<IMinecraftItem>>();
+
+        private ICollectionView _minecraftItemView;
+
         public ToggleItemBrowserCommand ToggleItemBrowserCommand { get; set; }
         public AddItemCommand AddItemCommand { get; set; }
         public RemoveItemCommand RemoveItemCommand { get; set; }
@@ -74,6 +117,20 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
         {
             SortingTypes = new ObservableCollection<string> { "----------", "Name", "Category", "Required (High to Low)", "Required (Low to High)" };
             SortType = "----------";
+
+            Categories = new List<string>
+            {
+                "All",
+                "Building Blocks",
+                "Decorations",
+                "Redstone",
+                "Transportation",
+                "Miscellaneous",
+                "Foodstuffs",
+                "Brewing",
+                "Combat"
+            };
+            CategoryIndex = 0;
 
             ToggleItemBrowserCommand = new ToggleItemBrowserCommand(this);
             AddItemCommand = new AddItemCommand(this);
@@ -137,6 +194,90 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             {
                 _canResetSort = true;
             }
+        }
+
+        #region Add Item Menu Sorting
+
+        private void ItemCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FilterMinecraftItems();
+        }
+
+        private void TB_ItemSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterMinecraftItems();
+        }
+
+        private void FilterMinecraftItems()
+        {
+            _minecraftItemView.Refresh();
+        }
+
+        private bool MinecraftItemFilter(object obj)
+        {
+            var item = obj as IMinecraftItem;
+            return _filters.Values.Aggregate(true, (prevValue, predicate) => prevValue && predicate(item));
+        }
+
+        private bool SearchTextFilter(object obj)
+        {
+            var item = obj as IMinecraftItem;
+            if(String.IsNullOrWhiteSpace(TB_ItemSearch.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return item.Name.ToLower().Contains(TB_ItemSearch.Text.ToLower());
+            }
+        }
+
+        private bool ItemCategoryFilter(object obj)
+        {
+            IMinecraftItem item = obj as IMinecraftItem;
+
+            switch (Categories[CategoryIndex])
+            {
+                case "All":
+                    return true;
+
+                case "Building Blocks":
+                    return item.Category == ItemCategory.BuildingBlocks ? true : false;
+
+                case "Decorations":
+                    return item.Category == ItemCategory.Decorations ? true : false;
+
+                case "Redstone":
+                    return item.Category == ItemCategory.Redstone ? true : false;
+
+                case "Transportation":
+                    return item.Category == ItemCategory.Transportation ? true : false;
+
+                case "Miscellaneous":
+                    return item.Category == ItemCategory.Miscellaneous ? true : false;
+
+                case "Foodstuffs":
+                    return item.Category == ItemCategory.Foodstuffs ? true : false;
+
+                case "Brewing":
+                    return item.Category == ItemCategory.Brewing ? true : false;
+
+                case "Combat":
+                    return item.Category == ItemCategory.Combat ? true : false;
+            }
+
+            return false;
+        }
+
+
+
+        #endregion
+
+        private void Button_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var item = (sender as Button).DataContext;
+            LV_MinecraftItems.SelectedItem = item;
+            AddItemCommand.Execute(item);
         }
     }
 }

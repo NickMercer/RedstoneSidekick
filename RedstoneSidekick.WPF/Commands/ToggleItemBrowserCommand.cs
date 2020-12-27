@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace RedstoneSidekickWPF.Commands
@@ -32,7 +33,9 @@ namespace RedstoneSidekickWPF.Commands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var controlVis = _craftingTreeControl.AddItemsPanel.Visibility;
+            controlVis = controlVis == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            _craftingTreeControl.AddItemsPanel.Visibility = controlVis;
         }
     }
 }
