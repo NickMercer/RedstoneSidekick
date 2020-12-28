@@ -180,7 +180,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
             var errorBlock = 0;
             var airBlock = 1;
 
-            itemDictionary.Remove(errorBlock);
+            //itemDictionary.Remove(errorBlock);
             itemDictionary.Remove(airBlock);
 
             return itemDictionary;

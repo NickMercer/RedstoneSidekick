@@ -63,6 +63,7 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 
         public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0, ICraftingTreeCompoundItem parent = null, bool isSmeltingIngredient = false)
         {
+            if (item == null) Item = new MinecraftItem();
             Item = item;
             RequiredAmount = requiredAmount;
             RecipeAmount = recipeAmount;

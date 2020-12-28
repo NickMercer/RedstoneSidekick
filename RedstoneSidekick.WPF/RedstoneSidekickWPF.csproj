@@ -14,6 +14,7 @@
     <None Remove="Images\App\CraftingTreeIcons\PlusButton.png" />
     <None Remove="Images\App\CraftingTreeIcons\SmeltingIcon.png" />
     <None Remove="Images\App\GatheringListIcons\Checkmark.png" />
+    <None Remove="Images\App\RSSplashScreen.png" />
     <None Remove="RedstoneSidekickDB.db" />
   </ItemGroup>
 
@@ -50,6 +51,9 @@
     <Resource Include="Images\App\GatheringListIcons\Checkmark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <SplashScreen Include="Images\App\RSSplashScreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </SplashScreen>
     <Resource Include="Images\Decorations\MagentaBed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
