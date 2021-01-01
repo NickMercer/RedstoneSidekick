@@ -1,15 +1,19 @@
 [
   {
     "FileName": "ItemData.csv",
-    "Version": "1.0.0"
+    "Version": "1.1.4"
   },
   {
     "FileName": "ItemCraftingRecipes.csv",
-    "Version": "1.0.0"
+    "Version": "1.1.0"
   },
   {
     "FileName": "ItemSmeltingData.csv",
-    "Version": "1.0.0"
+    "Version": "1.1.0"
+  },
+  {
+    "FileName": "ConversionDictionary.csv",
+    "Version": "1.1.2"
   }
 ]
 

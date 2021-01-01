@@ -27,6 +27,10 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
         private readonly SmeltingRecipeCSVReader _smeltingRecipeCSVReader = new SmeltingRecipeCSVReader();
         private readonly SmeltingRecipeRepository _smeltingRecipeRepository = new SmeltingRecipeRepository();
 
+        private readonly ConversionDictionaryCSVReader _conversionDictionaryCSVReader = new ConversionDictionaryCSVReader();
+        private readonly ConversionDictionaryRepository _conversionDictionaryRepository = new ConversionDictionaryRepository();
+
+
         public ItemDataUpdateHandler()
         {
             _csvVersions = GetVersionInfo();
@@ -37,9 +41,8 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
             RefreshMinecraftItemData("ItemData.csv");
             RefreshCraftingData("ItemCraftingRecipes.csv");
             RefreshSmeltingData("ItemSmeltingData.csv");
+            RefreshConversionDictionary("ConversionDictionary.csv");
         }
-
-
 
         public void RefreshMinecraftItemData(string fileName)
         {
@@ -74,6 +77,18 @@ namespace RedstoneSidekick.Logic.StartupDataProcess
 
             UpdateFileVersion(fileName, recipesInserted);
         }
+
+
+        private void RefreshConversionDictionary(string fileName)
+        {
+            if (FileRequiresUpdate(fileName) == false) return;
+
+            var conversionData = _conversionDictionaryCSVReader.LoadConversionDictionary();
+            var conversionsInserted = _conversionDictionaryRepository.InsertDictionaryEntries(conversionData);
+
+            UpdateFileVersion(fileName, conversionsInserted);
+        }
+
 
         private bool FileRequiresUpdate(string fileName)
         {

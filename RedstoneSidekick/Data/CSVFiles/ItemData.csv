@@ -727,3 +727,83 @@ Id,Name,ImagePath,MinecraftId,Category
 726,Honey Bottle,/Images/Foodstuffs/HoneyBottle.png,minecraft:honey_bottle,6
 727,Honey Block,/Images/Decorations/HoneyBlock.png,minecraft:honey_block,2
 728,Honeycomb Block,/Images/Decorations/HoneycombBlock.png,minecraft:honeycomb_block,2
+729,Crimson Nylium,/Images/Blocks/CrimsonNylium.png,minecraft:crimson_nylium,1
+730,Warped Nylium,/Images/Blocks/WarpedNylium.png,minecraft:warped_nylium,1
+731,Crimson Planks,/Images/Blocks/CrimsonPlanks.png,minecraft:crimson_planks,1
+732,Warped Planks,/Images/Blocks/WarpedPlanks.png,minecraft:warped_planks,1
+733,Nether Gold Ore,/Images/Blocks/NetherGoldOre.png,minecraft:nether_gold_ore,1
+734,Crimson Stem,/Images/Blocks/CrimsonStem.png,minecraft:crimson_stem,1
+735,Warped Stem,/Images/Blocks/WarpedStem.png,minecraft:warped_stem,1
+736,Stripped Crimson Stem,/Images/Blocks/StrippedCrimsonStem.png,minecraft:stripped_crimson_stem,1
+737,Stripped Warped Stem,/Images/Blocks/StrippedWarpedStem.png,minecraft:stripped_warped_stem,1
+738,Stripped Crimson Hyphae,/Images/Blocks/StrippedCrimsonHyphae.png,minecraft:stripped_crimson_hyphae,1
+739,Stripped Warped Hyphae,/Images/Blocks/StrippedWarpedHyphae.png,minecraft:stripped_warped_hyphae,1
+740,Crimson Hyphae,/Images/Blocks/CrimsonHyphae.png,minecraft:crimson_hyphae,1
+741,Warped Hyphae,/Images/Blocks/WarpedHyphae.png,minecraft:warped_hyphae,1
+742,Crimson Slab,/Images/Blocks/CrimsonSlab.png,minecraft:crimson_slab,1
+743,Warped Slab,/Images/Blocks/WarpedSlab.png,minecraft:warped_slab,1
+744,Soul Soil,/Images/Blocks/SoulSoil.png,minecraft:soul_soil,1
+745,Basalt,/Images/Blocks/Basalt.png,minecraft:basalt,1
+746,Polished Basalt,/Images/Blocks/PolishedBasalt.png,minecraft:polished_basalt,1
+747,Cracked Nether Bricks,/Images/Blocks/CrackedNetherBricks.png,minecraft:cracked_nether_bricks,1
+748,Crimson Stairs,/Images/Blocks/CrimsonStairs.png,minecraft:crimson_stairs,1
+749,Warped Stairs,/Images/Blocks/WarpedStairs.png,minecraft:warped_stairs,1
+750,Warped Wart Block,/Images/Blocks/WarpedWartBlock.png,minecraft:warped_wart_block,1
+751,Block of Netherite,/Images/Blocks/BlockOfNetherite.png,minecraft:netherite_block,1
+752,Ancient Debris,/Images/Blocks/AncientDebris.png,minecraft:ancient_debris,1
+753,Crying Obsidian,/Images/Blocks/CryingObsidian.png,minecraft:crying_obsidian,1
+754,Blackstone,/Images/Blocks/Blackstone.png,minecraft:blackstone,1
+755,Blackstone Slab,/Images/Blocks/BlackstoneSlab.png,minecraft:blackstone_slab,1
+756,Blackstone Stairs,/Images/Blocks/BlackstoneStairs.png,minecraft:blackstone_stairs,1
+757,Gilded Blackstone,/Images/Blocks/GildedBlackstone.png,minecraft:gilded_blackstone,1
+758,Polished Blackstone,/Images/Blocks/PolishedBlackstone.png,minecraft:polished_blackstone,1
+759,Polished Blackstone Slab,/Images/Blocks/PolishedBlackstoneSlab.png,minecraft:polished_blackstone_slab,1
+760,Polished Blackstone Stairs,/Images/Blocks/PolishedBlackstoneStairs.png,minecraft:polished_blackstone_stairs,1
+761,Chiseled Polished Blackstone,/Images/Blocks/ChiseledPolishedBlackstone.png,minecraft:chiseled_polished_blackstone,1
+762,Polished Blackstone Bricks,/Images/Blocks/PolishedBlackstoneBricks.png,minecraft:polished_blackstone_bricks,1
+763,Polished Blackstone Brick Slab,/Images/Blocks/PolishedBlackstoneBrickSlab.png,minecraft:polished_blackstone_brick_slab,1
+764,Polished Blackstone Brick Stairs,/Images/Blocks/PolishedBlackstoneBrickStairs.png,minecraft:polished_blackstone_brick_stairs,1
+765,Cracked Polished Blackstone Bricks,/Images/Blocks/CrackedPolishedBlackstoneBricks.png,minecraft:cracked_polished_blackstone_bricks,1
+766,Crimson Fungus,/Images/Decorations/CrimsonFungus.png,minecraft:crimson_fungus,2
+767,Warped Fungus,/Images/Decorations/WarpedFungus.png,minecraft:warped_fungus,2
+768,Crimson Roots,/Images/Decorations/CrimsonRoots.png,minecraft:crimson_roots,2
+769,Warped Roots,/Images/Decorations/WarpedRoots.png,minecraft:warped_roots,2
+770,Nether Sprouts,/Images/Decorations/NetherSprouts.png,minecraft:nether_sprouts,2
+771,Weeping Vines,/Images/Decorations/WeepingVines.png,minecraft:weeping_vines,2
+772,Twisting Vines,/Images/Decorations/TwistingVines.png,minecraft:twisting_vines,2
+773,Crimson Fence,/Images/Decorations/CrimsonFence.png,minecraft:crimson_fence,2
+774,Warped Fence,/Images/Decorations/WarpedFence.png,minecraft:warped_fence,2
+775,Soul Torch,/Images/Decorations/SoulTorch.png,minecraft:soul_torch,2
+776,Chain,/Images/Decorations/Chain.png,minecraft:chain,2
+777,Blackstone Wall,/Images/Decorations/BlackstoneWall.png,minecraft:blackstone_wall,2
+778,Polished Blackstone Wall,/Images/Decorations/PolishedBlackstoneWall.png,minecraft:polished_blackstone_wall,2
+779,Polished Blackstone Brick Wall,/Images/Decorations/PolishedBlackstoneBrickWall.png,minecraft:polished_blackstone_brick_wall,2
+780,Soul Lantern,/Images/Decorations/SoulLantern.png,minecraft:soul_lantern,2
+781,Soul Campfire,/Images/Decorations/SoulCampfire.png,minecraft:soul_campfire,2
+782,Shroomlight,/Images/Decorations/Shroomlight.png,minecraft:shroomlight,2
+783,Lodestone,/Images/Decorations/Lodestone.png,minecraft:lodestone,2
+784,Respawn Anchor,/Images/Decorations/RespawnAnchor.png,minecraft:respawn_anchor,2
+785,Crimson Pressure Plate,/Images/Redstone/CrimsonPressurePlate.png,minecraft:crimson_pressure_plate,3
+786,Warped Pressure Plate,/Images/Redstone/WarpedPressurePlate.png,minecraft:warped_pressure_plate,3
+787,Polished Blackstone Pressure Plate,/Images/Redstone/PolishedBlackstonePressurePlate.png,minecraft:polished_blackstone_pressure_plate,3
+788,Crimson Trapdoor,/Images/Redstone/CrimsonTrapdoor.png,minecraft:crimson_trapdoor,3
+789,Warped Trapdoor,/Images/Redstone/WarpedTrapdoor.png,minecraft:warped_trapdoor,3
+790,Crimson Fence Gate,/Images/Redstone/CrimsonFenceGate.png,minecraft:crimson_fence_gate,3
+791,Warped Fence Gate,/Images/Redstone/WarpedFenceGate.png,minecraft:warped_fence_gate,3
+792,Crimson Button,/Images/Redstone/CrimsonButton.png,minecraft:crimson_button,3
+793,Warped Button,/Images/Redstone/WarpedButton.png,minecraft:warped_button,3
+794,Polished Blackstone Button,/Images/Redstone/PolishedBlackstoneButton.png,minecraft:polished_blackstone_button,3
+795,Crimson Door,/Images/Redstone/CrimsonDoor.png,minecraft:crimson_door,3
+796,Warped Door,/Images/Redstone/WarpedDoor.png,minecraft:warped_door,3
+797,Target,/Images/Redstone/Target.png,minecraft:target,3
+798,Netherite Ingot,/Images/Miscellaneous/NetheriteIngot.png,minecraft:netherite_ingot,5
+799,Netherite Scrap,/Images/Miscellaneous/NetheriteScrap.png,minecraft:netherite_scrap,5
+800,Hoglin Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:hoglin_spawn_egg,5
+801,Piglin Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:piglin_spawn_egg,5
+802,Piglin Brute Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:piglin_brute_spawn_egg,5
+803,Strider Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:strider_spawn_egg,5
+804,Zoglin Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zoglin_spawn_egg,5
+805,Zombified Piglin Spawn Egg,/Images/Miscellaneous/SpawnEgg.png,minecraft:zombified_piglin_spawn_egg,5
+806,Chiseled Nether Bricks,/Images/Blocks/ChiseledNetherBricks.png,minecraft:chiseled_nether_bricks,1
+807,Crimson Sign,/Images/Decorations/CrimsonSign.png,minecraft:crimson_sign,2
+808,Warped Sign,/Images/Decorations/WarpedSign.png,minecraft:warped_sign,2

@@ -52,8 +52,8 @@
                     Grid.Column="0"
                     BorderThickness="2"
                     CornerRadius="3"
-                    Height="36"
-                    Width="36">
+                    Height="32"
+                    Width="32">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="4"
                                       ShadowDepth="3"

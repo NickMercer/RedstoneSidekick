@@ -15,7 +15,310 @@
     <None Remove="Images\App\CraftingTreeIcons\SmeltingIcon.png" />
     <None Remove="Images\App\GatheringListIcons\Checkmark.png" />
     <None Remove="Images\App\RSSplashScreen.png" />
+    <None Remove="Images\Blocks\AncientDebris.png" />
+    <None Remove="Images\Blocks\Basalt.png" />
+    <None Remove="Images\Blocks\Blackstone.png" />
+    <None Remove="Images\Blocks\BlackstoneSlab.png" />
+    <None Remove="Images\Blocks\BlackstoneStairs.png" />
+    <None Remove="Images\Blocks\BlockOfNetherite.png" />
+    <None Remove="Images\Blocks\ChiseledNetherBricks.png" />
+    <None Remove="Images\Blocks\ChiseledPolishedBlackstone.png" />
+    <None Remove="Images\Blocks\CrackedNetherBricks.png" />
+    <None Remove="Images\Blocks\CrackedPolishedBlackstoneBricks.png" />
+    <None Remove="Images\Blocks\CrimsonFence.png" />
+    <None Remove="Images\Blocks\CrimsonHyphae.png" />
+    <None Remove="Images\Blocks\CrimsonNylium.png" />
+    <None Remove="Images\Blocks\CrimsonPlanks.png" />
+    <None Remove="Images\Blocks\CrimsonSlab.png" />
+    <None Remove="Images\Blocks\CrimsonStairs.png" />
+    <None Remove="Images\Blocks\CrimsonStem.png" />
+    <None Remove="Images\Blocks\CryingObsidian.png" />
+    <None Remove="Images\Blocks\GildedBlackstone.png" />
+    <None Remove="Images\Blocks\NetherGoldOre.png" />
+    <None Remove="Images\Blocks\PolishedBasalt.png" />
+    <None Remove="Images\Blocks\PolishedBlackstone.png" />
+    <None Remove="Images\Blocks\PolishedBlackstoneBricks.png" />
+    <None Remove="Images\Blocks\PolishedBlackstoneBrickSlab.png" />
+    <None Remove="Images\Blocks\PolishedBlackstoneBrickStairs.png" />
+    <None Remove="Images\Blocks\PolishedBlackstoneSlab.png" />
+    <None Remove="Images\Blocks\PolishedBlackstoneStairs.png" />
+    <None Remove="Images\Blocks\QuartzBricks.png" />
+    <None Remove="Images\Blocks\SoulSoil.png" />
+    <None Remove="Images\Blocks\StrippedCrimsonHyphae.png" />
+    <None Remove="Images\Blocks\StrippedCrimsonStem.png" />
+    <None Remove="Images\Blocks\StrippedWarpedHyphae.png" />
+    <None Remove="Images\Blocks\StrippedWarpedStem.png" />
+    <None Remove="Images\Blocks\WarpedFence.png" />
+    <None Remove="Images\Blocks\WarpedHyphae.png" />
+    <None Remove="Images\Blocks\WarpedNylium.png" />
+    <None Remove="Images\Blocks\WarpedPlanks.png" />
+    <None Remove="Images\Blocks\WarpedSlab.png" />
+    <None Remove="Images\Blocks\WarpedStairs.png" />
+    <None Remove="Images\Blocks\WarpedStem.png" />
+    <None Remove="Images\Blocks\WarpedWartBlock.png" />
+    <None Remove="Images\Decorations\BlackstoneWall.png" />
+    <None Remove="Images\Decorations\Chain.png" />
+    <None Remove="Images\Decorations\CrimsonFungus.png" />
+    <None Remove="Images\Decorations\CrimsonRoots.png" />
+    <None Remove="Images\Decorations\CrimsonSign.png" />
+    <None Remove="Images\Decorations\Lodestone.png" />
+    <None Remove="Images\Decorations\NetherSprouts.png" />
+    <None Remove="Images\Decorations\PolishedBlackstoneBrickWall.png" />
+    <None Remove="Images\Decorations\PolishedBlackstoneWall.png" />
+    <None Remove="Images\Decorations\RespawnAnchor.png" />
+    <None Remove="Images\Decorations\Shroomlight.png" />
+    <None Remove="Images\Decorations\SoulCampfire.png" />
+    <None Remove="Images\Decorations\SoulLantern.png" />
+    <None Remove="Images\Decorations\SoulTorch.png" />
+    <None Remove="Images\Decorations\TwistingVines.png" />
+    <None Remove="Images\Decorations\WarpedFungus.png" />
+    <None Remove="Images\Decorations\WarpedRoots.png" />
+    <None Remove="Images\Decorations\WarpedSign.png" />
+    <None Remove="Images\Decorations\WeepingVines.png" />
+    <None Remove="Images\Miscellaneous\NetheriteIngot.png" />
+    <None Remove="Images\Miscellaneous\NetheriteScrap.png" />
+    <None Remove="Images\Redstone\CrimsonButton.png" />
+    <None Remove="Images\Redstone\CrimsonDoor.png" />
+    <None Remove="Images\Redstone\CrimsonFenceGate.png" />
+    <None Remove="Images\Redstone\CrimsonPressurePlate.png" />
+    <None Remove="Images\Redstone\CrimsonTrapdoor.png" />
+    <None Remove="Images\Redstone\PolishedBlackstoneButton.png" />
+    <None Remove="Images\Redstone\PolishedBlackstonePressurePlate.png" />
+    <None Remove="Images\Redstone\Target.png" />
+    <None Remove="Images\Redstone\WarpedButton.png" />
+    <None Remove="Images\Redstone\WarpedDoor.png" />
+    <None Remove="Images\Redstone\WarpedFenceGate.png" />
+    <None Remove="Images\Redstone\WarpedPressurePlate.png" />
+    <None Remove="Images\Redstone\WarpedTrapdoor.png" />
     <None Remove="RedstoneSidekickDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Blocks\AncientDebris.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\Basalt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\Blackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\BlackstoneSlab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\BlackstoneStairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\BlockOfNetherite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\ChiseledNetherBricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\ChiseledPolishedBlackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrackedNetherBricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrackedPolishedBlackstoneBricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\CrimsonFence.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonHyphae.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonNylium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonPlanks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonSlab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonStairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CrimsonStem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\CryingObsidian.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\GildedBlackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\NetherGoldOre.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBasalt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstoneBricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstoneBrickSlab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstoneBrickStairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstoneSlab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\PolishedBlackstoneStairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\QuartzBricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\SoulSoil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\StrippedCrimsonHyphae.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\StrippedCrimsonStem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\StrippedWarpedHyphae.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\StrippedWarpedStem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\WarpedFence.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedHyphae.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedNylium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedPlanks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedSlab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedStairs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedStem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Blocks\WarpedWartBlock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\BlackstoneWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\Chain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\CrimsonFungus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\CrimsonRoots.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\CrimsonSign.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\Lodestone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\NetherSprouts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\PolishedBlackstoneBrickWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\PolishedBlackstoneWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\RespawnAnchor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\Shroomlight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\SoulCampfire.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\SoulLantern.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\SoulTorch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\TwistingVines.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\WarpedFungus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\WarpedRoots.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\WarpedSign.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Decorations\WeepingVines.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Miscellaneous\NetheriteIngot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Miscellaneous\NetheriteScrap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\CrimsonButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\CrimsonDoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\CrimsonFenceGate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\CrimsonPressurePlate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\CrimsonTrapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\PolishedBlackstoneButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\PolishedBlackstonePressurePlate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\Target.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\WarpedButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\WarpedDoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\WarpedFenceGate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\WarpedPressurePlate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Redstone\WarpedTrapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 
@@ -930,9 +1233,9 @@
     <Resource Include="Images\Blocks\SnowBlock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Blocks\SoulSand.png">
+    <Content Include="Images\Blocks\SoulSand.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Images\Blocks\Sponge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

@@ -271,6 +271,50 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
 
         #endregion
 
+        #region Expand/Collapse All
+
+        private void ExpandAll(ItemsControl items, bool expand)
+        {
+            foreach (object obj in items.Items)
+            {
+                ItemsControl childControl = items.ItemContainerGenerator.ContainerFromItem(obj) as ItemsControl;
+                if (childControl != null)
+                {
+                    ExpandAll(childControl, expand);
+                }
+                TreeViewItem item = childControl as TreeViewItem;
+                if (item != null)
+                    item.IsExpanded = expand;
+            }
+        }
+
+
+        private void BTN_ExpandAll_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach (var item in CraftingTreeView.Items)
+            {
+                var tvi = CraftingTreeView.ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
+                if (tvi != null)
+                {
+                    tvi.ExpandSubtree();
+                }
+            }
+        }
+
+        private void BTN_CollapseAll_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object item in CraftingTreeView.Items)
+            {
+                TreeViewItem treeItem = CraftingTreeView.ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
+                if (treeItem != null)
+                    ExpandAll(treeItem, false);
+                treeItem.IsExpanded = false;
+            }
+        }
+
+        #endregion
+
         private void Button_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var item = (sender as Button).DataContext;

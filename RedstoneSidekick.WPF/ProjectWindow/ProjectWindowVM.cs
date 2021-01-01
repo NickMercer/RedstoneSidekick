@@ -66,7 +66,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
             RegisterCommands();
 
-            Project.CraftingTree = CreateTestData();
+            Project.CraftingTree = new ProjectCraftingTree();
             Project.GatheringList = new ProjectGatheringList(Project.CraftingTree.Items.ToList());
         }
 
