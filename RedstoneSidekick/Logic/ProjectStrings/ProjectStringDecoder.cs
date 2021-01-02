@@ -98,7 +98,6 @@ namespace RedstoneSidekick.Logic.ProjectStrings
         }
 
 
-        //TODO: Update this to the bulletproof interface serialization here: https://skrift.io/issues/bulletproof-interface-deserialization-in-jsonnet/. 
         private static ProjectCraftingTree DecodeFullCraftingTree(byte[] craftingTreeBytes)
         {
             ProjectCraftingTree craftingTree = new ProjectCraftingTree();
@@ -108,10 +107,7 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                 using (BinaryReader reader = new BinaryReader(m))
                 {
                     var treeJson = reader.ReadString();
-                    var settings = new JsonSerializerSettings()
-                    {
-                        TypeNameHandling = TypeNameHandling.All
-                    };
+
                     var converters = new CraftingTreeItemConverter();
                     craftingTree.Items = JsonConvert.DeserializeObject<RecursiveObservableCollection<ICraftingTreeItem>>(treeJson, converters);
                     foreach (ICraftingTreeCompoundItem rootItem in craftingTree.Items.Where(x => x is ICraftingTreeCompoundItem))
@@ -119,7 +115,6 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                         rootItem.UpdateIngredientCounts();
                         rootItem.UpdateIngredientParents();
                     }
-                    //craftingTree = JsonConvert.DeserializeObject<ProjectCraftingTree>(treeJson);
                 }
             }
 

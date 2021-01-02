@@ -296,7 +296,6 @@ minecraft:lantern,1,minecraft:iron_nugget|minecraft:torch,8|1,1
 minecraft:lapis_block,1,minecraft:lapis_lazuli,9,1
 minecraft:lapis_lazuli,9,minecraft:lapis_block,1,1
 minecraft:lead,2,minecraft:string|minecraft:slime_ball,4|1,1
-minecraft:leather,1,minecraft:rabbit_hide,4,1
 minecraft:leather_boots,1,minecraft:leather,4,1
 minecraft:leather_chestplate,1,minecraft:leather,8,1
 minecraft:leather_helmet,1,minecraft:leather,5,1
@@ -498,10 +497,10 @@ minecraft:red_bed,1,minecraft:white_bed|minecraft:red_dye,1|1,1
 minecraft:red_carpet,3,minecraft:red_wool,2,1
 minecraft:red_carpet,8,minecraft:white_carpet|minecraft:red_dye,8|1,1
 minecraft:red_concrete_powder,8,minecraft:red_dye|minecraft:sand|minecraft:gravel,1|4|4,1
-minecraft:red_dye,1,minecraft:beetroot,1,1
 minecraft:red_dye,1,minecraft:poppy,1,1
 minecraft:red_dye,2,minecraft:rose_bush,1,1
 minecraft:red_dye,1,minecraft:red_tulip,1,1
+minecraft:red_dye,1,minecraft:beetroot,1,1
 minecraft:red_nether_bricks,1,minecraft:nether_brick|minecraft:nether_wart,2|2,1
 minecraft:red_nether_brick_slab,6,minecraft:red_nether_bricks,3,1
 minecraft:red_nether_brick_stairs,4,minecraft:red_nether_bricks,6,1

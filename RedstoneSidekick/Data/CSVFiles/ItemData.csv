@@ -807,3 +807,6 @@ Id,Name,ImagePath,MinecraftId,Category
 806,Chiseled Nether Bricks,/Images/Blocks/ChiseledNetherBricks.png,minecraft:chiseled_nether_bricks,1
 807,Crimson Sign,/Images/Decorations/CrimsonSign.png,minecraft:crimson_sign,2
 808,Warped Sign,/Images/Decorations/WarpedSign.png,minecraft:warped_sign,2
+809,Milk Bucket,/Images/Miscellaneous/MilkBucket.png,minecraft:milk_bucket,5
+810,Glass Bottle,/Images/Brewing/GlassBottle.png,minecraft:glass_bottle,7
+811,Magma Cream,/Images/Brewing/MagmaCream.png,minecraft:magma_cream,7

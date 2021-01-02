@@ -38,6 +38,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.PopUps
             }
             else
             {
+                L_Error.Visibility = Visibility.Visible;
                 L_Error.Content = "This is not a valid Redstone Sidekick Project Code";
             }
 
