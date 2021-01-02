@@ -1,11 +1,12 @@
 ﻿using RedstoneSidekick.Domain.MinecraftItems;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace RedstoneSidekick.Domain
 {
-    public class MinecraftItem : IMinecraftItem
+    public class MinecraftItem : IMinecraftItem, INotifyPropertyChanged
     {
         public int Id { get; set; } = 0;
 
@@ -16,6 +17,8 @@ namespace RedstoneSidekick.Domain
         public string MinecraftId { get; set; } = "minecraft:error";
 
         public ItemCategory Category { get; set; } = ItemCategory.Error;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()
         {

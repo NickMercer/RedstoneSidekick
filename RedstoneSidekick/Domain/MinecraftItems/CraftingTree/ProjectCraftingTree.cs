@@ -4,13 +4,14 @@ using RedstoneSidekick.Logic.CraftingTree;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
-    public class ProjectCraftingTree
+    public class ProjectCraftingTree : INotifyPropertyChanged
     {
         public RecursiveObservableCollection<ICraftingTreeItem> Items { get; set; } = new RecursiveObservableCollection<ICraftingTreeItem>();
 
@@ -24,6 +25,8 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         {
             Items = GenerateItemTree(itemDictionary);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private RecursiveObservableCollection<ICraftingTreeItem> GenerateItemTree(Dictionary<int, int> itemDictionary)
         {

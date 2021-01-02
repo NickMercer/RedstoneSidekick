@@ -8,10 +8,11 @@ using System.Text;
 using Natick.Utilities.ViewModels;
 using System.Windows.Threading;
 using System.Windows;
+using System.ComponentModel;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
 {
-    public class ProjectGatheringList
+    public class ProjectGatheringList : INotifyPropertyChanged
     {
         public RecursiveObservableCollection<IGatheringListItem> Items { get; set; } = new RecursiveObservableCollection<IGatheringListItem>();
 
@@ -20,6 +21,8 @@ namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
             var items = GatheringListBuilder.GenerateGatheringList(craftingTree);
             Items.AddRange(items);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void UpdateList(IEnumerable<ICraftingTreeItem> craftingTree)
         {

@@ -92,7 +92,7 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public List<string> Categories { get; set; }
+        public ObservableCollection<string> Categories { get; set; }
 
         private int _categoryIndex;
         public int CategoryIndex
@@ -117,8 +117,8 @@ namespace RedstoneSidekickWPF.ProjectWindow.UserControls
             SortingTypes = new ObservableCollection<string> { "----------", "Name", "Category", "Required (High to Low)", "Required (Low to High)" };
             SortType = "----------";
 
-            Categories = new List<string>
-            {
+            Categories = new ObservableCollection<string>
+            { 
                 "All",
                 "Building Blocks",
                 "Decorations",
