@@ -61,7 +61,7 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                 {
                     var settings = new JsonSerializerSettings()
                     {
-                        TypeNameHandling = TypeNameHandling.All
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                     };
 
                     var treeJson = JsonConvert.SerializeObject(craftingTree.Items, settings);

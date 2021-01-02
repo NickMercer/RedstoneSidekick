@@ -155,8 +155,8 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
             if (success == true)
             {
-                string filePath = dialog.SafeFileName;
-                string fileName = dialog.FileName;
+                string filePath = dialog.FileName;
+                string fileName = dialog.SafeFileName;
 
                 project = RSPFileProcessor.LoadProjectFromFile(filePath, fileName);
                 if (project != null)

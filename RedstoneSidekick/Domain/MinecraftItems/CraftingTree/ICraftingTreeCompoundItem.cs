@@ -11,5 +11,6 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
         public void UpdateIngredientCounts();
 
         public void UpdateGatheredStatuses();
+        public void UpdateIngredientParents();
     }
 }

@@ -60,6 +60,16 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public CraftingTreeSimpleItem()
+        {
+            Item = new MinecraftItem();
+            RequiredAmount = 0;
+            RecipeAmount = 0;
+            CurrentAmount = 0;
+            Parent = null;
+            IsRootItem = (Parent == null);
+            IsSmeltingIngredient = false;
+        }
 
         public CraftingTreeSimpleItem(MinecraftItem item, int requiredAmount = 0, int recipeAmount = 0, int currentAmount = 0, ICraftingTreeCompoundItem parent = null, bool isSmeltingIngredient = false)
         {

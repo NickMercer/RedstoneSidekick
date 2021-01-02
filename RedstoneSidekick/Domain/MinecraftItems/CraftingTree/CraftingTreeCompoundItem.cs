@@ -67,7 +67,18 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        
+        public CraftingTreeCompoundItem()
+        {
+            Item = new MinecraftItem();
+            RequiredAmount = 0;
+            Ingredients = new List<ICraftingTreeItem>();
+            RecipeResultCount = 0;
+            RecipeAmount = 0;
+            CurrentAmount = 0;
+            Parent = null;
+            IsRootItem = true;
+            IsSmeltingIngredient = false;
+        }
         
         public CraftingTreeCompoundItem(MinecraftItem item, List<ICraftingTreeItem> ingredients, int requiredAmount = 0, int recipeResultCount = 0, int recipeAmount = 0, int currentAmount = 0, ICraftingTreeCompoundItem parent = null, bool isSmeltingIngredient = false)
         {
@@ -97,6 +108,20 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             {
                 ingredient.RequiredAmount = (int)recipeMultiplier * ingredient.RecipeAmount;
                 ingredient.CurrentAmount = Math.Min(ingredient.CurrentAmount, ingredient.RequiredAmount);
+            }
+        }
+
+        public void UpdateIngredientParents()
+        {
+            if (Ingredients == null) return;
+
+            foreach(var ingredient in Ingredients)
+            {
+                ingredient.Parent = this;
+                if(ingredient is ICraftingTreeCompoundItem)
+                {
+                    (ingredient as ICraftingTreeCompoundItem).UpdateIngredientParents();
+                }
             }
         }
 

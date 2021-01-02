@@ -2,10 +2,12 @@
 using Newtonsoft.Json;
 using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.Projects;
+using RedstoneSidekick.Logic.RSPFiles;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using static RedstoneSidekick.Logic.ProjectStrings.ProjectStringEncoder;
 
@@ -49,9 +51,9 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                     CraftingTree = projectCraftingTree
                 };
             }
-            catch
+            catch(Exception ex)
             {
-
+                var message = ex;
             }
 
 
@@ -110,8 +112,13 @@ namespace RedstoneSidekick.Logic.ProjectStrings
                     {
                         TypeNameHandling = TypeNameHandling.All
                     };
-
-                    craftingTree.Items = JsonConvert.DeserializeObject<RecursiveObservableCollection<ICraftingTreeItem>>(treeJson, settings);
+                    var converters = new CraftingTreeItemConverter();
+                    craftingTree.Items = JsonConvert.DeserializeObject<RecursiveObservableCollection<ICraftingTreeItem>>(treeJson, converters);
+                    foreach (ICraftingTreeCompoundItem rootItem in craftingTree.Items.Where(x => x is ICraftingTreeCompoundItem))
+                    {
+                        rootItem.UpdateIngredientCounts();
+                        rootItem.UpdateIngredientParents();
+                    }
                     //craftingTree = JsonConvert.DeserializeObject<ProjectCraftingTree>(treeJson);
                 }
             }
