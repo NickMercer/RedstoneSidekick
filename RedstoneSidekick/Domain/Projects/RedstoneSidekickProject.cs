@@ -4,6 +4,7 @@ using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 
 namespace RedstoneSidekick.Domain.Projects
@@ -42,6 +43,24 @@ namespace RedstoneSidekick.Domain.Projects
         public RedstoneSidekickProject()
         {
 
+        }
+
+        ~RedstoneSidekickProject() 
+        {
+            Clear();
+        }
+
+        public void Clear()
+        {
+            if (CraftingTree != null)
+            {
+                foreach(var item in CraftingTree.Items.Where(x => x is ICraftingTreeCompoundItem))
+                {
+                    (item as ICraftingTreeCompoundItem).RemoveIngredientParents();
+                }
+                CraftingTree.Clear();
+            }
+            if(GatheringList != null) GatheringList.Clear();
         }
 
     }

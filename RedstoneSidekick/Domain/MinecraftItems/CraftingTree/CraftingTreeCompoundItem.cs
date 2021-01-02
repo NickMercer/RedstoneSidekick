@@ -125,6 +125,20 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             }
         }
 
+        public void RemoveIngredientParents()
+        {
+            if (Ingredients == null) return;
+
+            foreach (var ingredient in Ingredients)
+            {
+                ingredient.Parent = null;
+                if (ingredient is ICraftingTreeCompoundItem)
+                {
+                    (ingredient as ICraftingTreeCompoundItem).RemoveIngredientParents();
+                }
+            }
+        }
+
         public override string ToString()
         {
             return $"Compound Item: {Item.Id} - {Item.Name} - {Item.MinecraftId}";

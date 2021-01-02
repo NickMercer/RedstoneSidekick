@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using Natick.Utilities;
 using System.Text;
 using Natick.Utilities.ViewModels;
+using System.Windows.Threading;
+using System.Windows;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
 {
@@ -24,6 +26,11 @@ namespace RedstoneSidekick.Domain.MinecraftItems.GatheringList
             Items.Clear();
             var newItems = GatheringListBuilder.GenerateGatheringList(craftingTree);
             Items.AddRange(newItems);
+        }
+
+        internal void Clear()
+        {
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() => Items.Clear()));
         }
     }
 }

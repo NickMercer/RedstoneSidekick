@@ -1,9 +1,12 @@
 ﻿using Natick.Utilities.ViewModels;
 using RedstoneSidekick.Domain.MinecraftItems.GatheringList;
 using RedstoneSidekick.Logic.CraftingTree;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
 {
@@ -36,6 +39,11 @@ namespace RedstoneSidekick.Domain.MinecraftItems.CraftingTree
             }
 
             return itemTree;
+        }
+
+        public void Clear()
+        {
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() => Items.Clear()));
         }
 
         public void UpdateItemTree(IEnumerable<IGatheringListItem> gatheringList)
