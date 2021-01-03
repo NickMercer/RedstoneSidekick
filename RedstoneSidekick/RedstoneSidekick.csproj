@@ -10,12 +10,25 @@
     <None Remove="Data\CSVFiles\ItemCraftingRecipes.csv" />
     <None Remove="Data\CSVFiles\ItemData.csv" />
     <None Remove="Data\CSVFiles\ItemSmeltingData.csv" />
-    <None Remove="Data\CSVFiles\ItemSmeltingRecipes.csv" />
     <None Remove="Data\CSVFiles\versions.json" />
-    <None Remove="RedstoneSidekickDB.db" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Data\CSVFiles\ConversionDictionary.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\CSVFiles\ItemCraftingRecipes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\CSVFiles\ItemData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\CSVFiles\ItemSmeltingData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\CSVFiles\versions.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Data\CSVFiles\ConversionDictionary.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -29,9 +42,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\CSVFiles\versions.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RedstoneSidekickDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

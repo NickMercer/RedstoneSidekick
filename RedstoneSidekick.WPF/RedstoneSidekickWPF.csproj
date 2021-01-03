@@ -1,11 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <UseAppHost>true</UseAppHost>
+    <PublishSingleFile>true</PublishSingleFile>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
     <StartupObject>RedstoneSidekickWPF.App</StartupObject>
+    <PackageId>RedstoneSidekickUI</PackageId>
+    <Authors>Nick Mercer</Authors>
+    <Company>Natick Software</Company>
+    <Product>Redstone Sidekick</Product>
+    <Description>A minecraft crafting tree and gathering list application</Description>
+    <Copyright>2021 - Nick Mercer</Copyright>
+    <PackageIcon>RSLogo.ico</PackageIcon>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <ApplicationIcon>C:\Users\dekor\Downloads\RSLogo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -94,6 +106,10 @@
     <None Remove="Images\Redstone\WarpedPressurePlate.png" />
     <None Remove="Images\Redstone\WarpedTrapdoor.png" />
     <None Remove="RedstoneSidekickDB.db" />
+    <None Include="..\..\..\..\..\..\Downloads\RSLogo.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -2400,9 +2416,9 @@
     <Resource Include="Images\Transportation\TNTMinecart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="RedstoneSidekickDB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="RedstoneSidekickDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
