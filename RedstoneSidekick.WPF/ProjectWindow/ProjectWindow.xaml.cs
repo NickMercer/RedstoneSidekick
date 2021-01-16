@@ -25,7 +25,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         public ProjectWindow()
         {
-            _projectWindowVM = new ProjectWindowVM();
+            _projectWindowVM = new ProjectWindowVM(this);
             this.DataContext = _projectWindowVM;
 
             InitializeComponent();
@@ -79,6 +79,11 @@ namespace RedstoneSidekickWPF.ProjectWindow
         {
             int index = int.Parse(((Button)e.Source).Uid);
 
+            SwitchTabs(index);
+        }
+
+        public void SwitchTabs(int index)
+        {
             Rectangle_Cursor.SetValue(Grid.ColumnProperty, index);
 
             if (_focusedTabIndex != index)
@@ -107,6 +112,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
                 _focusedTabIndex = index;
             }
         }
+
         private static void FocusButton(Button button)
         {
             button.Opacity = 1;

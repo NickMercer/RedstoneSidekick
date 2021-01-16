@@ -26,6 +26,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 {
     public class ProjectWindowVM : ViewModelBase
     {
+        private ProjectWindow _window;
 
         private RedstoneSidekickProject _project = new RedstoneSidekickProject();
         public RedstoneSidekickProject Project
@@ -57,8 +58,10 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         #endregion
 
-        public ProjectWindowVM()
+        public ProjectWindowVM(ProjectWindow window)
         {
+            _window = window;
+
             new ItemDataUpdateHandler().RefreshAllData();
 
             var items = new MinecraftItemRepository().GetMinecraftItems();
@@ -86,6 +89,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         internal void NewProject()
         {
+            _window.SwitchTabs(1);
             Project = new RedstoneSidekickProject();
         }
 
@@ -101,6 +105,8 @@ namespace RedstoneSidekickWPF.ProjectWindow
             Mouse.OverrideCursor = Cursors.Wait;
             if (dialogResult == true)
             {
+                _window.SwitchTabs(1);
+
                 var filePath = dialog.FileName;
                 var project = MinecraftStructureProcessor.CreateProjectFromStructureFile(filePath, dialog.SafeFileName);
 
@@ -132,6 +138,8 @@ namespace RedstoneSidekickWPF.ProjectWindow
             };
             var dialogResult = dialog.ShowDialog();
 
+            _window.SwitchTabs(1);
+
             Mouse.OverrideCursor = Cursors.Wait;
             if (dialogResult == true)
             {
@@ -155,6 +163,8 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
             if (success == true)
             {
+                _window.SwitchTabs(1);
+
                 string filePath = dialog.FileName;
                 string fileName = dialog.SafeFileName;
 
@@ -198,12 +208,15 @@ namespace RedstoneSidekickWPF.ProjectWindow
             };
             projectCodeDialog.Closing += ProjectCodeDialog_Closing;
             projectCodeDialog.ShowDialog();
+
         }
         private void ProjectCodeDialog_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             var codeDialog = (ProjectCodeInputWindow)sender;
 
             if (codeDialog.ProjectCode == null) return;
+
+            _window.SwitchTabs(1);
 
             var project = ProjectStringDecoder.Decode(codeDialog.ProjectCode);
             
@@ -235,7 +248,10 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
         internal void RefreshCraftingTree()
         {
-            Project.CraftingTree.UpdateItemTree(Project.GatheringList.Items);
+            if(Project.GatheringList.Items != null)
+            {
+                Project.CraftingTree.UpdateItemTree(Project.GatheringList.Items);
+            }
         }
 
         internal void RefreshGatheringList()
