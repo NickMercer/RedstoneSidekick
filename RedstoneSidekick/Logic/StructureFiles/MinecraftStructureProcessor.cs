@@ -17,12 +17,10 @@ using System.Windows;
 namespace RedstoneSidekick.Logic.StructureFiles
 {
 
-    public static class MinecraftStructureProcessor
+    public class MinecraftStructureProcessor : IStructureProcessor
     {
-        private static readonly Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
-        private static readonly Dictionary<string, int> _minecraftIdToIdDictionary = new MinecraftItemRepository().GetMinecraftIdToIdDictionary();
-
-        public static RedstoneSidekickProject CreateProjectFromStructureFile(string filePath, string fileName)
+        
+        public RedstoneSidekickProject CreateProjectFromFile(string filePath, string fileName)
         {
             RedstoneSidekickProject project = null;
 
@@ -42,9 +40,9 @@ namespace RedstoneSidekick.Logic.StructureFiles
             return project;
         }
 
-        public static RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
+        public RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
         {
-            var addedStructureTree = CreateProjectFromStructureFile(filePath, fileName).CraftingTree;
+            var addedStructureTree = CreateProjectFromFile(filePath, fileName).CraftingTree;
 
             if (addedStructureTree == null)
             {
@@ -66,7 +64,6 @@ namespace RedstoneSidekick.Logic.StructureFiles
             }
 
             return project;
-            
         }
 
         private static Dictionary<int, int> CreateBlockList(Structure structure)
@@ -91,7 +88,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
         {
             var itemDictionary = new Dictionary<int, int>();
 
-            foreach(Palette blockType in structure.Palette)
+            foreach (Palette blockType in structure.Palette)
             {
                 var blockId = blockType.Name.GetItemId();
 
@@ -106,7 +103,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
 
         private static Dictionary<int, int> SetBlockCounts(Structure structure, Dictionary<int, int> itemDictionary)
         {
-            foreach(Block block in structure.Blocks)
+            foreach (Block block in structure.Blocks)
             {
                 itemDictionary = DetermineBlockCount(structure, block, itemDictionary);
             }
@@ -185,8 +182,14 @@ namespace RedstoneSidekick.Logic.StructureFiles
 
             return itemDictionary;
         }
+    }
 
-        private static int GetItemId(this string minecraftId)
+    public static class ProcessorExtension
+    {
+        private static readonly Dictionary<string, string> _conversionDictionary = new ConversionDictionaryRepository().GetConversionDictionary();
+        private static readonly Dictionary<string, int> _minecraftIdToIdDictionary = new MinecraftItemRepository().GetMinecraftIdToIdDictionary();
+
+        public static int GetItemId(this string minecraftId)
         {
             var id = 0;
 
@@ -202,6 +205,5 @@ namespace RedstoneSidekick.Logic.StructureFiles
 
             return id;
         }
-
     }
 }

@@ -15,9 +15,9 @@
     <Product>Redstone Sidekick</Product>
     <Description>A minecraft crafting tree and gathering list application</Description>
     <Copyright>2021 - Nick Mercer</Copyright>
-    <PackageIcon>RSLogo.ico</PackageIcon>
+    <PackageIcon>RSLogo.png</PackageIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <ApplicationIcon>C:\Users\dekor\Downloads\RSLogo.ico</ApplicationIcon>
+    <ApplicationIcon>C:\Users\dekor\Documents\Natick Software\Projects\Development\RedstoneSidekick\RedstoneSidekick.WPF\RSLogo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -106,7 +106,7 @@
     <None Remove="Images\Redstone\WarpedPressurePlate.png" />
     <None Remove="Images\Redstone\WarpedTrapdoor.png" />
     <None Remove="RedstoneSidekickDB.db" />
-    <None Include="..\..\..\..\..\..\Downloads\RSLogo.ico">
+    <None Include="Images\App\RSLogo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

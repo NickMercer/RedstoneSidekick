@@ -97,7 +97,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
         {
             OpenFileDialog dialog = new OpenFileDialog
             {
-                Filter = "Structure Files(*.nbt)|*.nbt",
+                Filter = "Structure/Schematic Files(*.nbt,*.schematic, *.schem)|*.nbt;*.schematic;*.schem",
                 InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".minecraft\\saves")
             };
             var dialogResult = dialog.ShowDialog();
@@ -108,7 +108,19 @@ namespace RedstoneSidekickWPF.ProjectWindow
                 _window.SwitchTabs(1);
 
                 var filePath = dialog.FileName;
-                var project = MinecraftStructureProcessor.CreateProjectFromStructureFile(filePath, dialog.SafeFileName);
+
+                IStructureProcessor processor;
+                try
+                {
+                    processor = StructureProcessorFactory.Build(dialog.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+
+                var project = processor.CreateProjectFromFile(filePath, dialog.SafeFileName);
 
                 if (project != null)
                 {
@@ -133,7 +145,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
         {
             OpenFileDialog dialog = new OpenFileDialog
             {
-                Filter = "Structure Files(*.nbt)|*.nbt",
+                Filter = "Structure/Schematic Files(*.nbt,*.schematic, *.schem)|*.nbt;*.schematic;*.schem",
                 InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".minecraft\\saves")
             };
             var dialogResult = dialog.ShowDialog();
@@ -144,7 +156,19 @@ namespace RedstoneSidekickWPF.ProjectWindow
             if (dialogResult == true)
             {
                 var filePath = dialog.FileName;
-                Project = MinecraftStructureProcessor.AddStructureToProject(Project, filePath, dialog.SafeFileName);
+
+                IStructureProcessor processor;
+                try
+                {
+                    processor = StructureProcessorFactory.Build(dialog.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+
+                Project = processor.AddStructureToProject(Project, filePath, dialog.SafeFileName);
             }
             Mouse.OverrideCursor = null;
         }
