@@ -1,13 +1,15 @@
 ﻿using NbtLib;
 using Newtonsoft.Json;
 using RedstoneSidekick.Domain.MinecraftSchematics;
+using RedstoneSidekick.Domain.MinecraftStructures;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using Palette = RedstoneSidekick.Domain.MinecraftSchematics.Palette;
 
-namespace RedstoneSidekick.Domain.MinecraftStructures
+namespace RedstoneSidekick.Domain
 {
     public static class NBTConverter
     {
@@ -20,17 +22,21 @@ namespace RedstoneSidekick.Domain.MinecraftStructures
             var jsonWithoutInvalidNBT = json.RemoveInvalidNBT();
 
             return JsonConvert.DeserializeObject<Structure>(jsonWithoutInvalidNBT);
-        }
+        } 
 
         public static Schematic ConvertToSchematic(string filePath)
         {
             var fileAsNBT = ReadFileAsNBT(filePath);
 
-            var json = fileAsNBT.ToJsonString();
+            var schematic = ConvertNBTToSchematic(fileAsNBT);
 
-            var jsonWithoutInvalidNBT = json.RemoveInvalidNBT().RemoveSchematicPaletteStates().SwapSchematicPaletteDictionary();
+            return schematic;
 
-            return JsonConvert.DeserializeObject<Schematic>(jsonWithoutInvalidNBT);
+            //var json = fileAsNBT.ToJsonString();
+
+            //var jsonWithoutInvalidNBT = json.RemoveInvalidNBT().RemoveSchematicPaletteStates().SwapSchematicPaletteDictionary();
+
+            //return JsonConvert.DeserializeObject<Schematic>(jsonWithoutInvalidNBT);
         }
 
         private static NbtCompoundTag ReadFileAsNBT(string filePath)
@@ -71,6 +77,23 @@ namespace RedstoneSidekick.Domain.MinecraftStructures
             json = Regex.Replace(json, regex, "");
 
             return json;
+        }
+
+
+        private static Schematic ConvertNBTToSchematic(NbtCompoundTag nbt)
+        {
+            nbt.TryGetValue("Palette", out var paletteValue);
+            var palette = (NbtCompoundTag)paletteValue;
+
+            List<Palette> palettes = new List<Palette>();
+
+            foreach (var item in palette)
+            {
+                var intValue = int.Parse(item.Value.ToString());
+                palettes.Add(new Palette { MinecraftId = item.Key, SchemBlockId = intValue });
+            }
+
+            return new Schematic();
         }
     }
 }

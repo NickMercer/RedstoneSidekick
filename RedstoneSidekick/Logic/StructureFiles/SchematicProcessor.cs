@@ -1,4 +1,5 @@
-﻿using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
+﻿using RedstoneSidekick.Domain;
+using RedstoneSidekick.Domain.MinecraftItems.CraftingTree;
 using RedstoneSidekick.Domain.MinecraftSchematics;
 using RedstoneSidekick.Domain.MinecraftStructures;
 using RedstoneSidekick.Domain.Projects;
