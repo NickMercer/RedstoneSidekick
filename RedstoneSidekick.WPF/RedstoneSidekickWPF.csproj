@@ -17,7 +17,9 @@
     <Copyright>2021 - Nick Mercer</Copyright>
     <PackageIcon>RSLogo.png</PackageIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <ApplicationIcon>C:\Users\dekor\Documents\Natick Software\Projects\Development\RedstoneSidekick\RedstoneSidekick.WPF\RSLogo.ico</ApplicationIcon>
+    <ApplicationIcon>RSLogo.ico</ApplicationIcon>
+    <Version>1.1.0</Version>
+    <AssemblyName>RedstoneSidekickWPF</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
