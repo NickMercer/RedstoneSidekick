@@ -17,10 +17,10 @@ using System.Windows;
 namespace RedstoneSidekick.Logic.StructureFiles
 {
 
-    public class MinecraftStructureProcessor : IStructureProcessor
+    public class MinecraftStructureProcessor : StructureProcessor
     {
         
-        public RedstoneSidekickProject CreateProjectFromFile(string filePath, string fileName)
+        public override RedstoneSidekickProject CreateProjectFromFile(string filePath, string fileName)
         {
             RedstoneSidekickProject project = null;
 
@@ -40,7 +40,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
             return project;
         }
 
-        public RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
+        public override RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
         {
             var addedStructureTree = CreateProjectFromFile(filePath, fileName).CraftingTree;
 
@@ -116,61 +116,12 @@ namespace RedstoneSidekick.Logic.StructureFiles
             Palette palette = structure.Palette[block.State];
             var itemId = palette.Name.GetItemId();
             int itemCount = itemDictionary[itemId];
-
-            if (palette.Properties != null)
-            {
-                string value;
-                if (palette.Properties.TryGetValue("half", out value))          //Doors, 2 High Plants
-                {
-                    if (value != "upper")
-                    {
-                        itemCount++;
-                    }
-                }
-                else if (palette.Properties.TryGetValue("part", out value))     //Beds
-                {
-                    if (value == "foot")
-                    {
-                        itemCount++;
-                    }
-                }
-                else if (palette.Properties.TryGetValue("layers", out value))     //Snow Layers
-                {
-                    itemCount += int.Parse(value);
-                }
-                else if (palette.Properties.TryGetValue("type", out value))     //Slabs
-                {
-                    if (value == "bottom" || value == "top")
-                    {
-                        itemCount++;
-                    }
-                    else if (value == "double")
-                    {
-                        itemCount += 2;
-                    }
-                    else
-                    {
-                        itemCount++;
-                    }
-                }
-                else if (palette.Properties.TryGetValue("pickles", out value))     //Sea Pickles
-                {
-                    itemCount += int.Parse(value);
-                }
-                else                                                            //Everything Else
-                {
-                    itemCount++;
-                }
-            }
-            else
-            {
-                itemCount++;
-            }
-
-            itemDictionary[itemId] = itemCount;
+            itemDictionary = ParsePropertyBasedCounts(itemDictionary, palette, itemId);
 
             return itemDictionary;
         }
+
+        
 
         private static Dictionary<int, int> RemoveNonBlocks(Dictionary<int, int> itemDictionary)
         {

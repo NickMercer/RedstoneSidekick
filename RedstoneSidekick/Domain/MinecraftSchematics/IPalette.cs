@@ -4,9 +4,8 @@ using System.Text;
 
 namespace RedstoneSidekick.Domain.MinecraftSchematics
 {
-    public class Schematic
+    public interface IPalette
     {
-        public List<Palette> Palette { get; set; }
-        public IList<int> BlockData { get; set; }
+        Dictionary<string, string> Properties { get; set; }
     }
 }

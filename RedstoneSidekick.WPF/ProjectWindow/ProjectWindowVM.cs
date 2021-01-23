@@ -109,7 +109,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
 
                 var filePath = dialog.FileName;
 
-                IStructureProcessor processor;
+                StructureProcessor processor;
                 try
                 {
                     processor = StructureProcessorFactory.Build(dialog.FileName);
@@ -120,23 +120,40 @@ namespace RedstoneSidekickWPF.ProjectWindow
                     return;
                 }
 
-                var project = processor.CreateProjectFromFile(filePath, dialog.SafeFileName);
-
-                if (project != null)
+                try
                 {
-                    Project = project;
+                    var project = processor.CreateProjectFromFile(filePath, dialog.SafeFileName);
+
+                    if (project != null)
+                    {
+                        Project = project;
+                    }
+                    else
+                    {
+                        MessageBoxWindow window = new MessageBoxWindow()
+                        {
+                            Title = "File Does Not Exist",
+                            MessageText = "File does not exist. Please try again",
+                            WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                            ShowActivated = true
+                        };
+                        window.Show();
+                    }
                 }
-                else
+                catch
                 {
                     MessageBoxWindow window = new MessageBoxWindow()
                     {
-                        Title = "File Does Not Exist",
-                        MessageText = "File does not exist. Please try again",
+                        Title = "File Format Not Supported",
+                        MessageText = $"The schematic file that was loaded was either corrupt or not a supported schematic type. {Environment.NewLine}" +
+                                        $"Redstone Sidekick currently supports Minecraft structure files and Sponge Specification .schem files (Like the ones used by the newest version of WorldEdit).",
                         WindowStartupLocation = WindowStartupLocation.CenterScreen,
                         ShowActivated = true
                     };
                     window.Show();
                 }
+
+
             }
             Mouse.OverrideCursor = null;
         }
@@ -157,7 +174,7 @@ namespace RedstoneSidekickWPF.ProjectWindow
             {
                 var filePath = dialog.FileName;
 
-                IStructureProcessor processor;
+                StructureProcessor processor;
                 try
                 {
                     processor = StructureProcessorFactory.Build(dialog.FileName);
@@ -168,7 +185,22 @@ namespace RedstoneSidekickWPF.ProjectWindow
                     return;
                 }
 
-                Project = processor.AddStructureToProject(Project, filePath, dialog.SafeFileName);
+                try 
+                { 
+                    Project = processor.AddStructureToProject(Project, filePath, dialog.SafeFileName);
+                }
+                catch
+                {
+                    MessageBoxWindow window = new MessageBoxWindow()
+                    {
+                        Title = "File Format Not Supported",
+                        MessageText = $"The schematic file that was loaded was either corrupt or not a supported schematic type. {Environment.NewLine}" +
+                                        $"Redstone Sidekick currently supports Minecraft structure files and Sponge Specification .schem files (Like the ones used by the newest version of WorldEdit).",
+                        WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                        ShowActivated = true
+                    };
+                    window.Show();
+                }
             }
             Mouse.OverrideCursor = null;
         }

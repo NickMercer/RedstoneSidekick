@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         WindowStyle="ThreeDBorderWindow"
         Icon="{StaticResource RSLogo}">
-    <Grid Margin="20 20 20 20">
+    <Grid Margin="20 10 20 20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -20,7 +20,8 @@
 
         <TextBlock Grid.Row="1"
                    Name="Text_Message"
-                   Padding="20"
+                   Padding="0 0 10 0"
+                   TextWrapping="Wrap"
                    FontWeight="DemiBold" />
         <Grid Grid.Row="2">
             <Border HorizontalAlignment="Center"

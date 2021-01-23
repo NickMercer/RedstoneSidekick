@@ -22,7 +22,7 @@ namespace RedstoneSidekick.Logic.RSPFiles
             var jsonObject = JObject.Load(reader);
             var itemReader = jsonObject.CreateReader();
             ICraftingTreeItem item = new CraftingTreeSimpleItem();
-            var hasIngredients = jsonObject.TryGetValue("Ingredients", out JToken? ingredientsValue);
+            var hasIngredients = jsonObject.TryGetValue("Ingredients", out JToken ingredientsValue);
 
             if (hasIngredients)
             {

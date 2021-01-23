@@ -6,11 +6,11 @@ namespace RedstoneSidekick.Logic.StructureFiles
 {
     public static class StructureProcessorFactory
     {
-        public static IStructureProcessor Build(string fileName)
+        public static StructureProcessor Build(string fileName)
         {
             var extension = fileName.Substring(fileName.LastIndexOf("."));
 
-            IStructureProcessor processor;
+            StructureProcessor processor;
 
             switch (extension)
             {
@@ -25,7 +25,6 @@ namespace RedstoneSidekick.Logic.StructureFiles
 
                 default:
                     throw new ArgumentException("The given file was of an invalid file type. Please provide a schematic or structure file.");
-                    break;
             }
 
             return processor;

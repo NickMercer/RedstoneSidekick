@@ -11,9 +11,9 @@ using System.Text;
 
 namespace RedstoneSidekick.Logic.StructureFiles
 {
-    public class SchematicProcessor : IStructureProcessor
+    public class SchematicProcessor : StructureProcessor
     {
-        public RedstoneSidekickProject CreateProjectFromFile(string filePath, string fileName)
+        public override RedstoneSidekickProject CreateProjectFromFile(string filePath, string fileName)
         {
             RedstoneSidekickProject project = null;
 
@@ -21,7 +21,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
             {
                 project = new RedstoneSidekickProject();
                 Schematic schematic = NBTConverter.ConvertToSchematic(filePath);
-
+                
                 string projectName = fileName;
                 int extPos = projectName.LastIndexOf(".");
 
@@ -33,7 +33,7 @@ namespace RedstoneSidekick.Logic.StructureFiles
             return project;
         }
 
-        public RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
+        public override RedstoneSidekickProject AddStructureToProject(RedstoneSidekickProject project, string filePath, string fileName)
         {
             var addedStructureTree = CreateProjectFromFile(filePath, fileName).CraftingTree;
 
@@ -82,9 +82,9 @@ namespace RedstoneSidekick.Logic.StructureFiles
         {
             var itemDictionary = new Dictionary<int, int>();
 
-            foreach (KeyValuePair<int, string> blockType in schematic.Palette)
+            foreach (var blockType in schematic.Palette)
             {
-                var blockId = blockType.Value.GetItemId();
+                var blockId = blockType.MinecraftId.GetItemId();
 
                 if (!itemDictionary.ContainsKey(blockId))
                 {
@@ -102,15 +102,25 @@ namespace RedstoneSidekick.Logic.StructureFiles
         {
             foreach (int block in schematic.BlockData)
             {
-                var blockMinecraftId = schematic.Palette.FirstOrDefault(x => x.Key == block).Value;
+                var blockPalette = schematic.Palette.FirstOrDefault(x => x.SchemBlockId == block);
+                
+                string blockMinecraftId = null;
+                if(blockPalette != null)
+                {
+                    blockMinecraftId = blockPalette.MinecraftId;
+                }
+
                 if (blockMinecraftId == null) continue;
 
                 var blockId = blockMinecraftId.GetItemId();
-                var itemCount = itemDictionary[blockId];
+                var palette = schematic.Palette.First(x => x.SchemBlockId == block);
 
-                itemCount++;
+                if(blockMinecraftId.Contains("slab") && !palette.Properties.Values.Contains("top"))
+                {
+                    var truth = "Her I am";
+                }
 
-                itemDictionary[blockId] = itemCount;
+                itemDictionary = ParsePropertyBasedCounts(itemDictionary, palette, blockId);
             }
 
             return itemDictionary;
